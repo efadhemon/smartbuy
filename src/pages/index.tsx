@@ -1,13 +1,14 @@
-import { Button } from 'antd'
-import type { NextPage } from 'next'
+import AppLayout from "@modules/common/layout/AppLayout";
+import { Button } from "antd";
+import type { NextPage } from "next";
 
 const Home: NextPage = () => {
   return (
-    <div className="">
-		<Button type="primary">Primary Button</Button>
-		<h1 className="text-2xl">Hello World</h1>
-    </div>
-  )
-}
+    <AppLayout>
+      <Button type="primary">Primary Button</Button>
+      <h1 className="text-2xl">Hello World</h1>
+    </AppLayout>
+  );
+};
 
-export default Home
+export default Home;
