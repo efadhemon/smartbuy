@@ -1,0 +1,24 @@
+// Normal desktop 1200px to 1500px
+@include xl {
+	.box {
+		background: red;
+	}
+}
+// Normal laptop 992px to 1200px
+@include lg {
+	.box {
+		background: rgb(173, 171, 46);
+	}
+}
+//Tablet 768px to 991px
+@include md {
+	.box {
+		background: rgb(83, 4, 59);
+	}
+}
+//Tablet max 767px
+@include sm {
+	.box {
+		background: rgb(103, 103, 143);
+	}
+}
