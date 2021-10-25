@@ -1,0 +1,244 @@
+.single-product-area {
+  padding: 110px 0 110px;
+
+  .product-gallery {
+
+    @include sm {
+      margin: 0 auto;
+    }
+    
+  }
+  .product-title {
+    p {
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 700;
+      margin: 0 0 8px;
+      color: #f17626;
+    }
+    h2 {
+      color: #22254a;
+      font-size: 30px;
+      line-height: 40px;
+      font-weight: 700;
+    }
+  }
+  .product-value {
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    padding: 25px 0 28px;
+    margin: 30px 0 34px;
+    h3 {
+      font-size: 24px;
+      line-height: 30px;
+      font-weight: 700;
+      color: #f17626;
+      del {
+        color: #b2bfce;
+        font-size: 18px;
+      }
+    }
+    .review-box {
+      display: flex;
+      align-items: center;
+      margin-top: 11px;
+      svg {
+        color: #f6d000;
+        font-size: 18px;
+      }
+    }
+  }
+  .product-text {
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: 33px;
+    margin-bottom: 36px;
+    p {
+      color: #22254a;
+      font-size: 16px;
+      line-height: 26px;
+      font-weight: 400;
+      margin: 0;
+    }
+  }
+  .bottom {
+    padding-top: 12px;
+    display: flex;
+    flex-direction: column;
+    p {
+      float: left;
+      margin-right: 30px;
+      color: #22254a;
+      font-size: 16px;
+      font-weight: 400;
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+  .product-cart-box {
+
+    @include xs {
+      text-align: center;
+    }
+    .input-box {
+      margin-bottom: 20px;
+      .title {
+        padding-bottom: 15px;
+        h4 {
+          color: #22254a;
+          font-size: 16px;
+          line-height: 20px;
+          font-weight: 700;
+        }
+      }
+    }
+    .product-item-counter-btn {
+      @include sm {
+        margin: 0 auto;
+      }
+    }
+  }
+  .product-details-button-box {
+    display: flex;
+    align-content: center;
+
+    @include xs {
+      flex-direction: column;
+      row-gap: 15px;
+    }
+
+    .btn-one {
+      padding-left: 40px;
+      padding-right: 40px;
+      color: #ffffff;
+      font-size: 16px;
+      line-height: 50px;
+      font-weight: 700;
+      text-transform: capitalize;
+      border-radius: 10px;
+    }
+    .addto-cart-button {
+      .addtocart {
+        line-height: 62px;
+        border-radius: 0;
+        background: #f17626;
+      }
+    }
+
+    .wishlist-button {
+      margin-left: 30px;
+      @include xs {
+        margin: 0;
+      }
+      .wishlist {
+        color: #22254a;
+        line-height: 58px;
+        background: #ffffff;
+        border: 1px solid #e5e5e5;
+        border-radius: 0;
+        padding: 0 30px;
+      }
+    }
+  }
+  .share-products-socials {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+
+    @include sm {
+      justify-content: center;
+    }
+    h5 {
+      color: #22254a;
+      font-size: 14px;
+      line-height: 40px;
+      font-weight: 700;
+      margin-right: 20px;
+    }
+  }
+}
+
+.products-details-tab-area {
+  background: #f4f2ef;
+  padding: 113px 0 120px;
+  .ant-tabs-content-holder {
+    background-color: white !important;
+  }
+  .ant-tabs-nav {
+    margin-bottom: 0 !important;
+    .ant-tabs-nav-list {
+      .ant-tabs-tab {
+        padding: 0px 29px 22px;
+        color: #22254a;
+        font-size: 16px;
+        font-weight: 700;
+      }
+      .ant-tabs-tab-active {
+        .ant-tabs-tab-btn {
+          color: #f17626 !important;
+        }
+      }
+    }
+    .ant-tabs-tab-btn:focus,
+    .ant-tabs-tab-remove:focus,
+    .ant-tabs-tab-btn:active,
+    .ant-tabs-tab-remove:active {
+      color: #f17626 !important;
+    }
+  }
+}
+
+.review-form-section {
+  .shop-page-title {
+    padding-bottom: 29px;
+    .title {
+      color: #22254a;
+      font-size: 20px;
+      line-height: 30px;
+      font-weight: 600;
+      margin: 0 0 4px;
+    }
+  }
+  .review-form {
+    .user-info {
+      .ant-input {
+        height: 50px !important;
+        border: 1px solid #ededed !important;
+        color: #252525 !important;
+        border-radius: 0 !important;
+      }
+      .ant-form-item-control-input-content {
+        display: flex;
+        column-gap: 30px;
+      }
+    }
+    .review-box {
+      display: flex;
+      align-items: center;
+      p {
+        padding-right: 20px;
+      }
+      svg {
+        color: #f6d000;
+      }
+    }
+    .btn-one {
+      padding-left: 40px;
+      padding-right: 40px;
+      height: auto !important;
+      color: #ffffff;
+      font-size: 16px;
+      line-height: 50px;
+      font-weight: 700;
+      text-transform: capitalize;
+      border-radius: 10px;
+      background: #f17626;
+    }
+  }
+}
+
+.product-gallery {
+  .bottom {
+    padding-top: 0 !important;
+  }
+}

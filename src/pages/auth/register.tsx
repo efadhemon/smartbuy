@@ -3,7 +3,6 @@ import AppMainHeader from "@modules/common/layout/headers/app-main-header.compon
 import { MoreOutlined } from "@ant-design/icons"
 import { PageHeader } from "antd"
 import PureResponsive from "@modules/common/container/pure-responsive-container.component"
-import React from "react"
 import { RegisterContainer } from "@modules/auth/RegisterContainer"
 
 const Login = () => {

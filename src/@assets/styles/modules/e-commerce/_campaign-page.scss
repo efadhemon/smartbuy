@@ -1,0 +1,15 @@
+.tab-container {
+    .btn-wrapper {
+        display: flex;
+        column-gap: 10px;
+        margin: 20px 0;
+        button {
+            padding: 8px;
+            background-color: #f17626;
+            color: white;
+            a {
+                color: white;
+            }
+        }
+    }
+}

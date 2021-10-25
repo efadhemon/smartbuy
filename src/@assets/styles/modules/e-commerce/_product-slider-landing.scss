@@ -1,0 +1,49 @@
+.landing-slider-product-wrapper {
+  h4 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .search-area {
+    display: flex;
+    justify-content: flex-end;
+    .search-bar {
+      display: flex;
+      margin-right: 10px;
+      input {
+        padding: 5px;
+        border: 1px solid #f17626;
+      }
+      button {
+        background-color: #f17626;
+        padding: 6px;
+        color: white;
+        svg {
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+    .view-all-btn {
+      background-color: #f17626;
+      padding: 10px;
+      color: white;
+    }
+  }
+
+  // SwiperJs Modification
+  .swiper {
+    .swiper-custom-bullet {
+      width: 45px !important;
+      height: 4px !important;
+      border-radius: 0 !important;
+    }
+
+    .swiper-pagination-bullet-active {
+      opacity: 1 !important;
+      background: $primary-color !important;
+    }
+    .swiper-wrapper {
+      padding-bottom: 40px;
+    }
+  }
+}

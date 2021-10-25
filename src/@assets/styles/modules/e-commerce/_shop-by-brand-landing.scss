@@ -1,0 +1,35 @@
+.shop-by-brand-wrapper {
+  margin: 20px 0 !important;
+  background-color: #ededed;
+  padding: 10px;
+  h4 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .search-area {
+    display: flex;
+    justify-content: flex-end;
+    .search-bar {
+      display: flex;
+      margin-right: 10px;
+      input {
+        padding: 5px;
+        border: 1px solid #f17626;
+      }
+      button {
+        background-color: #f17626;
+        padding: 6px;
+        color: white;
+        svg {
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+    .view-all-btn {
+      background-color: #f17626;
+      padding: 10px;
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.orders-info {
+    background-color: #ffffff;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
+    .order-from-card {
+      padding: 1.5rem;
+      border-right: 1px solid #d3d3d3;
+      @include sm{
+        width: 100%;
+        border-right: 0;
+        border-bottom: 1px solid #d3d3d3;
+      }
+      img {
+        width: 50px;
+        height: 50px;
+      }
+      svg {
+        color: #f17626;
+      }
+    }
+    .bills-to-card {
+      padding: 1.5rem;
+      @include sm{
+        width: 100%;
+      }
+      .pp-avatar {
+        display: inline-block;
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        .pp-avatar_text {
+          width: 50px;
+          height: 50px;
+          line-height: initial;
+          text-align: center;
+          color: #ffffff;
+          border-radius: 100%;
+          background: #f17626;
+        }
+      }
+      .btn-wrapper {
+        .btn-report {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 13px;
+          line-height: 22px;
+          padding: 4px 24px;
+          background: #fff2f1;
+          border: 1px solid #f17626;
+          color: #f17626;
+          width: 100%;
+        }
+        .btn-check-issue {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 13px;
+          line-height: 22px;
+          padding: 4px 24px;
+          background: #f5f6f7;
+          border: 1px solid #1d2531;
+          color: #1d2531;
+        }
+      }
+    }
+  }
