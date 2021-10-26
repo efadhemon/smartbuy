@@ -1,8 +1,8 @@
+/* eslint-disable react/display-name */
 import { Paths } from "@shared/constant/routes.constant"
 import { storage } from "@shared/utils"
 
 const withAuth = (WrappedComponent: any) => {
-	// eslint-disable-next-line react/display-name
 	return (props: JSX.IntrinsicAttributes) => {
 		// checks whether we are on client / browser or server.
 		if (typeof window !== "undefined") {

@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { IoIosArrowForward } from "react-icons/io";
 
-const SidebarMenuLanding = () => {
+const SidebarMenu = () => {
   return (
     <div className="sidebar-menu-wrapper">
       <ul>
@@ -64,4 +64,4 @@ const SidebarMenuLanding = () => {
   );
 };
 
-export default SidebarMenuLanding;
+export default SidebarMenu;
