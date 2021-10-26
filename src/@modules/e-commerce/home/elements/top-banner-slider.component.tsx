@@ -5,7 +5,7 @@ interface IFProps {
 	banners: any
 }
 
-const ShopHeroSliderContainer: React.FC<IFProps> = ({ banners }) => {
+const TopBannerSlider: React.FC<IFProps> = ({ banners }) => {
 	const tokenUser = getSession()
 
 	return (
@@ -15,4 +15,4 @@ const ShopHeroSliderContainer: React.FC<IFProps> = ({ banners }) => {
 	)
 }
 
-export default ShopHeroSliderContainer
+export default TopBannerSlider

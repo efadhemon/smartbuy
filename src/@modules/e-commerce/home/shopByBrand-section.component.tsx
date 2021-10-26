@@ -5,7 +5,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 
 const { Meta } = Card;
 
-const ShopByBrandLanding = () => {
+const ShopByBrandSection = () => {
   const vendorData = [
     {
       name: "Yamaha",
@@ -62,14 +62,16 @@ const ShopByBrandLanding = () => {
         <Col xs={24} sm={24} md={24} lg={24} xl={12}>
           <h4>Shop by Brands</h4>
         </Col>
-        <Col className="search-area" xs={24} sm={24} md={24} lg={24} xl={12}>
-          <div className="search-bar">
-            <input type="search" name="" id="" />
-            <button>
-              <AiOutlineSearch />
-            </button>
+        <Col xs={24} sm={24} md={24} lg={24} xl={12}>
+          <div className="search-area">
+            <div className="search-bar">
+              <input type="search" name="" id="" />
+              <button>
+                <AiOutlineSearch />
+              </button>
+            </div>
+            <button className="view-all-btn">View All</button>
           </div>
-          <button className="view-all-btn">View All</button>
         </Col>
       </Row>
 
@@ -98,4 +100,4 @@ const ShopByBrandLanding = () => {
   );
 };
 
-export default ShopByBrandLanding;
+export default ShopByBrandSection;
