@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^3.9.2",
     "@reduxjs/toolkit": "^1.6.2",
     "ahooks": "^2.10.11",
     "antd": "^4.16.13",
