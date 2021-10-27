@@ -38,7 +38,7 @@ const ProductCardSingle = ({ product }) => {
         <div className="title-holder">
           <Title className="ant-text-fix" level={4} ellipsis={true}>
             <Link href={`/products/${product.title}`}>
-              <a>{product.title}</a>
+              <a>{product.name}</a>
             </Link>
           </Title>
           <button onClick={() => onAddToWishlist(product)}>

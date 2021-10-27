@@ -43,10 +43,10 @@ const WishlistDrawerContainer = () => {
       onClose={() => dispatch(toggleWishlistDrawer())}
       footer={
         <div>
-          <Link href="/checkout">
-            <a className="w-full py-2 rounded text-white font-bold bg-orange">
+          <Link href="/checkout" passHref>
+            <button className="w-full py-2 rounded text-white font-bold bg-orange">
               Go To Checkout
-            </a>
+            </button>
           </Link>
         </div>
       }
@@ -56,7 +56,7 @@ const WishlistDrawerContainer = () => {
           <li key={wi.id}>
             <WishListDrawerItem
               img={wi.img}
-              title={wi.title}
+              title={wi.name}
               onDelete={() => dispatch(removeFromWishlist(wi))}
             />
           </li>

@@ -134,7 +134,7 @@ const MainMobileHeader: React.FC<IFProps> = ({ onClickShoppingBag }) => {
 							Logout
 						</Button>
 					) : (
-						<Link href={"/test"}>
+						<Link href={"/"} passHref>
 							<Button size="middle" style={{ width: "100%" }} type="primary">
 								Sign In
 							</Button>

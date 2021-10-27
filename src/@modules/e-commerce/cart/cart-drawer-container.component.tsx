@@ -37,6 +37,7 @@ const CartDrawerContainer = () => {
 	)
 
 	return (
+		<>
 			<Drawer
 				title="Shopping Cart"
 				placement="right"
@@ -54,10 +55,10 @@ const CartDrawerContainer = () => {
 							</Text>
 						</div>
 						<div className="text-center">
-							<Link href="/checkout">
-								<a className="w-full py-2 rounded text-white font-bold bg-orange">
+							<Link href="/checkout" passHref>
+								<button onClick={() => dispatch(toggleCartDrawer())} className="w-full py-2 rounded text-white font-bold bg-orange">
 									View Cart
-								</a>
+								</button>
 							</Link>
 						</div>
 					</div>
@@ -67,8 +68,8 @@ const CartDrawerContainer = () => {
 						<li key={ci?.id}>
 							<CartDrawerProductItem
 								image={ci.img}
-								title={ci.title}
-								price={ci.price}
+								title={ci.name}
+								price={ci.mrp}
 								quantity={ci.quantity}
 								onIncrement={() => dispatch(addToCart(ci))}
 								onDecrement={() => dispatch(removeFromCart(ci))}
@@ -78,6 +79,7 @@ const CartDrawerContainer = () => {
 					))}
 				</ul>
 			</Drawer>
+		</>
 	)
 }
 

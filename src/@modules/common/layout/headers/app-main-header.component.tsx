@@ -2,10 +2,11 @@
 import MainDesktopHeader from "./main-desktop-header.component"
 import MainMobileHeader from "./main-mobile-header.component"
 import PureResponsive from "@modules/common/container/pure-responsive-container.component"
-import React from "react"
 import { toggleCartDrawer } from "@shared/redux/cart/cart-slice"
 import { toggleWishlistDrawer } from "@shared/redux/wishlist/wishlist-slice"
 import { useDispatch } from "react-redux"
+import CartDrawerContainer from "@modules/e-commerce/cart/cart-drawer-container.component"
+import WishlistDrawerContainer from "@modules/e-commerce/wishlist/wishlist-drawer-container.component"
 
 const AppMainHeader = () => {
 	const dispatch = useDispatch()
@@ -22,6 +23,9 @@ const AppMainHeader = () => {
 			<PureResponsive show="mobile">
 				<MainMobileHeader onClickShoppingBag={onToggleCartDrawer} />
 			</PureResponsive>
+
+			<CartDrawerContainer />
+			<WishlistDrawerContainer />
 		</>
 	)
 }

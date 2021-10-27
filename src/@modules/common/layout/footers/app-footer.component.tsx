@@ -179,6 +179,41 @@ const AppFooter = () => {
           </p>
         </div>
       </div>
+
+      <div className="ftr-app-btm-nav">
+        <div className="ftr-btn-nav-itm">
+          <Link href={Paths.root}>
+            <a>
+              <AiOutlineHome />
+              <h6>Home</h6>
+            </a>
+          </Link>
+        </div>
+        <div className="ftr-btn-nav-itm">
+          <Link href={Paths.root}>
+            <a>
+              <AiOutlineMenu />
+              <h6>Category</h6>
+            </a>
+          </Link>
+        </div>
+        <div className="ftr-btn-nav-itm">
+          <Link href={Paths.root}>
+            <a>
+              <AiOutlineSearch />
+              <h6>Search</h6>
+            </a>
+          </Link>
+        </div>
+        <div className="ftr-btn-nav-itm">
+          <Link href={Paths.root}>
+            <a>
+              <AiOutlineProfile />
+              <h6>Account</h6>
+            </a>
+          </Link>
+        </div>
+      </div>
     </footer>
   );
 };

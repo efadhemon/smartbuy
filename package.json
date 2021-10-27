@@ -24,6 +24,7 @@
     "react-query": "^3.28.0",
     "react-redux": "^7.2.5",
     "redux-persist": "^6.0.0",
+    "reselect": "^4.1.0",
     "sass": "^1.43.3",
     "swiper": "^7.1.0",
     "type-fest": "^2.5.1"
