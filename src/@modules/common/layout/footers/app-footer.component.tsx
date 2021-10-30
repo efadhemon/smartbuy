@@ -148,23 +148,22 @@ const AppFooter = () => {
           </Col>
           <Col xs={24} sm={12} md={12} lg={6} xl={6}>
             <div className="footer-widget">
-              <h3>Our Pages</h3>
+              <h3>Our Address</h3>
               <div className="contact-info">
                 <ul>
                   <li>
                     <MdLocationPin />
                     <p>
-                      Address: 6/10, Akhi Nahar Goli, Tajmahal Road,
-                      Mohammadpur, Dhaka - 1207
+                      Address: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
                     </p>
                   </li>
                   <li>
                     <BsEnvelopeOpen />
-                    <a href="mailto:info@airmoll.com">info@airmoll.com</a>
+                    <a href="mailto:sharifmart@gmail.com">sharifmart@gmail.com</a>
                   </li>
                   <li>
                     <BsTelephone />
-                    <p>09678789191</p>
+                    <p>+8801511-782511</p>
                   </li>
                 </ul>
               </div>
