@@ -6,10 +6,10 @@ import { storage } from "@shared/utils"
 
 const headers = {
 	"Content-Type": "application/json",
-	"X-Request-ID": 124,
+	"X-Request-ID": "124",
 	"X-Country-Code": "BD",
 	"X-Client-Name": "CRM",
-	"X-Client-Version": 123,
+	"X-Client-Version": "123",
 	Authorization: `Bearer ${storage?.getToken()}`,
 }
 export const CoreAxiosInstance = axios.create({

@@ -9,6 +9,7 @@ const { Title } = Typography;
 SwiperCore.use([Pagination]);
 
 const ProductSliderSection = () => {
+  
   const productData = [
     {
       id: 1,
@@ -54,7 +55,7 @@ const ProductSliderSection = () => {
     },
   ];
 
-  const onSearch = (value) => console.log(value);
+  const onSearch = (value: any) => console.log(value);
 
   return (
     <section id="home-product-slider-section" className="py-5">

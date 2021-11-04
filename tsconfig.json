@@ -14,11 +14,12 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "baseUrl": ".",
-		"paths": {
-			"@assets/*": ["./src/@assets/*"],
-			"@modules/*": ["./src/@modules/*"],
-			"@shared/*": ["./src/@shared/*"]
-		}
+    "paths": {
+      "@assets/*": ["./src/@assets/*"],
+      "@modules/*": ["./src/@modules/*"],
+      "@shared/*": ["./src/@shared/*"]
+    },
+    "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
