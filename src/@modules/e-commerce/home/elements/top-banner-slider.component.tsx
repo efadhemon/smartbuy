@@ -10,7 +10,7 @@ const TopBannerSlider: React.FC<IFProps> = ({ banners }) => {
 
 	return (
 		<>
-			<img src="https://fairmartslive.s3.ap-south-1.amazonaws.com/public/assets/images/sliders/cT1HjFTI.FairMart_Tv_A_series_web.jpg" alt="" />
+			<img src="https://api.airmoll.com/1633849427908.jpg" alt="" />
 		</>
 	)
 }
