@@ -5,3 +5,9 @@
 @import "base/plugins.scss";
 @import "custom-style.scss";
 @import "./modules/index.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

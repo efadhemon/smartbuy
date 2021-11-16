@@ -3,13 +3,13 @@ import AppMainHeader from "./headers/app-main-header.component";
 import React from "react";
 
 const AppLayout = ({ children }) => {
-  return (
-    <>
-      <AppMainHeader />
-      {children}
-      <AppFooter />
-    </>
-  );
+    return (
+        <>
+            <AppMainHeader />
+            <main>{children}</main>
+            <AppFooter />
+        </>
+    );
 };
 
 export default AppLayout;

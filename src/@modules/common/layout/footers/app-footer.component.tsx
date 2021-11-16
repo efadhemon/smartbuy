@@ -19,7 +19,7 @@ import { BsEnvelopeOpen, BsTelephone } from "react-icons/bs";
 const AppFooter = () => {
   return (
     <footer>
-      <div className="container">
+      <div className="container overflow-hidden">
         <Row
           className="footer-content"
           gutter={[
