@@ -1,7 +1,7 @@
 import React from "react";
 import { Descriptions, Badge } from "antd";
 
-const ProductSpcificationTable = () => {
+const ProductSpecificationTable = () => {
   const { Item } = Descriptions;
   return (
     <>
@@ -82,4 +82,4 @@ const ProductSpcificationTable = () => {
   );
 };
 
-export default ProductSpcificationTable;
+export default ProductSpecificationTable;

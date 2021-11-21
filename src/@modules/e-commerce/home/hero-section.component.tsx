@@ -5,7 +5,7 @@ import TopBannerSlider from "./elements/top-banner-slider.component";
 const HeroSection = () => {
     return (
         <section id="hero-section" className="my-5">
-            <div className="container overflow-hidden">
+            <div className="container">
                 <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 24 }}>
                     <Col xs={24} sm={24} md={24} lg={6} xl={6}>
                         <SidebarMenu />

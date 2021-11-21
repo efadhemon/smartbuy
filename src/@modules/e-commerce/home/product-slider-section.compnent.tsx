@@ -1,7 +1,7 @@
 import { Col, Row, Input, Space, Button, Typography } from "antd";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination } from "swiper";
-import ProductCardSingle from "../products/product-card-single.component";
+import ProductCard from "../products/product-card-interactive.component";
 
 const { Search } = Input;
 const { Title } = Typography;
@@ -121,7 +121,7 @@ const ProductSliderSection = () => {
           >
             {productData.map((pd) => (
               <SwiperSlide key={pd.id}>
-                <ProductCardSingle product={pd} />
+                <ProductCard product={pd} />
               </SwiperSlide>
             ))}
           </Swiper>
