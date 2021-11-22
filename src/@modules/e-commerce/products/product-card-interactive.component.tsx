@@ -1,10 +1,11 @@
+import { addToCart } from "@shared/redux/cart/cart-slice";
 import {
     addToWishList,
     toggleWishlistDrawer,
 } from "@shared/redux/wishlist/wishlist-slice";
-import { Col, Modal, Row } from "antd";
+import { Col, Modal, Row, Tooltip } from "antd";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useState } from "react";
 import { AiOutlineEye, AiOutlineHeart } from "react-icons/ai";
 import ReactImageGallery from "react-image-gallery";
 import { useDispatch } from "react-redux";
@@ -28,24 +29,29 @@ const ProductCard = ({ product }) => {
     return (
         <div className="product-card-int">
             <div className="product-card-top">
-                <a className="product-image" href="#">
+                <div className="product-image">
                     <img
                         src="https://cdnprod.mafretailproxy.com/sys-master-root/hb6/hfe/8953749831710/1262777_main.jpg_480Wx480H"
                         alt=""
                     />
-                </a>
+                </div>
                 <div className="product-card-actions">
-                    <button
-                        onClick={() => {
-                            dispatch(addToWishList(product));
-                            dispatch(toggleWishlistDrawer());
-                        }}
-                    >
-                        <AiOutlineHeart />
-                    </button>
-                    <button onClick={() => setModalState(true)}>
-                        <AiOutlineEye />
-                    </button>
+                    <Tooltip placement="rightTop" title="Add To Wishlist">
+                        <button
+                            onClick={() => {
+                                dispatch(addToWishList(product));
+                                dispatch(toggleWishlistDrawer());
+                            }}
+                        >
+                            <AiOutlineHeart />
+                        </button>
+                    </Tooltip>
+
+                    <Tooltip placement="rightTop" title="Quick View">
+                        <button onClick={() => setModalState(true)}>
+                            <AiOutlineEye />
+                        </button>
+                    </Tooltip>
                 </div>
                 <ul className="product-badge">
                     <li className="badge">50%</li>
@@ -70,8 +76,8 @@ const ProductCard = ({ product }) => {
                     ৳111,900
                     <span className="previous-price">৳140,900</span>
                 </div>
-                <Link href={`/products/${product.name}`}>
-                    <a className="shopnow-btn">Shop Now</a>
+                <Link href="/checkout">
+                    <a onClick={()=>dispatch(addToCart(product))} className="shopnow-btn">Shop Now</a>
                 </Link>
             </div>
 
