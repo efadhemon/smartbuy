@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AiFillStar } from "react-icons/ai";
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 
-const SingleProductDescription = ({title}) => {
+const ProductDescription = ({title}) => {
     const [productCount, setProductCount] = useState(0);
     return (
         <div className="single-product-info-box">
@@ -112,4 +112,4 @@ const SingleProductDescription = ({title}) => {
     );
 };
 
-export default SingleProductDescription;
+export default ProductDescription;

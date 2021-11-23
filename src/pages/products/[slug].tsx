@@ -1,7 +1,7 @@
 import AppLayout from "@modules/common/layout/AppLayout";
 import ProductReviewCard from "@modules/e-commerce/products/product-review-card.component";
 import ProductReviewForm from "@modules/e-commerce/products/product-review-form.component";
-import SingleProductDescription from "@modules/e-commerce/products/single-product-detail-section.component";
+import ProductDescription from "@modules/e-commerce/products/product-description.component";
 import ProductSpecificationTable from "@modules/e-commerce/sections/product-specification-table.components";
 import RelatedProductSection from "@modules/e-commerce/sections/related-product-section.component";
 import { Col, Row, Tabs } from "antd";
@@ -50,7 +50,7 @@ const SingleProductDetail = () => {
                             />
                         </Col>
                         <Col md={24} lg={12} xl={14}>
-                            <SingleProductDescription title={slug} />
+                            <ProductDescription title={slug} />
                         </Col>
                     </Row>
                 </div>

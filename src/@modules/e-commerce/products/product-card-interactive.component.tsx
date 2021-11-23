@@ -9,7 +9,7 @@ import { useState } from "react";
 import { AiOutlineEye, AiOutlineHeart } from "react-icons/ai";
 import ReactImageGallery from "react-image-gallery";
 import { useDispatch } from "react-redux";
-import SingleProductDescription from "./single-product-detail-section.component";
+import ProductDescription from "./product-description.component";
 
 const ProductCard = ({ product }) => {
     const dispatch = useDispatch();
@@ -111,7 +111,7 @@ const ProductCard = ({ product }) => {
                                 />
                             </Col>
                             <Col md={24} lg={12} xl={14}>
-                                <SingleProductDescription title="Samsung 700 L - RS72R5001M9/D2 No Frost Side-by-SideDouble Door" />
+                                <ProductDescription title="Samsung 700 L - RS72R5001M9/D2 No Frost Side-by-SideDouble Door" />
                             </Col>
                         </Row>
                     </div>
