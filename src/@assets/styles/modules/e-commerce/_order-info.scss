@@ -15,7 +15,7 @@
         height: 50px;
       }
       svg {
-        color: #f17626;
+        color: $primary-color;
       }
     }
     .bills-to-card {
@@ -36,7 +36,7 @@
           text-align: center;
           color: #ffffff;
           border-radius: 100%;
-          background: #f17626;
+          background: $primary-color;
         }
       }
       .btn-wrapper {
@@ -47,8 +47,8 @@
           line-height: 22px;
           padding: 4px 24px;
           background: #fff2f1;
-          border: 1px solid #f17626;
-          color: #f17626;
+          border: 1px solid $primary-color;
+          color: $primary-color;
           width: 100%;
         }
         .btn-check-issue {

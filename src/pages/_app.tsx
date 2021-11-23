@@ -14,35 +14,35 @@ import withReduxStore from "../@shared/config/redux/with-redux-store";
 import BackToTop from "@modules/common/back-to-top.component";
 
 function MyApp({ Component, pageProps, reduxStore }: any) {
-  useEffect(() => {
-    Aos.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
+    useEffect(() => {
+        Aos.init({
+            duration: 1000,
+            once: true,
+        });
+    }, []);
 
-  return (
-    <>
-      <Head>
-        <title>SharifMart</title>
-        <meta
-          name="description"
-          content="SharifMart | find your daily product. - SharifMart"
-        />
-        <link rel="icon" href="/images/favicon.png" />
-      </Head>
+    return (
+        <>
+            <Head>
+                <title>SharifMart</title>
+                <meta
+                    name="description"
+                    content="SharifMart | find your daily product. - SharifMart"
+                />
+                <link rel="icon" href="/images/favicon.png" />
+            </Head>
 
-      <Provider store={reduxStore}>
-        <PersistGate persistor={persistStore(reduxStore)}>
-          <QueryClientProvider client={queryClient}>
-            <Hydrate state={pageProps?.dehydratedState}>
-              <Component {...pageProps} />
-            </Hydrate>
-          </QueryClientProvider>
-          <BackToTop />
-        </PersistGate>
-      </Provider>
-    </>
-  );
+            <Provider store={reduxStore}>
+                <PersistGate persistor={persistStore(reduxStore)}>
+                    <QueryClientProvider client={queryClient}>
+                        <Hydrate state={pageProps?.dehydratedState}>
+                            <Component {...pageProps} />
+                        </Hydrate>
+                    </QueryClientProvider>
+                    <BackToTop />
+                </PersistGate>
+            </Provider>
+        </>
+    );
 }
 export default withReduxStore(MyApp);

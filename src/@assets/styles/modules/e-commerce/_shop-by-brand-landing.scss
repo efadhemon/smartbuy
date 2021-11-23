@@ -14,10 +14,10 @@
       margin-right: 10px;
       input {
         padding: 5px;
-        border: 1px solid #f17626;
+        border: 1px solid $primary-color;
       }
       button {
-        background-color: #f17626;
+        background-color: $primary-color;
         padding: 6px;
         color: white;
         svg {
@@ -27,7 +27,7 @@
       }
     }
     .view-all-btn {
-      background-color: #f17626;
+      background-color: $primary-color;
       padding: 10px;
       color: white;
     }

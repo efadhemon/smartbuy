@@ -15,7 +15,7 @@
             line-height: 18px;
             font-weight: 700;
             margin: 0 0 8px;
-            color: #f17626;
+            color: $primary-color;
         }
         h2 {
             color: #22254a;
@@ -33,7 +33,7 @@
             font-size: 24px;
             line-height: 30px;
             font-weight: 700;
-            color: #f17626;
+            color: $primary-color;
             del {
                 color: #b2bfce;
                 font-size: 18px;
@@ -121,7 +121,7 @@
             .addtocart {
                 line-height: 62px;
                 border-radius: 0;
-                background: #f17626;
+                background: $primary-color;
             }
         }
 
@@ -188,7 +188,7 @@
             }
             .ant-tabs-tab-active {
                 .ant-tabs-tab-btn {
-                    color: #f17626 !important;
+                    color: $primary-color !important;
                 }
             }
         }
@@ -196,7 +196,7 @@
         .ant-tabs-tab-remove:focus,
         .ant-tabs-tab-btn:active,
         .ant-tabs-tab-remove:active {
-            color: #f17626 !important;
+            color: $primary-color !important;
         }
     }
 
@@ -256,7 +256,7 @@
                 font-weight: 700;
                 text-transform: capitalize;
                 border-radius: 10px;
-                background: #f17626;
+                background: $primary-color;
             }
         }
     }

@@ -87,7 +87,7 @@
 				padding: 6px 9px;
 				text-align: right;
 				border-radius: 0.25rem !important;
-				background-color: #f17626;
+				background-color: $primary-color;
 			}
 		}
 	}
@@ -181,7 +181,7 @@
 			transform: scale(0.9);
 			-webkit-transition: 0.2s ease-in-out;
 			transition: 0.2s ease-in-out;
-			background-color: #f17726c9;
+			background-color: $primary-color;
 			color: #fff;
 			border: 0;
 			font-weight: 500;
@@ -190,7 +190,7 @@
 			line-height: 1.5;
 			border-radius: 0.25rem;
 			&:hover {
-				background-color: #f17726;
+				background-color: $primary-color;
 			}
 		}
 	}

@@ -21,7 +21,7 @@
 
       button {
         padding: 8px 15px;
-        background-color: #f17626;
+        background-color: $primary-color;
         color: white;
         font-size: 18px;
         font-weight: 600;
@@ -43,7 +43,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background-color: #f17626a8;
+      background-color: $primary-color;
       transform: scaleY(0);
       transform-origin: bottom;
       transition: 0.4s;
@@ -78,7 +78,7 @@
     }
     .price-box {
       span {
-        color: #f17626;
+        color: $primary-color;
         padding-right: 10px;
         font-size: 18px;
         line-height: 20px;
