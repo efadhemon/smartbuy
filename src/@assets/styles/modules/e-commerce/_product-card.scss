@@ -18,7 +18,7 @@
 	.product-card-top {
 		position: relative;
 		.product-image {
-			height: 180px;
+			height: 150px;
 			width: 100%;
 		}
 		.product-card-actions {
@@ -168,7 +168,7 @@
 				text-decoration: line-through;
 			}
 		}
-		.shopnow-btn {
+		.shop-now-btn {
 			font-size: 0.875rem;
 			position: absolute;
 			left: 0;
@@ -233,7 +233,7 @@
 				opacity: 0;
 				visibility: hidden;
 			}
-			.shopnow-btn {
+			.shop-now-btn {
 				opacity: 1;
 				visibility: visible;
 				-webkit-transform: scale(1);

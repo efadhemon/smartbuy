@@ -48,7 +48,7 @@ const SingleProductDetail = () => {
                             </div>
                         </Col>
                         <Col xs={24} sm={24} md={12} lg={10} xl={10}>
-                            <ProductInfo title={slug} />
+                            <ProductInfo product={slug} />
                         </Col>
                         <Col xs={24} sm={24} md={24} lg={6} xl={6}>
                             <DeliveryInfo />

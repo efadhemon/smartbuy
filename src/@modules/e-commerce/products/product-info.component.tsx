@@ -1,15 +1,31 @@
 import { takaCurrencySign } from "@shared/constant/preference";
+import { Paths } from "@shared/constant/routes.constant";
+import { addToCart, toggleCartDrawer } from "@shared/redux/cart/cart-slice";
+import {
+    addToWishList,
+    toggleWishlistDrawer,
+} from "@shared/redux/wishlist/wishlist-slice";
 import { Rate } from "antd";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
-import { AiOutlineHeart, AiOutlineShopping, AiOutlineShoppingCart } from "react-icons/ai";
+import {
+    AiOutlineHeart,
+    AiOutlineShopping,
+    AiOutlineShoppingCart,
+} from "react-icons/ai";
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { useDispatch } from "react-redux";
 
-const ProductInfo = ({ title }) => {
+const ProductInfo = ({ product }) => {
+    const dispatch = useDispatch();
+    const router = useRouter();
+
     const [productQuantity, setProductQuantity] = useState<number>(1);
+
     return (
         <div className="product-info-box">
             <div className="info-meta-1">
-                <h2 className="product-name">{title}</h2>
+                <h2 className="product-name">{product.name}</h2>
                 <div className="meta-list">
                     <span>In Stock</span>
                     <span>|</span>
@@ -41,7 +57,9 @@ const ProductInfo = ({ title }) => {
                 <div className="product-quantity">
                     <button
                         onClick={() =>
-                            setProductQuantity((prevQuantity) => prevQuantity > 1 ? prevQuantity - 1 : 1)
+                            setProductQuantity((prevQuantity) =>
+                                prevQuantity > 1 ? prevQuantity - 1 : 1
+                            )
                         }
                     >
                         -
@@ -49,7 +67,9 @@ const ProductInfo = ({ title }) => {
                     <span>{productQuantity}</span>
                     <button
                         onClick={() =>
-                            setProductQuantity((prevQuantity) => prevQuantity + 1)
+                            setProductQuantity(
+                                (prevQuantity) => prevQuantity + 1
+                            )
                         }
                     >
                         +
@@ -57,21 +77,36 @@ const ProductInfo = ({ title }) => {
                 </div>
 
                 <div className="cart-btn">
-                    <button>
-                       <AiOutlineShoppingCart/> Add To Cart
+                    <button
+                        onClick={() => {
+                            dispatch(addToCart({}));
+                            dispatch(toggleCartDrawer());
+                        }}
+                    >
+                        <AiOutlineShoppingCart /> Add To Cart
                     </button>
                 </div>
                 <div className="wishlist-btn">
-                    <button>
-                        <AiOutlineHeart/> Add To Wishlist
+                    <button
+                        onClick={() => {
+                            dispatch(addToWishList({}));
+                            dispatch(toggleWishlistDrawer());
+                        }}
+                    >
+                        <AiOutlineHeart /> Add To Wishlist
                     </button>
                 </div>
                 <div className="buy-now-btn">
-                    <button>
-                        <AiOutlineShopping/> Buy Now
+                    <button
+                        onClick={() => {
+                            dispatch(addToCart({}));
+                            router.push(Paths.checkout)
+                            
+                        }}
+                    >
+                        <AiOutlineShopping /> Buy Now
                     </button>
                 </div>
-
             </div>
 
             <div className="share-product">

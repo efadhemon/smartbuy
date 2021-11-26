@@ -1,10 +1,11 @@
-import { addToCart } from "@shared/redux/cart/cart-slice";
+import { takaCurrencySign } from "@shared/constant/preference";
 import {
     addToWishList,
     toggleWishlistDrawer,
 } from "@shared/redux/wishlist/wishlist-slice";
 import { Col, Modal, Row, Tooltip } from "antd";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { AiOutlineEye, AiOutlineHeart } from "react-icons/ai";
 import ReactImageGallery from "react-image-gallery";
@@ -30,9 +31,10 @@ const ProductCard = ({ product }) => {
         <div className="product-card-int">
             <div className="product-card-top">
                 <div className="product-image">
-                    <img
-                        src="https://cdnprod.mafretailproxy.com/sys-master-root/hb6/hfe/8953749831710/1262777_main.jpg_480Wx480H"
-                        alt=""
+                    <Image
+                        layout="fill"
+                        src={product.img}
+                        alt="Product-image"
                     />
                 </div>
                 <div className="product-card-actions">
@@ -54,21 +56,20 @@ const ProductCard = ({ product }) => {
                     </Tooltip>
                 </div>
                 <ul className="product-badge">
-                    <li className="badge">50%</li>
+                    <li className="badge">30%</li>
                 </ul>
             </div>
             <div className="product-card-middle">
-                <Link href={`/products/${product.name}`}>
+                <Link href={`/products/${product.id}`}>
                     <a>
-                        <h6 className="product-name">
-                            Samsung 700 L - RS72R5001M9/D2 No Frost Side-by-Side
-                            Double Door
-                        </h6>
+                        <h6 className="product-name">{product.name}</h6>
                     </a>
                 </Link>
                 <div className="product-price-clone">
-                    ৳111,900
-                    <span className="previous-price">৳140,900</span>
+                    {takaCurrencySign + product.price}
+                    <span className="previous-price">
+                        {takaCurrencySign + product.price + 200}
+                    </span>
                 </div>
             </div>
             <div className="product-card-bottom">
@@ -76,46 +77,42 @@ const ProductCard = ({ product }) => {
                     ৳111,900
                     <span className="previous-price">৳140,900</span>
                 </div>
-                <Link href="/checkout">
-                    <a onClick={()=>dispatch(addToCart(product))} className="shopnow-btn">Shop Now</a>
+                <Link href={`/products/${product.id}`}>
+                    <a className="shop-now-btn">Shop Now</a>
                 </Link>
             </div>
 
             <Modal
-                // title="Vertically centered modal dialog"
                 centered
                 visible={modalState}
                 footer={null}
-                width={1000}
-                //   onOk={() => this.setModal2Visible(false)}
+                width={1200}
                 onCancel={() => setModalState(false)}
             >
-                <section className="single-product-area">
-                    <div className="container">
-                        <Row
-                            gutter={[
-                                { xs: 8, sm: 16, md: 24, lg: 30 },
-                                { xs: 8, sm: 16, md: 24, lg: 30 },
-                            ]}
-                        >
-                            <Col
-                                md={24}
-                                lg={12}
-                                xl={10}
-                                className="product-gallery"
-                            >
-                                <ReactImageGallery
-                                    showNav={false}
-                                    showPlayButton={false}
-                                    items={images}
-                                />
-                            </Col>
-                            <Col md={24} lg={12} xl={14}>
-                                <ProductDescription title="Samsung 700 L - RS72R5001M9/D2 No Frost Side-by-SideDouble Door" />
-                            </Col>
-                        </Row>
-                    </div>
-                </section>
+                <Row
+                    gutter={[
+                        { md: 20, lg: 30 },
+                        { xs: 20, sm: 20, md: 20 },
+                    ]}
+                >
+                    <Col
+                        xs={24}
+                        sm={24}
+                        md={24}
+                        lg={8}
+                        xl={10}
+                        className="product-gallery"
+                    >
+                        <ReactImageGallery
+                            showNav={false}
+                            showPlayButton={false}
+                            items={images}
+                        />
+                    </Col>
+                    <Col xs={24} sm={24} md={24} lg={16} xl={14}>
+                        <ProductDescription product={product} />
+                    </Col>
+                </Row>
             </Modal>
         </div>
     );

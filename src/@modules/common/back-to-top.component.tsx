@@ -8,7 +8,7 @@ const BackToTop = () => {
 
     useEffect(() => {
         window.addEventListener("scroll", () => {
-            if (window.scrollY > 100) {
+            if (window.scrollY > 100 && window.innerWidth > 991) {
                 setIsVisible(true);
             } else {
                 setIsVisible(false);

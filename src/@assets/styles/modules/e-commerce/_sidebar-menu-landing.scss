@@ -1,20 +1,23 @@
 .sidebar-menu-wrapper {
-  background-color: white;
-  // box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
-  margin-top: -23px;
-  ul {
-    li {
-      border: 1px solid #ededed;
-      cursor: pointer;
-      svg {
-        display: inline-block;
-      }
-      a {
-        padding: 15px;
-        display: flex;
-        justify-content: space-between;
-        color: black;
-      }
+    background-color: white;
+    margin-top: -23px;
+    @media (max-width: 991px) {
+      display: none;
     }
-  }
+
+    ul {
+        li {
+            border: 1px solid #ededed;
+            cursor: pointer;
+            svg {
+                display: inline-block;
+            }
+            a {
+                padding: 15px;
+                display: flex;
+                justify-content: space-between;
+                color: black;
+            }
+        }
+    }
 }

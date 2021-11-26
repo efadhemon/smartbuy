@@ -148,9 +148,9 @@ const MainDesktopHeader: React.FC<IFProps> = ({
             </div>
 
             <div className="create-shop-btn">
-              <Link href={Paths.creatProfile}>
+              <Link href={Paths.contact}>
                 <a>
-                  <Button>Create your Shop</Button>
+                  <Button>Contact Us</Button>
                 </a>
               </Link>
             </div>
