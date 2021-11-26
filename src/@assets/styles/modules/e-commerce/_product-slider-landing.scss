@@ -1,18 +1,21 @@
-#home-product-slider-section {
-  // SwiperJs Modification
+.product-slider-wrapper {
   .swiper {
-    .swiper-custom-bullet {
-      width: 45px !important;
-      height: 4px !important;
-      border-radius: 0 !important;
-    }
+      .swiper-custom-bullet {
+          width: 45px !important;
+          height: 4px !important;
+          border-radius: 0 !important;
+          @include xs{
+            width: 20px !important;
+            height: 4px !important;
+          }
+      }
 
-    .swiper-pagination-bullet-active {
-      opacity: 1 !important;
-      background: $primary-color !important;
-    }
-    .swiper-wrapper {
-      padding-bottom: 40px;
-    }
+      .swiper-pagination-bullet-active {
+          opacity: 1 !important;
+          background: $primary-color !important;
+      }
+      .swiper-wrapper {
+          padding-bottom: 40px;
+      }
   }
 }

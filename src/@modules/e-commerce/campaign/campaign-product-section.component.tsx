@@ -1,7 +1,5 @@
 import { Col, Row } from "antd";
-
-import ProductCardSingle from "../products/product-card-single.component";
-import React from "react";
+import ProductCard from "../products/product-card.component";
 
 const CampaignProductSection = () => {
   const productData = [
@@ -39,14 +37,14 @@ const CampaignProductSection = () => {
   return (
     <Row
       gutter={[
-        { xs: 8, sm: 16, md: 24, lg: 32 },
-        { xs: 8, sm: 16, md: 24, lg: 32 },
+        { xs: 8, sm: 16, md: 24, lg: 30 },
+        { xs: 8, sm: 16, md: 24, lg: 30 },
       ]}
     >
       <Col sm={24} md={24} lg={24} xl={24}>
         <div className="grid grid-cols-2 gap-4 content-center md:grid-cols-5 ">
           {productData.map((pd) => (
-            <ProductCardSingle key={pd.id} product={pd} />
+            <ProductCard key={pd.id} product={pd} />
           ))}
         </div>
       </Col>

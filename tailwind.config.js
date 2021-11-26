@@ -54,10 +54,10 @@ module.exports = {
             addComponents({
                 ".container": {
                     width: "100%",
-                    // marginLeft: 'auto',
-                    // marginRight: 'auto',
-                    // paddingLeft: '2rem',
-                    // paddingRight: '2rem',
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                    paddingLeft: '15px',
+                    paddingRight: '15px',
                     "@screen xs": {
                         maxWidth: theme("screens.xs"),
                     },

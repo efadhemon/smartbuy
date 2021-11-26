@@ -9,7 +9,7 @@ import { useState } from "react";
 import { AiOutlineEye, AiOutlineHeart } from "react-icons/ai";
 import ReactImageGallery from "react-image-gallery";
 import { useDispatch } from "react-redux";
-import ProductDescription from "./product-description.component";
+import ProductDescription from "./product-info.component";
 
 const ProductCard = ({ product }) => {
     const dispatch = useDispatch();
@@ -94,8 +94,8 @@ const ProductCard = ({ product }) => {
                     <div className="container">
                         <Row
                             gutter={[
-                                { xs: 8, sm: 16, md: 24, lg: 32 },
-                                { xs: 8, sm: 16, md: 24, lg: 32 },
+                                { xs: 8, sm: 16, md: 24, lg: 30 },
+                                { xs: 8, sm: 16, md: 24, lg: 30 },
                             ]}
                         >
                             <Col

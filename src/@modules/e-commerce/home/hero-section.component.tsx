@@ -12,7 +12,7 @@ const HeroSection = () => {
                     </Col>
 
                     <Col xs={24} sm={24} md={24} lg={18} xl={18}>
-                        <TopBannerSlider banners={[]} />
+                        <TopBannerSlider />
                     </Col>
                 </Row>
             </div>

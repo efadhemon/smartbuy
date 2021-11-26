@@ -23,8 +23,8 @@ const AppFooter = () => {
         <Row
           className="footer-content"
           gutter={[
-            { xs: 8, sm: 16, md: 24, lg: 32 },
-            { xs: 8, sm: 16, md: 24, lg: 32 },
+            { xs: 8, sm: 16, md: 24, lg: 30 },
+            { xs: 8, sm: 16, md: 24, lg: 30 },
           ]}
         >
           <Col xs={24} sm={12} md={12} lg={6} xl={6}>

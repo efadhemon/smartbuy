@@ -33,12 +33,12 @@ const CampaignBrandSection = () => {
   return (
     <Row
       gutter={[
-        { xs: 8, sm: 16, md: 24, lg: 32 },
-        { xs: 8, sm: 16, md: 24, lg: 32 },
+        { xs: 8, sm: 16, md: 24, lg: 30 },
+        { xs: 8, sm: 16, md: 24, lg: 30 },
       ]}
     >
       {brandData.map((vd, i) => (
-        <Col xs={24} sm={12} md={8} lg={6} xl={4}>
+        <Col key={i} xs={24} sm={12} md={8} lg={6} xl={4}>
           <Card
             className="vendor-card shadow-md"
             bodyStyle={{ padding: "10px 24px" }}
