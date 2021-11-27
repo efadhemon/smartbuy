@@ -1,13 +1,13 @@
-import AppFooter from "./footers/app-footer.component";
-import AppMainHeader from "./headers/app-main-header.component";
+import AppMainHeader from "./headers/app-main-header";
 import React from "react";
+import AppMainFooter from "./footers/app-main-footer";
 
 const AppLayout = ({ children }) => {
     return (
         <>
             <AppMainHeader />
             <main>{children}</main>
-            <AppFooter />
+            <AppMainFooter />
         </>
     );
 };

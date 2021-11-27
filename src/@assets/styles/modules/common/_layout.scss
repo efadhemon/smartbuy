@@ -301,49 +301,57 @@ footer {
             padding-bottom: 75px;
         }
     }
+}
+/*-------------------------------------------------------------------
+                    App Footer Css End
+--------------------------------------------------------------------*/
 
-    .ftr-app-btm-nav {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 60px;
-        background: #ffff;
-        display: none;
-        align-items: center;
-        justify-content: space-between;
-        z-index: 99;
-        box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2);
 
-        @media (max-width: 991px) {
+/*-------------------------------------------------------------------
+                    App Footer Nav Css Start
+--------------------------------------------------------------------*/
+.app-footer-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 60px;
+    background: #ffff;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 99;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2);
+
+    @media (max-width: 991px) {
+        display: flex;
+    }
+
+    .footer-nav-item {
+        flex: 0 0 25%;
+        max-width: 25%;
+        a {
             display: flex;
-        }
+            justify-content: center;
+            flex-direction: column;
 
-        .ftr-btn-nav-itm {
-            flex: 0 0 25%;
-            max-width: 25%;
-            a {
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-
-                align-items: center;
-                svg {
-                    font-size: 18px;
-                    color: $primary-color;
-                }
-                h6 {
-                    margin: 0;
-                    line-height: 1;
-                    font-size: 13px;
-                    margin-top: 4px;
-                    color: $primary-color;
-                    font-weight: 500;
-                }
+            align-items: center;
+            svg {
+                font-size: 18px;
+                color: $primary-color;
+            }
+            h6 {
+                margin: 0;
+                line-height: 1;
+                font-size: 13px;
+                margin-top: 4px;
+                color: $primary-color;
+                font-weight: 500;
             }
         }
     }
 }
 /*-------------------------------------------------------------------
-                    App Footer Css End
+                    App Footer Nav Css Enf
 --------------------------------------------------------------------*/
