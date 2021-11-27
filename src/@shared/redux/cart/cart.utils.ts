@@ -6,8 +6,8 @@ export const addItemUtils = (cartItems: any, addItem: any) => {
 			x.id === addItem.id ? { ...x, quantity: x.quantity + 1 } : x
 		)
 	}
-
-	return [...cartItems, { ...addItem, quantity: 1 }]
+	const quantity = addItem.quantity || 1;
+	return [...cartItems, { ...addItem, quantity: quantity }]
 }
 
 export const removeItemUtils = (cartItems: any, cartItemToRemove: any) => {

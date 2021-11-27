@@ -8,10 +8,11 @@ import { useRouter } from "next/dist/client/router";
 import ReactImageGallery from "react-image-gallery";
 import DeliveryInfo from "@modules/e-commerce/products/delivery-info.component";
 import RelatedProductSection from "@modules/e-commerce/sections/related-product-section.component";
+import productData from "productData";
 
 const SingleProductDetail = () => {
     const router = useRouter();
-    const { slug } = router.query;
+    const { productId } = router.query;
     const { TabPane } = Tabs;
 
     const images = [
@@ -27,6 +28,8 @@ const SingleProductDetail = () => {
         original: i,
         thumbnail: i,
     }));
+
+    const product = productData.find((pd) => Number(productId) === pd.id);
 
     return (
         <AppLayout>
@@ -48,7 +51,7 @@ const SingleProductDetail = () => {
                             </div>
                         </Col>
                         <Col xs={24} sm={24} md={12} lg={10} xl={10}>
-                            <ProductInfo product={slug} />
+                            <ProductInfo product={product} />
                         </Col>
                         <Col xs={24} sm={24} md={24} lg={6} xl={6}>
                             <DeliveryInfo />

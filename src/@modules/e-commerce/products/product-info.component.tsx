@@ -36,7 +36,12 @@ const ProductInfo = ({ product }) => {
             </div>
 
             <h3 className="product-price">
-                {takaCurrencySign}245.00 <del>{takaCurrencySign}399.99</del>
+                {takaCurrencySign}
+                {product.price}{" "}
+                <del>
+                    {takaCurrencySign}
+                    {parseInt(product.price) + 200}
+                </del>
             </h3>
 
             <div className="info-meta-2">
@@ -79,7 +84,7 @@ const ProductInfo = ({ product }) => {
                 <div className="cart-btn">
                     <button
                         onClick={() => {
-                            dispatch(addToCart({}));
+                            dispatch(addToCart({...product, quantity: productQuantity}));
                             dispatch(toggleCartDrawer());
                         }}
                     >
@@ -89,7 +94,7 @@ const ProductInfo = ({ product }) => {
                 <div className="wishlist-btn">
                     <button
                         onClick={() => {
-                            dispatch(addToWishList({}));
+                            dispatch(addToWishList(product));
                             dispatch(toggleWishlistDrawer());
                         }}
                     >
@@ -100,8 +105,7 @@ const ProductInfo = ({ product }) => {
                     <button
                         onClick={() => {
                             dispatch(addToCart({}));
-                            router.push(Paths.checkout)
-                            
+                            router.push(Paths.checkout);
                         }}
                     >
                         <AiOutlineShopping /> Buy Now

@@ -1,8 +1,12 @@
-import { LoginContainer } from "@modules/auth/LoginContainer";
-
+import LoginContainer from "@modules/auth/LoginContainer";
+import AppLayout from "@modules/common/layout/AppLayout";
 
 const LoginPage = () => {
-    return <LoginContainer />;
+    return (
+        <AppLayout>
+            <LoginContainer />;
+        </AppLayout>
+    );
 };
 
 export default LoginPage;

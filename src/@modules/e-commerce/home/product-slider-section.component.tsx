@@ -14,7 +14,6 @@ interface IProps {
 }
 
 const ProductSliderSection = () => {
-
     const onSearch = (value: any) => console.log(value);
 
     return (

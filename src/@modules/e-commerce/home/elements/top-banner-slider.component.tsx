@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay, Navigation } from "swiper";
+import SwiperCore, { Autoplay, Pagination } from "swiper";
 
-SwiperCore.use([Autoplay, Navigation]);
+SwiperCore.use([Autoplay, Pagination]);
 
 const TopBannerSlider = () => {
     const banners = [
@@ -21,22 +21,28 @@ const TopBannerSlider = () => {
     ];
 
     return (
-        <Swiper
-            loop={true}
-            autoplay={{
-                delay: 3000,
-                disableOnInteraction: false,
-            }}
-            navigation={true}
-        >
-            {banners.map((b) => (
-                <SwiperSlide key={b.id}>
-                    <div className="banner-box">
-                        <img src={b.img} alt="" />
-                    </div>
-                </SwiperSlide>
-            ))}
-        </Swiper>
+        <div className="banner-wrapper">
+            <Swiper
+                loop={true}
+                autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false,
+                }}
+                pagination={{
+                    bulletClass:
+                        "swiper-pagination-bullet swiper-custom-bullet",
+                    clickable: true,
+                }}
+            >
+                {banners.map((b) => (
+                    <SwiperSlide key={b.id}>
+                        <div className="banner-image">
+                            <img src={b.img} alt="" />
+                        </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+        </div>
     );
 };
 

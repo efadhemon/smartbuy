@@ -17,7 +17,6 @@ const AuthFrom: React.FC<IFProps> = ({ initialValues, onFinish }) => {
 	return (
 		<>
 			<Form
-				name="login-form"
 				layout="vertical"
 				initialValues={initialValues}
 				onFinish={onFinish}>

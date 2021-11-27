@@ -16,7 +16,7 @@ export const Paths = {
 	ordersHistory: "/user/dashboard/orders-history",
 	security: "/user/dashboard/security",
 	myOrders: "/order/my-orders",
-	shopLanding: "/shop",
 	campaign: "/campaign",
 	checkout: "/checkout",
+	proceedCheckout: "/checkout/proceed-checkout",
 }
