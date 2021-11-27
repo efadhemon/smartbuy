@@ -28,7 +28,7 @@ const ProductCard = ({ product }) => {
     ];
 
     return (
-        <div className="product-card-int">
+        <div className="product-card">
             <div className="product-card-top">
                 <div className="product-image">
                     <Image

@@ -9,9 +9,6 @@ module.exports = {
             sm: "2rem",
             lg: "4rem",
             xl: "5rem",
-            // padding: {
-            // 	DEFAULT: "1rem",
-            // },
         },
         screens: {
             // xs: "576",
@@ -44,6 +41,9 @@ module.exports = {
             backgroundImage: {
                 "footer-wave": "url('/images/wave.svg')",
             },
+            gridTemplateColumns: {
+                2: "repeat(4, minmax(0, 1fr))",
+            },
         },
     },
     variants: {
@@ -54,10 +54,10 @@ module.exports = {
             addComponents({
                 ".container": {
                     width: "100%",
-                    marginLeft: 'auto',
-                    marginRight: 'auto',
-                    paddingLeft: '15px',
-                    paddingRight: '15px',
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                    paddingLeft: "15px",
+                    paddingRight: "15px",
                     "@screen xs": {
                         maxWidth: theme("screens.xs"),
                     },
@@ -84,4 +84,5 @@ module.exports = {
             });
         },
     ],
+
 };
