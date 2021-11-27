@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
@@ -77,7 +78,7 @@ const ProductCategorySlider = () => {
                         <SwiperSlide key={ct.id}>
                             <Link href={`/products/category/${ct.title.toLowerCase()}`}>
                                 <a>
-                                    <div className="text-center p-4 rounded-lg bg-gray-100 transform hover:scale-105 transition-all duration-300">
+                                    <div className="text-center p-4 rounded-lg bg-white transform hover:scale-105 transition-all duration-300">
                                         <div className="mb-5">
                                             <img
                                                 className="h-12 w-12 mx-auto"

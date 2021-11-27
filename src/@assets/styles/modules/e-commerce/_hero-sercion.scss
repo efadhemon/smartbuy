@@ -1,6 +1,5 @@
 .sidebar-menu-wrapper {
     background-color: white;
-    margin-top: -20px;
     @media (max-width: 991px) {
         display: none;
     }
@@ -8,6 +7,7 @@
 
 .banner-wrapper {
     height: 100%;
+    padding-top: 20px;
     .swiper {
         .swiper-custom-bullet {
             width: 45px !important;

@@ -6,7 +6,7 @@ const AppLayout = ({ children }) => {
     return (
         <>
             <AppMainHeader />
-            <main>{children}</main>
+            <main className="app-core-content">{children}</main>
             <AppMainFooter />
         </>
     );

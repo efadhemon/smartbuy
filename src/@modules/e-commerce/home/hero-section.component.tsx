@@ -4,11 +4,11 @@ import TopBannerSlider from "./elements/top-banner-slider.component";
 
 const HeroSection = () => {
     return (
-        <section id="hero-section" className="my-5">
+        <section id="hero-section">
             <div className="container">
                 <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 24 }}>
                     <Col xs={24} sm={24} md={24} lg={6} xl={6}>
-                        <div className="sidebar-menu-wrapper shadow">
+                        <div className="sidebar-menu-wrapper">
                             <SidebarMenu />
                         </div>
                     </Col>

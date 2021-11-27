@@ -10,8 +10,6 @@ const Home: NextPage = () => {
         <AppLayout>
             <HeroSection />
             <ProductCategorySlider />
-            
-            <ProductSliderSection />
             <ProductSliderSection />
             <ProductSliderSection />
             <ProductSliderSection />
