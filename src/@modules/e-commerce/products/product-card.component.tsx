@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { takaCurrencySign } from "@shared/constant/preference";
 import {
     addToWishList,
@@ -5,7 +6,6 @@ import {
 } from "@shared/redux/wishlist/wishlist-slice";
 import { Col, Modal, Row, Tooltip } from "antd";
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { AiOutlineEye, AiOutlineHeart } from "react-icons/ai";
 import ReactImageGallery from "react-image-gallery";
@@ -31,8 +31,7 @@ const ProductCard = ({ product }) => {
         <div className="product-card">
             <div className="product-card-top">
                 <div className="product-image">
-                    <Image
-                        layout="fill"
+                    <img
                         src={product.img}
                         alt="Product-image"
                     />

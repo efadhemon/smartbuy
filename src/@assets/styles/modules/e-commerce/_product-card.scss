@@ -17,8 +17,10 @@
 	.product-card-top {
 		position: relative;
 		.product-image {
-			height: 150px;
-			width: 100%;
+			img{
+				width: 100%;
+				height: auto;
+			}
 		}
 		.product-card-actions {
 			position: absolute;
