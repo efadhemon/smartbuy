@@ -16,12 +16,12 @@ const SingleProductDetail = () => {
     const { TabPane } = Tabs;
 
     const images = [
-        "https://fairmartslive.s3.ap-south-1.amazonaws.com/public/assets/images/products/ckZpSFjNYfOH.jpg",
-        "https://fairmartslive.s3.ap-south-1.amazonaws.com/public/assets/images/products/ckZpSFjNYfOH.jpg",
-        "https://fairmartslive.s3.ap-south-1.amazonaws.com/public/assets/images/products/ckZpSFjNYfOH.jpg",
-        "https://fairmartslive.s3.ap-south-1.amazonaws.com/public/assets/images/products/ckZpSFjNYfOH.jpg",
-        "https://fairmartslive.s3.ap-south-1.amazonaws.com/public/assets/images/products/ckZpSFjNYfOH.jpg",
-        "https://fairmartslive.s3.ap-south-1.amazonaws.com/public/assets/images/products/ckZpSFjNYfOH.jpg",
+        "https://heriken.com/assets/products/1ccd82c9f1454776695ab5959f9e1c9f.jpg",
+        "https://heriken.com/assets/products/1ccd82c9f1454776695ab5959f9e1c9f.jpg",
+        "https://heriken.com/assets/products/1ccd82c9f1454776695ab5959f9e1c9f.jpg",
+        "https://heriken.com/assets/products/1ccd82c9f1454776695ab5959f9e1c9f.jpg",
+        "https://heriken.com/assets/products/1ccd82c9f1454776695ab5959f9e1c9f.jpg",
+        "https://heriken.com/assets/products/1ccd82c9f1454776695ab5959f9e1c9f.jpg",
     ];
 
     const image = images.map((i: string) => ({
@@ -33,7 +33,7 @@ const SingleProductDetail = () => {
 
     return (
         <AppLayout>
-            <section className="section-space-1">
+            <section className="product-primary-details">
                 <div className="container">
                     <Row
                         gutter={[
