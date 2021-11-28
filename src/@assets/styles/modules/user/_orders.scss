@@ -1,0 +1,15 @@
+.orders-history {
+
+    .order-table {
+        .ant-table-wrapper {
+            // overflow-x: hidden;
+            overflow-y: scroll;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            .ant-table-content {
+                min-width: 567px;
+            }
+        }
+    }
+}

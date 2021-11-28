@@ -1,4 +1,4 @@
-import AuthFrom from "./elements/AuthFrom";
+import AuthForm from "./elements/AuthForm";
 import Link from "next/link";
 import { Paths } from "@shared/constant/routes.constant";
 // import { useAuth } from "@shared/hooks/useAuth"
@@ -10,23 +10,25 @@ const LoginContainer = () => {
     // }
     return (
         <div className="auth-container">
-            <div className="title">
-                <h2>Log In</h2>
-            </div>
+            <div className="auth-form">
+                <div className="title">
+                    <h2>Log In</h2>
+                </div>
 
-            <AuthFrom
-                initialValues={{ password: "", phoneNumber: "" }}
-                onFinish={async (val: any) => {
-                    // await loginFn.mutateAsync(val)
-                }}
-            />
-            <div className="bottom-link">
-                <span>
-                    <b>*</b> Don{"'"}t have an account
-                </span>
-                <Link href={Paths.authRegister}>
-                    <a> Register now </a>
-                </Link>
+                <AuthForm
+                    initialValues={{ password: "", phoneNumber: "" }}
+                    onFinish={async (val: any) => {
+                        // await loginFn.mutateAsync(val)
+                    }}
+                />
+                <div className="bottom-link">
+                    <span>
+                        <b>*</b> Don{"'"}t have an account
+                    </span>
+                    <Link href={Paths.authRegister}>
+                        <a> Register now </a>
+                    </Link>
+                </div>
             </div>
         </div>
     );

@@ -9,6 +9,7 @@ module.exports = {
             sm: "2rem",
             lg: "4rem",
             xl: "5rem",
+            "2xl": "5rem",
         },
         screens: {
             // xs: "576",
@@ -75,8 +76,6 @@ module.exports = {
                     },
                     "@screen 2xl": {
                         maxWidth: theme("screens.2xl"),
-                        marginLeft: "auto",
-                        marginRight: "auto",
                         paddingLeft: "2rem",
                         paddingRight: "2rem",
                     },

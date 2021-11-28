@@ -1,76 +1,83 @@
 @import "../theme/antd/ant-scss-var.scss";
 
 .auth-container {
-    width: 500px;
-    margin: 80px auto;
-    padding: 30px;
-    box-shadow: 0px 0px 15px 0px lightgrey;
-    border-radius: 5px;
+    padding: 80px 0;
     @include xs {
-        width: 100%;
-		max-width: 500px;
-        margin: 40px auto;
-        padding: 20px 10px;
+        padding: 50px 0;
     }
-
-    .title {
-        text-align: center;
-        h2 {
-            font-size: 30px;
-            font-weight: 700;
-            color: #00599e;
+    .auth-form {
+        width: 500px;
+        padding: 30px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        box-shadow: 0px 0px 15px 0px lightgrey;
+        border-radius: 5px;
+        @include xs {
+            width: 100%;
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 20px 10px;
         }
-    }
 
-    .remember-me,
-    .bottom-link {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
-        span {
-            font-size: 16px;
-            font-weight: 500;
-            b {
-                color: $primary-color;
+        .title {
+            text-align: center;
+            h2 {
+                font-size: 30px;
+                font-weight: 700;
+                color: #00599e;
             }
         }
-        a {
-            font-size: 16px;
-            font-weight: 500;
-            text-decoration: underline;
-        }
-		@include xs {
-			span,
-			a{
-				font-size: 14px;
-			}
-		}
-    }
 
-    // ant from custom design
-    .ant-form {
-        .ant-form-item {
-            .ant-form-item-label {
-                label {
-                    display: block;
-                    font-size: 20px;
-                    font-weight: 600;
-                    color: #8a8a8a;
-                }
-                label::before {
-                    display: none;
+        .remember-me,
+        .bottom-link {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            span {
+                font-size: 16px;
+                font-weight: 500;
+                b {
+                    color: $primary-color;
                 }
             }
-            .ant-form-item-control-input-content {
-                input {
-                    font-size: 16px;
-                    font-weight: 500;
-                    color: #8a8a8a;
+            a {
+                font-size: 16px;
+                font-weight: 500;
+                text-decoration: underline;
+            }
+            @include xs {
+                span,
+                a {
+                    font-size: 14px;
                 }
-                input::placeholder {
-                    font-size: 16px;
-                    font-weight: 500;
-                    color: #aaaaaa;
+            }
+        }
+
+        // ant from custom design
+        .ant-form {
+            .ant-form-item {
+                .ant-form-item-label {
+                    label {
+                        display: block;
+                        font-size: 20px;
+                        font-weight: 600;
+                        color: #8a8a8a;
+                    }
+                    label::before {
+                        display: none;
+                    }
+                }
+                .ant-form-item-control-input-content {
+                    input {
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: #8a8a8a;
+                    }
+                    input::placeholder {
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: #aaaaaa;
+                    }
                 }
             }
         }

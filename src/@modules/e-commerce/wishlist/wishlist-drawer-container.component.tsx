@@ -15,6 +15,7 @@ import WishListDrawerItem from "./elements/wishlist-drawer-item.component";
 import { createStructuredSelector } from "reselect";
 import { useResponsive } from "ahooks";
 import { addToCart } from "@shared/redux/cart/cart-slice";
+import { Paths } from "@shared/constant/routes.constant";
 
 const WishlistDrawerContainer = () => {
     const responsive = useResponsive();
@@ -44,12 +45,12 @@ const WishlistDrawerContainer = () => {
             onClose={() => dispatch(toggleWishlistDrawer())}
             footer={
                 <div>
-                    <Link href="/checkout" passHref>
+                    <Link href={Paths.wishList} passHref>
                         <button
                             onClick={() => dispatch(addToCart(wishlistItem))}
                             className="w-full py-2 rounded text-white font-bold bg-orange"
                         >
-                            Go To Checkout
+                            View Wishlist
                         </button>
                     </Link>
                 </div>

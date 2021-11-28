@@ -111,8 +111,8 @@ const AppFooter = () => {
                             <div className="footer-links">
                                 <ul>
                                     <li>
-                                        <Link href={Paths.aboutUs}>
-                                            <a>About Us</a>
+                                        <Link href={Paths.user}>
+                                            <a>Dashboard</a>
                                         </Link>
                                     </li>
                                     <li>

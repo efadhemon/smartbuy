@@ -4,7 +4,7 @@ import AppLayout from "@modules/common/layout/AppLayout";
 const LoginPage = () => {
     return (
         <AppLayout>
-            <LoginContainer />;
+            <LoginContainer />
         </AppLayout>
     );
 };
