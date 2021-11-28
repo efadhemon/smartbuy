@@ -13,7 +13,7 @@ import {
     AiOutlineShopping,
     AiOutlineShoppingCart,
 } from "react-icons/ai";
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 
 const ProductInfo = ({ product }) => {
@@ -122,8 +122,8 @@ const ProductInfo = ({ product }) => {
                     <a style={{ backgroundColor: "#55acee" }} href="#">
                         <FaTwitter />
                     </a>
-                    <a style={{ backgroundColor: "#0077B5" }} href="#">
-                        <FaLinkedinIn />
+                    <a style={{ backgroundColor: "#fb3958" }} href="#">
+                        <FaInstagram />
                     </a>
                 </div>
             </div>
