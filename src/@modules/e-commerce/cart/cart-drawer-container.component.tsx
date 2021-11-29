@@ -54,13 +54,13 @@ const CartDrawerContainer = () => {
                         </Text>
                     </div>
                     <div className="text-center">
-                        <Link href="/checkout" passHref>
-                            <button
+                        <Link href="/checkout">
+                            <a
                                 onClick={() => dispatch(toggleCartDrawer())}
                                 className="w-full py-2 rounded text-white font-bold bg-orange"
                             >
                                 View Cart
-                            </button>
+                            </a>
                         </Link>
                     </div>
                 </div>

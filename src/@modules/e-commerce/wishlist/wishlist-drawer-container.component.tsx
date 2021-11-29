@@ -45,13 +45,13 @@ const WishlistDrawerContainer = () => {
             onClose={() => dispatch(toggleWishlistDrawer())}
             footer={
                 <div>
-                    <Link href={Paths.wishList} passHref>
-                        <button
+                    <Link href={Paths.wishlist}>
+                        <a
                             onClick={() => dispatch(addToCart(wishlistItem))}
                             className="w-full py-2 rounded text-white font-bold bg-orange"
                         >
                             View Wishlist
-                        </button>
+                        </a>
                     </Link>
                 </div>
             }
