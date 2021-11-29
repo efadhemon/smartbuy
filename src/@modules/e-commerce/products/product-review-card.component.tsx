@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Rate } from "antd";
 import React from "react";
 
