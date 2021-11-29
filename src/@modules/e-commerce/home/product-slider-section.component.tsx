@@ -3,17 +3,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination } from "swiper";
 import ProductCard from "../products/product-card.component";
 import productData from "productData";
+import React from "react";
 
 const { Search } = Input;
 const { Title } = Typography;
 
 SwiperCore.use([Pagination]);
 
-interface IProps {
-    title: string;
+interface IFProps {
+    products?: any;
 }
 
-const ProductSliderSection = () => {
+const ProductSliderSection:React.FC<IFProps> = ({products}) => {
     const onSearch = (value: any) => console.log(value);
 
     return (

@@ -1,7 +1,6 @@
 import AppLayout from "@modules/common/layout/AppLayout";
-import FilterBySize from "@modules/e-commerce/products/filterBySize.component";
 import ProductCard from "@modules/e-commerce/products/product-card.component";
-import { Col, PageHeader, Row } from "antd";
+import { Col, Row } from "antd";
 import { useRouter } from "next/router";
 import productData from "productData";
 import React from "react";
