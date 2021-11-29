@@ -28,6 +28,7 @@ const TopBannerSlider = () => {
                     delay: 3000,
                     disableOnInteraction: false,
                 }}
+                slidesPerView={1}
                 pagination={{
                     bulletClass:
                         "swiper-pagination-bullet swiper-custom-bullet",

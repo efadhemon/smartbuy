@@ -1,7 +1,22 @@
 .sidebar-menu-wrapper {
     background-color: white;
-    @media (max-width: 991px) {
-        display: none;
+}
+
+.sidebar-menu {
+    .ant-menu {
+        .ant-menu-item {
+            margin: 0 !important;
+            height: 50px;
+            line-height: 50px;
+            font-size: 16px;
+            font-weight: 500;
+            &:hover {
+                background-color: #fff6ee;
+            }
+            &.ant-menu-item-selected {
+                background-color: #fff6ee;
+            }
+        }
     }
 }
 

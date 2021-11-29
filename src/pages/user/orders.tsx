@@ -1,11 +1,10 @@
 import DashboardLayout from '@modules/user/dashboard-layout';
-import OrdersList from '@modules/user/orders-list.component';
-import React from 'react';
+import OrdersListContainer from '@modules/user/orders-list-container.component';
 
 const orders = () => {
     return (
         <DashboardLayout>
-            <OrdersList/>
+            <OrdersListContainer/>
         </DashboardLayout>
     );
 };

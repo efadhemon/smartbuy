@@ -8,7 +8,7 @@ const HeroSection = () => {
             <div className="container">
                 <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 30 }}>
                     <Col xs={24} sm={24} md={24} lg={6} xl={6}>
-                        <div className="sidebar-menu-wrapper">
+                        <div className="sidebar-menu-wrapper hidden lg:block">
                             <SidebarMenu />
                         </div>
                     </Col>

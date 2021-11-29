@@ -1,1 +1,1 @@
-export const takaCurrencySign = "৳"
+export const takaCurrencySign = "৳ "

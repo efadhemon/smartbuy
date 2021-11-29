@@ -102,9 +102,9 @@ const onSelect = () => {
 
 }
 
-const OrdersList = () => {
+const OrdersListContainer = () => {
     return (
-        <div className="orders-history">
+        <div className="orders-list-container">
             <PageHeader
                 ghost={false}
                 title="Orders List"
@@ -122,4 +122,4 @@ const OrdersList = () => {
     )
 }
 
-export default OrdersList;
+export default OrdersListContainer;

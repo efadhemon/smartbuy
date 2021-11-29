@@ -53,10 +53,6 @@ const ProductCard: React.FC<IFProps> = ({ product }) => {
                             <hr className="my-2" />
                             <h4 className="product-price">
                                 {takaCurrencySign + product.price}
-                                <span className="previous-price">
-                                    {takaCurrencySign +
-                                        (parseInt(product.price) + 200)}
-                                </span>
                             </h4>
                         </div>
                     </div>

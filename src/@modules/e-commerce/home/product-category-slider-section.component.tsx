@@ -2,11 +2,10 @@
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
-import { Card } from "antd";
 
 SwiperCore.use([Autoplay]);
 
-const { Meta } = Card;
+
 
 const ProductCategorySlider = () => {
     const categoryData = [
@@ -46,6 +45,11 @@ const ProductCategorySlider = () => {
         <section className="product-category-slider my-10">
             <div className="container">
                 <Swiper
+                    loop={true}
+                    autoplay={{
+                        delay: 2000,
+                        disableOnInteraction: false,
+                    }}
                     breakpoints={{
                         320: {
                             slidesPerView: 2,
@@ -68,15 +72,12 @@ const ProductCategorySlider = () => {
                             spaceBetween: 20,
                         },
                     }}
-                    loop={true}
-                    autoplay={{
-                        delay: 2000,
-                        disableOnInteraction: false,
-                    }}
                 >
                     {categoryData.map((ct) => (
                         <SwiperSlide key={ct.id}>
-                            <Link href={`/products/category/${ct.title.toLowerCase()}`}>
+                            <Link
+                                href={`/products/category/${ct.title.toLowerCase()}`}
+                            >
                                 <a>
                                     <div className="text-center p-4 rounded-lg bg-white transform hover:scale-105 transition-all duration-300">
                                         <div className="mb-5">

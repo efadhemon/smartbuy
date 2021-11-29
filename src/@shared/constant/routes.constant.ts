@@ -4,6 +4,8 @@ export const Paths = {
 	authRegister: "/auth/register",
 
 	products: "/products",
+	category: "/products/category",
+	
 	campaign: "/campaign",
 	checkout: "/checkout",
 	proceedCheckout: "/checkout/proceed-checkout",
@@ -11,7 +13,7 @@ export const Paths = {
 	user: "/user",
 	dashboard: "/user/dashboard",
 	ordersList: "/user/orders",
-	wishList: "/user/wishList",
+	wishlist: "/user/wishlist",
 	profile: "/user/profile",
 	changePassword: "/user/change-password",
 	forgotPassword: "/user/forgot-password",

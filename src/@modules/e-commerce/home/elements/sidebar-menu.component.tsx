@@ -40,34 +40,55 @@ const SidebarMenu = () => {
             title: "Food",
             image: "https://fairmartslive.s3.ap-south-1.amazonaws.com/public/assets/images/categories/2hJPqpDy.Food.png",
         },
+        {
+            id: 7,
+            title: "Groceries",
+            image: "https://fairmartslive.s3.ap-south-1.amazonaws.com/public/assets/images/categories/Uv2onBRA.Grocery.png",
+        },
+        {
+            id: 8,
+            title: "Mobile Phone",
+            image: "https://fairmartslive.s3.ap-south-1.amazonaws.com/public/assets/images/categories/XCvlxt5n.mobile.png",
+        },
+        {
+            id: 9,
+            title: "Automobil",
+            image: "https://fairmartslive.s3.ap-south-1.amazonaws.com/public/assets/images/categories/U03eFH9K.Automobil.png",
+        },
+        {
+            id: 10,
+            title: "Fashion",
+            image: "https://fairmartslive.s3.ap-south-1.amazonaws.com/public/assets/images/categories/rUP2lDyA.Fashion.png",
+        },
     ];
 
-    function handleClick(e) {
-        console.log("click", e);
-    }
+    const onSelect = ({ key }) => {
+        console.log("categoryId", key);
+    };
 
     return (
-        <Menu onClick={handleClick} mode="vertical">
-            {categoryData.map((ct) => (
-                <Menu.Item
-                    key={ct.id}
-                    icon={
-                        <img
-                            style={{
-                                width: 30,
-                                height: 30,
-                                display: "inline",
-                            }}
-                            src={ct.image}
-                            alt="menu-icon"
-                        ></img>
-                    }
-                >
-                    {ct.title}
-                </Menu.Item>
-            ))}
+        <div className="sidebar-menu">
+            <Menu onSelect={onSelect} mode="vertical">
+                {categoryData.map((ct) => (
+                    <Menu.Item
+                        key={ct.id}
+                        icon={
+                            <img
+                                style={{
+                                    width: 25,
+                                    height: 25,
+                                    display: "inline",
+                                }}
+                                src={ct.image}
+                                alt="menu-icon"
+                            ></img>
+                        }
+                    >
+                        {ct.title}
+                    </Menu.Item>
+                ))}
 
-            {/* <SubMenu
+                {/* <SubMenu
                     key="sub1"
                     icon={<MailOutlined />}
                     title="Navigation One"
@@ -98,7 +119,8 @@ const SidebarMenu = () => {
                     <Menu.Item key="11">Option 11</Menu.Item>
                     <Menu.Item key="12">Option 12</Menu.Item>
                 </SubMenu> */}
-        </Menu>
+            </Menu>
+        </div>
     );
 };
 

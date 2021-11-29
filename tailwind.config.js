@@ -39,12 +39,7 @@ module.exports = {
             green: colors.green,
         },
         extend: {
-            backgroundImage: {
-                "footer-wave": "url('/images/wave.svg')",
-            },
-            gridTemplateColumns: {
-                2: "repeat(4, minmax(0, 1fr))",
-            },
+
         },
     },
     variants: {

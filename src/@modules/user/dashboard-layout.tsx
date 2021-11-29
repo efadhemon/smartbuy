@@ -49,9 +49,9 @@ const DashboardLayout = ({ children }) => {
                                     </Menu.Item>
                                     <Menu.Item
                                         icon={<AiOutlineHeart />}
-                                        key={Paths.wishList}
+                                        key={Paths.wishlist}
                                     >
-                                        Wishing List
+                                        Wishlist
                                     </Menu.Item>
                                     <Menu.Item
                                         icon={<RiUserSettingsLine />}
