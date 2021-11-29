@@ -51,17 +51,12 @@
             .ant-page-header-heading {
                 padding: 10px 20px;
                 border-bottom: 1px solid #e2e2e2;
+                .ant-page-header-heading-title {
+                    text-transform: uppercase;
+                }
             }
             .ant-page-header-content {
                 padding: 20px;
-                
-                @include lg{
-                    height: 600px;
-                    overflow-y: scroll;
-                    &::-webkit-scrollbar{
-                        display: none;
-                    }
-                }
             }
         }
     }

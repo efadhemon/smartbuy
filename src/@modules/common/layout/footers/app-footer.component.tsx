@@ -111,7 +111,7 @@ const AppFooter = () => {
                             <div className="footer-links">
                                 <ul>
                                     <li>
-                                        <Link href={Paths.user}>
+                                        <Link href={Paths.ordersList}>
                                             <a>Dashboard</a>
                                         </Link>
                                     </li>
