@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps, reduxStore }: any) {
                     name="description"
                     content="SharifMart | find your daily product. - SharifMart"
                 />
-                <link rel="icon" href="/images/favicon.png" />
+                <link rel="icon" href="/favicon.ico" />
             </Head>
 
             <Provider store={reduxStore}>

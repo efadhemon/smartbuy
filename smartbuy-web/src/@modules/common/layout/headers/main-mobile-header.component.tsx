@@ -71,7 +71,7 @@ const MainMobileHeader: React.FC<IFProps> = ({ onClickShoppingBag }) => {
                             </button>
 
                             <div className="app-name">
-                                <h2>SharifMart</h2>
+                                <h2>Smart Buy</h2>
                             </div>
 
                             <button onClick={onClickShoppingBag}>
