@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npm install && npm run web:start",
     "web:start": "cd smartbuy-web && npm install && npm run dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server:start": "cd smartbuy-server && npm install && npm run dev",
+		"server:install": "cd smartbuy-server && npm install"
   },
   "repository": {
     "type": "git",
