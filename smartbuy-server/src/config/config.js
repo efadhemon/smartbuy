@@ -1,8 +1,10 @@
-module.exports = {
-    app:{
-        name: process.env.APP_NAME
+const config = {
+    bd: {
+        uri: process.env.DB_URI,
     },
-    bd:{
-        uri: process.env.DB_URI
-    }
-}
+    token: {
+        secret: process.env.TOKEN_SECRET,
+    },
+};
+
+module.exports.config = config;

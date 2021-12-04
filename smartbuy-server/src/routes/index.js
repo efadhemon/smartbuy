@@ -1,13 +1,19 @@
 const express = require("express");
 const router = express.Router();
-const userController = require("../modules/users/users.controller");
+const authController = require("../modules/auth/auth.controller");
+const userController = require("../modules/user/user.controller");
 
 
 router.get("/", function(req, res){
-  res.send("congrats! App is working.")
+  res.send("App is working.")
 });
 
 
+// auth route
+router.post("/auth/resister", authController.resister)
+router.post("/auth/login", authController.login)
+
+// user route
 router.post("/users", userController.createUser);
 router.get("/users", userController.getUsers);
 

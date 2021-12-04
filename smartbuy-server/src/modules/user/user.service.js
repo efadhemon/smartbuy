@@ -1,10 +1,10 @@
-const Users = require("./users.model");
-
+const User = require("./user.model");
 
 module.exports.createUser = async function (user) {
-    return Users.create(user);
+    return User.create(user);
 };
 
 module.exports.getUsers = async function () {
-    return Users.find({});
+    return User.find({});
 };
+
