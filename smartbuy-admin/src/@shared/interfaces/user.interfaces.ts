@@ -1,30 +1,26 @@
 export interface IUser {
-	id: string
-	isActive: boolean
-	phoneNumber: string
+	_id: string
 	name: string
-	type: string
+	phone: string
 	email: string
-	gender?: null
-	address?: null
-	image?: null
+	gender: string
+	address: string
+	image: string
 }
 export interface IUpdateUser {
-	id: string
+	id?: string
 	name?: string
 	email?: string
-	phoneNumber?: string
-	type?: string
+	phone?: string
 	gender?: string
 	address?: string
 }
 
 export interface ICreateUser {
 	name: string
+	phone: string
 	email: string
-	phoneNumber: string
 	password: string
 	gender: string
 	address: string
-	type: string
 }

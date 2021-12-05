@@ -13,22 +13,20 @@ export const UsersList = () => {
 
 	const { data, isLoading } = useUsers({
 		options: {
-			// page: page,
-			// take: 10,
+			page: page,
+			take: 10,
 		},
 	})
-
-	console.log(data);
 	
 
-	const dataSource = data?.data?.payload?.map((x: IUser, i:number) => ({
-		key: i,
-		id: x.id,
-		name: x.name,
-		email: x.email,
+	const dataSource = data?.data?.payload?.map((x: IUser) => ({
+		key: x._id,
+		id: x._id,
+		name: x.name || "N/A",
+		email: x.email || "N/A",
+		phone: x.phone || "N/A",
+		gender: x.gender || "N/A",
 		address: x.address || "N/A",
-		phoneNumber: x.phoneNumber,
-		type: x.type,
 	}))
 
 	const columns = [
@@ -38,24 +36,24 @@ export const UsersList = () => {
 			key: "name",
 		},
 		{
+			title: "Phone",
+			dataIndex: "phone" ,
+			key: "phone",
+		},
+		{
 			title: "Email",
 			dataIndex: "email",
 			key: "email",
 		},
 		{
+			title: "Gender",
+			dataIndex: "gender" ,
+			key: "gender",
+		},
+		{
 			title: "Address",
 			dataIndex: "address",
 			key: "address",
-		},
-		{
-			title: "phoneNumber",
-			dataIndex: "phoneNumber",
-			key: "phoneNumber",
-		},
-		{
-			title: "Type",
-			key: "type",
-			dataIndex: "type",
 		},
 		{
 			title: "Action",

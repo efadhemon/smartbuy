@@ -2,8 +2,7 @@ import { IBaseFilter } from "@shared/interfaces";
 import { MutationConfig, QueryConfig, queryClient } from "@shared/config";
 import { UsersService } from "@shared/services";
 import { useMutation, useQuery } from "react-query";
-import { notification } from "antd"
-
+import { notification } from "antd";
 
 // useUsers hooks
 type IFuseUsers = {
@@ -13,7 +12,7 @@ type IFuseUsers = {
 export const useUsers = ({ options, config }: IFuseUsers) => {
     return useQuery({
         ...config,
-        queryKey: ["userList", options],
+        queryKey: [UsersService.NAME, UsersService.filterByID.name],
         queryFn: () => UsersService.filter(options),
     });
 };
@@ -21,13 +20,13 @@ export const useUsers = ({ options, config }: IFuseUsers) => {
 // use user hook
 type IFuseUser = {
     id: string;
-    config?: QueryConfig<typeof UsersService.filterSingle>;
+    config?: QueryConfig<typeof UsersService.filterByID>;
 };
 
 export const useUser = ({ id, config }: IFuseUser) => {
     return useQuery({
         ...config,
-        queryFn: () => UsersService.filterSingle(id),
+        queryFn: () => UsersService.filterByID(id),
     });
 };
 
@@ -55,22 +54,20 @@ export const useUpdateUser = ({ config }: IFuseUpdateUser = {}) => {
     });
 };
 
-
-
 type IFuseDeleteUser = {
-	config?: MutationConfig<typeof UsersService.delete>
-}
+    config?: MutationConfig<typeof UsersService.delete>;
+};
 
 export const useDeleteUser = ({ config }: IFuseDeleteUser = {}) => {
-	return useMutation({
-		onSuccess: () => {
-			queryClient.invalidateQueries("userList")
-			notification.success({
-				type: "success",
-				message: "User Deleted",
-			})
-		},
-		...config,
-		mutationFn: UsersService.delete,
-	})
-}
+    return useMutation({
+        onSuccess: () => {
+            queryClient.invalidateQueries(UsersService.NAME);
+            notification.success({
+                type: "success",
+                message: "User Deleted",
+            });
+        },
+        ...config,
+        mutationFn: UsersService.delete,
+    });
+};
