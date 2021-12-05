@@ -1,31 +1,42 @@
-const { responseData } = require("../../utils/responseData");
-const productService = require("./product.service");
+import { Request, Response } from "express";
+import { responseData } from "../../shared/utils/responseData";
+import productService from "./product.service";
 
-module.exports.createProduct = async function (req, res) {
+const createProduct = async (req: Request, res: Response) => {
     const user = req.body;
     const newProduct = await productService.createProduct(user);
     return res.status(200).send(responseData(newProduct));
 };
 
-module.exports.getProducts = async function (req, res) {
+const getProducts = async (req: Request, res: Response) => {
     const products = await productService.getProducts();
     return res.send(responseData(products, req.query.page, req.query.take));
 };
 
-module.exports.getProductById = async function (req, res) {
+const getProductById = async (req: Request, res: Response) => {
     const productId = req.params.id;
     const product = await productService.getProductById(productId);
     return res.send(responseData(product));
 };
 
-module.exports.updateProductById = async function (req, res) {
+const updateProductById = async (req: Request, res: Response) => {
     const productId = req.params.id;
     const update = req.body;
     const product = await productService.updateProductById(productId, update);
     return res.send(responseData(product));
 };
-module.exports.deleteProductById = async function (req, res) {
+const deleteProductById = async (req: Request, res: Response) => {
     const productId = req.params.id;
     const product = await productService.deleteProductById(productId);
     return res.send(responseData(product));
 };
+
+const productController = {
+    createProduct,
+    getProducts,
+    getProductById,
+    updateProductById,
+    deleteProductById,
+};
+
+export default productController;

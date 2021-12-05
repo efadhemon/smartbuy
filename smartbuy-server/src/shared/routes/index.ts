@@ -1,10 +1,10 @@
-const express = require("express");
+import express, { Request, Response } from "express";
+import authController from "../../modules/auth/auth.controller";
+import productController from "../../modules/product/product.controller";
+import userController from "../../modules/user/user.controller";
 const router = express.Router();
-const authController = require("../modules/auth/auth.controller");
-const userController = require("../modules/user/user.controller");
-const productController = require("../modules/product/product.controller");
 
-router.get("/", function (req, res) {
+router.get("/", (req: Request, res: Response) => {
     res.send("App is working.");
 });
 
@@ -26,4 +26,6 @@ router.get("/products/:id", productController.getProductById);
 router.put("/products/:id", productController.updateProductById);
 router.delete("/products/:id", productController.deleteProductById);
 
-module.exports = router;
+const indexRouter = router;
+
+export default indexRouter;

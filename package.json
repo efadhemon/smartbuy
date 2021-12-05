@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "npm install && npm run web:start",
-    "web:start": "npm run server:start && cd smartbuy-web && npm install && npm run dev",
-    "server:start": "npm run admin:start && cd smartbuy-server && npm install && npm run dev",
+    "web:start": "cd smartbuy-web && npm install && npm run dev",
+    "server:start": "cd smartbuy-server && npm install && npm run dev",
 		"server:install": "cd smartbuy-server && npm install",
     "admin:start": "cd smartbuy-admin && npm install && npm start",
 		"admin:install": "cd smartbuy-admin && npm install"

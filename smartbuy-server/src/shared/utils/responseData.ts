@@ -1,4 +1,4 @@
-const responseData = (data, page, take) => {
+export const responseData = (data:any, page?:any, take?:any) => {
     const startIndex = (page - 1) * take;
     const endIndex = page * take;
     if (page && take) {
@@ -19,5 +19,3 @@ const responseData = (data, page, take) => {
         };
     }
 };
-
-module.exports.responseData = responseData;

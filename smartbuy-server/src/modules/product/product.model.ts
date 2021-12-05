@@ -1,4 +1,6 @@
-const mongoose = require("mongoose");
+import IProduct from "./product.interface";
+
+import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const productSchema = new Schema(
@@ -19,13 +21,13 @@ const productSchema = new Schema(
             type: String,
             required: true,
         },
-        rating:{
+        rating: {
             type: Number,
-            required: false
+            required: false,
         },
-        reviews:{
+        reviews: {
             type: Array,
-            required: false
+            required: false,
         },
         code: {
             type: String,
@@ -46,4 +48,4 @@ const productSchema = new Schema(
     }
 );
 
-module.exports = mongoose.model("Product", productSchema);
+export default mongoose.model<IProduct>("Product", productSchema);

@@ -1,10 +1,11 @@
-const { responseData } = require("../../utils/responseData");
-const userService = require("./user.service");
-const User = require("./user.model");
-const bcrypt = require("bcryptjs");
-const { authValidation } = require("../auth/auth.validator");
+import User from "./user.model";
+import bcrypt from "bcryptjs";
+import { Request, Response } from "express";
+import userService from "./user.service";
+import { authValidation } from "../auth/auth.validator";
+import { responseData } from "../../shared/utils/responseData";
 
-module.exports.createUser = async function (req, res) {
+const createUser = async (req: Request, res: Response) => {
     // before registration data validation
     const { error } = authValidation({
         phone: req.body.phone,
@@ -33,26 +34,36 @@ module.exports.createUser = async function (req, res) {
     return res.status(200).send(responseData(createdUser));
 };
 
-module.exports.getUsers = async function (req, res) {
+const getUsers = async (req: Request, res: Response) => {
     const users = await userService.getUsers();
     return res.send(responseData(users, req.query.page, req.query.take));
 };
 
-module.exports.getUserById = async function (req, res) {
+const getUserById = async (req: Request, res: Response) => {
     const userId = req.params.id;
     const user = await userService.getUserById(userId);
     return res.send(responseData(user));
 };
 
-module.exports.updateUserById = async function (req, res) {
+const updateUserById = async (req: Request, res: Response) => {
     const userId = req.params.id;
     const updatedData = req.body;
     const user = await userService.updateUserById(userId, updatedData);
     return res.send(responseData(user));
 };
 
-module.exports.deleteUserById = async function (req, res) {
+const deleteUserById = async (req: Request, res: Response) => {
     const userId = req.params.id;
     const user = await userService.deleteUserById(userId);
     return res.send(responseData(user));
 };
+
+const userController = {
+    createUser,
+    getUsers,
+    getUserById,
+    updateUserById,
+    deleteUserById,
+};
+
+export default userController;
