@@ -23,11 +23,7 @@ const userSchema = new Schema(
             type: String,
             required: false,
         },
-        dob: {
-            type: String,
-            required: false,
-        },
-        city: {
+        address: {
             type: String,
             required: false,
         },

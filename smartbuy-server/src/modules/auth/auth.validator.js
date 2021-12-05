@@ -1,9 +1,9 @@
-const BD_PHONE_NUMBER_PATTERN = /^(?:\+88|88)?(01[3-9]\d{8})$/;
 const Joi = require("joi");
+const { BD_PHONE_NUMBER_PATTERN } = require("../../utils/regex");
 
 const authValidation = (data) => {
     const schema = Joi.object({
-        phone: Joi.string().pattern(new RegExp(BD_PHONE_NUMBER_PATTERN)),
+        phone: Joi.string().pattern(new RegExp(BD_PHONE_NUMBER_PATTERN)).message(`${data.phone} is not a valid phone number`),
         password: Joi.string().min(6).required(),
     });
 
@@ -11,4 +11,3 @@ const authValidation = (data) => {
 };
 
 module.exports.authValidation = authValidation;
-module.exports.BD_PHONE_NUMBER_PATTERN = BD_PHONE_NUMBER_PATTERN;
