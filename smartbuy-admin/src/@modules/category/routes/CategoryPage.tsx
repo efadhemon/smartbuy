@@ -2,27 +2,27 @@ import { Authorization } from "@modules/auth";
 import { Paths } from "@shared/enums";
 import { Button, PageHeader } from "antd";
 import { useNavigate } from "react-router-dom";
-import { UsersList } from "../components/UsersList";
+import CategoryList from "../components/CategoryList";
 
-const UsersPage = () => {
+const CategoryPage = () => {
     const navigate = useNavigate();
     return (
-        <Authorization allowedAccess={["UserView"]}>
+        <Authorization allowedAccess={["CategoryView"]}>
             <PageHeader
                 onBack={() => navigate(-1)}
-                title="Users List"
+                title="Category List"
                 extra={[
                     <Button
-                        onClick={() => navigate(Paths.UserCreate)}
+                        onClick={() => navigate(Paths.CategoryCreate)}
                         type="primary"
                     >
                         Create
                     </Button>,
                 ]}
             />
-            <UsersList />
+            <CategoryList />
         </Authorization>
     );
 };
 
-export default UsersPage;
+export default CategoryPage;

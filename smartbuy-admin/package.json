@@ -7,6 +7,7 @@
 		"@reduxjs/toolkit": "^1.6.1",
 		"ahooks": "^2.10.9",
 		"antd": "^4.16.12",
+		"antd-img-crop": "^3.16.0",
 		"axios": "^0.21.1",
 		"draft-js": "^0.11.7",
 		"draftjs-to-html": "^0.9.1",

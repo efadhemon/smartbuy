@@ -1,8 +1,13 @@
 export enum Permissions {
+	UserView = "UserView",
+	UserCreate = "UserCreate",
 	UserModify = "UserModify",
 	UserDelete = "UserDelete",
-	UserCreate = "UserCreate",
-	UserView = "UserView",
+
+	CategoryView = "CategoryView",
+	CategoryCreate = "CategoryCreate",
+	CategoryModify = "CategoryModify",
+	CategoryDelete = "CategoryDelete",
 }
 
 export type PermissionsTypes =
@@ -10,4 +15,10 @@ export type PermissionsTypes =
 	| "UserDelete"
 	| "UserCreate"
 	| "UserView"
+
+	| "CategoryView"
+	| "CategoryCreate"
+	| "CategoryModify"
+	| "CategoryDelete"
+
 	| "FORBIDDEN"

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Authorization } from "@modules/auth";
 import { useCreateUser } from "@shared/hooks";
 
-export const CreateUserPage = () => {
+const CreateUserPage = () => {
     const navigate = useNavigate();
 
     const createUserMutation = useCreateUser({
@@ -14,7 +14,7 @@ export const CreateUserPage = () => {
             onSuccess: (data: AxiosResponse) => {
                 if (data?.data?.success) {
                     navigate(Paths.Users);
-					notification.success({
+                    notification.success({
                         type: "success",
                         message: "User created successfully",
                     });
@@ -38,3 +38,5 @@ export const CreateUserPage = () => {
         </Authorization>
     );
 };
+
+export default CreateUserPage;

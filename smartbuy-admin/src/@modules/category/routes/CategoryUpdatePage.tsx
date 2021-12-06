@@ -1,29 +1,30 @@
 import { Authorization } from "@modules/auth";
 import { Paths } from "@shared/enums";
-import { useUpdateUser, useUser } from "@shared/hooks";
+import { useCategory, useUpdateCategory } from "@shared/hooks";
 import { Purify } from "@shared/utils";
 import { notification, PageHeader } from "antd";
 import { AxiosResponse } from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import UpdateUserForm from "../components/UpdateUserForm";
+import CategoryUpdateForm from "../components/CategoryUpdateForm";
 
-const UpdateUserPage = () => {
+const CategoryUpdatePage = () => {
     const navigate = useNavigate();
     const { id } = useParams();
-    const { data, isLoading } = useUser({ id });
-    const updateUserMutation = useUpdateUser({
+    const { data, isLoading } = useCategory({ id });
+
+    const updateCategory = useUpdateCategory({
         config: {
             onSuccess: (data: AxiosResponse) => {
                 if (data?.data?.success) {
-                    navigate(Paths.Users);
+                    navigate(Paths.Category);
                     notification.success({
                         type: "success",
-                        message: "User update successfully",
+                        message: "Category update successfully",
                     });
                 } else {
                     notification.error({
                         type: "error",
-                        message: data?.data?.message,
+                        message: data?.data?.message || "Something is wrong!",
                     });
                 }
             },
@@ -31,14 +32,14 @@ const UpdateUserPage = () => {
     });
 
     return (
-        <Authorization allowedAccess={["UserModify"]}>
+        <Authorization allowedAccess={["CategoryModify"]}>
             <Purify loading={isLoading} empty={false}>
-                <PageHeader onBack={() => navigate(-1)} title="Update User" />
-                <UpdateUserForm
+                <PageHeader onBack={() => navigate(-1)} title="Update Category" />
+                <CategoryUpdateForm
                     initialValues={data?.data?.payload}
-                    isLoading={updateUserMutation.isLoading}
+                    isLoading={updateCategory.isLoading}
                     onFinish={(values) =>
-                        updateUserMutation.mutateAsync({ ...values, id })
+                        updateCategory.mutateAsync({ ...values, id })
                     }
                 />
             </Purify>
@@ -46,4 +47,4 @@ const UpdateUserPage = () => {
     );
 };
 
-export default UpdateUserPage;
+export default CategoryUpdatePage;

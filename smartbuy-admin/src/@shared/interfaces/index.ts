@@ -1,5 +1,5 @@
 export * from "./auth.interfaces"
 export * from "./base.interfaces"
 export * from "./user.interfaces"
-export * from "./department.interfaces"
+export * from "./category.interfaces"
 export * from "./products.interfaces"

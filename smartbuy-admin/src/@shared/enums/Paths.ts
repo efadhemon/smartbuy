@@ -10,12 +10,16 @@ export enum Paths {
     UserCreate = "/users/create",
     UserUpdate = "/users/update",
 
+    //Category
+    Category = "/category",
+    CategoryCreate = "/category/create",
+    CategoryUpdate = "/category/update",
+
     //Products
     Products = "/products",
-    ProductsDetail = "/products/detail",
+    ProductsDetail = "/products/:id",
     ProductsCreate = "/products/create",
     ProductsUpdate = "/products/update",
-    ProductsDelete = "/products/delete",
 
     //Banners
     Banners = "/banners",

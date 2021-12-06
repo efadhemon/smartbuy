@@ -186,8 +186,20 @@ const MainLayout: React.FC<IFProps> = ({ children }) => {
 
                         <Menu.Item
                             icon={<UserOutlined />}
-                            onClick={() => navigate(Paths.Products, { replace: true })}
-                            key={Paths.Banners}
+                            onClick={() =>
+                                navigate(Paths.Category, { replace: true })
+                            }
+                            key={Paths.Category}
+                        >
+                            Category
+                        </Menu.Item>
+
+                        <Menu.Item
+                            icon={<UserOutlined />}
+                            onClick={() =>
+                                navigate(Paths.Products, { replace: true })
+                            }
+                            key={Paths.Products}
                         >
                             Products
                         </Menu.Item>
