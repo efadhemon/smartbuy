@@ -2,8 +2,8 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { Request, Response } from "express";
 import { authValidation } from "./auth.validator";
-import userModel from "../user/user.model";
 import config from "../../shared/config/config";
+import User from "../user/user.model";
 
 const resister = async (req: Request, res: Response) => {
     // before registration data validation
@@ -11,7 +11,7 @@ const resister = async (req: Request, res: Response) => {
     if (error) return res.status(400).send(error.details[0].message);
 
     // checking if the user already in database
-    const phoneExist = await userModel.findOne({ phone: req.body.phone });
+    const phoneExist = await User.findOne({ phone: req.body.phone });
     if (phoneExist)
         return res.status(400).send("Phone Number is already exits");
 
@@ -20,7 +20,7 @@ const resister = async (req: Request, res: Response) => {
     const hashPassword = await bcrypt.hash(req.body.password, salt);
 
     // create a new user
-    const newUser = new userModel({
+    const newUser = new User({
         phone: req.body.phone,
         password: hashPassword,
     });
@@ -33,7 +33,7 @@ const resister = async (req: Request, res: Response) => {
 
 const login = async (req: Request, res: Response) => {
     // checking if the user is exist
-    const user = await userModel.findOne({ phone: req.body.phone });
+    const user = await User.findOne({ phone: req.body.phone });
     if (!user) return res.status(400).send("Phone or Password is wrong");
 
     // Is the password is correct

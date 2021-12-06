@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import authController from "../../modules/auth/auth.controller";
+import categoryController from "../../modules/category/category.controller";
 import imageRoute from "../../modules/image/image.controller";
 import productController from "../../modules/product/product.controller";
 import userController from "../../modules/user/user.controller";
@@ -30,6 +31,13 @@ router.delete("/products/:id", productController.deleteProductById);
 // image route
 router.use("/", imageRoute);
 
-const indexRouter = router;
 
+// category routes
+router.post("/category", categoryController.createCategory);
+router.get("/category", categoryController.getCategories);
+router.get("/category/:id", categoryController.getCategoryById);
+router.put("/category/:id", categoryController.updateCategoryById);
+router.delete("/category/:id", categoryController.deleteCategoryById);
+
+const indexRouter = router;
 export default indexRouter;
