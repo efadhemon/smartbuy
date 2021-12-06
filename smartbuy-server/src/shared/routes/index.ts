@@ -10,9 +10,11 @@ router.get("/", (req: Request, res: Response) => {
     res.send("App is working.");
 });
 
-// auth route
-router.post("/auth/resister", authController.resister);
-router.post("/auth/login", authController.login);
+// auth routes
+router.post("/auth/user/resister", authController.userResister);
+router.post("/auth/user/login", authController.userLogin);
+router.post("/auth/admin/resister", authController.adminResister);
+router.post("/auth/admin/login", authController.adminLogin);
 
 // user route
 router.post("/users", userController.createUser);
