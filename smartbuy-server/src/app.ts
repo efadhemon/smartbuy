@@ -1,10 +1,8 @@
-import http from "http";
 import express, { NextFunction, Request, Response } from "express";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
 import cors from "cors";
 import indexRouter from "./shared/routes/index";
-import config from "./shared/config/config";
 require("./shared/db/db");
 
 var app = express();
@@ -25,8 +23,4 @@ app.use((req: Request, res: Response, next: NextFunction) => {
     });
 });
 
-const httpServer = http.createServer(app);
-
-httpServer.listen(config.server.port, () => {
-    console.log(`app listen on port ${config.server.port}`);
-});
+export default app;

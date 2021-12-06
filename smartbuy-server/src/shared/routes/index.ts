@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import authController from "../../modules/auth/auth.controller";
+import imageRoute from "../../modules/image/image.controller";
 import productController from "../../modules/product/product.controller";
 import userController from "../../modules/user/user.controller";
 const router = express.Router();
@@ -25,6 +26,9 @@ router.get("/products", productController.getProducts);
 router.get("/products/:id", productController.getProductById);
 router.put("/products/:id", productController.updateProductById);
 router.delete("/products/:id", productController.deleteProductById);
+
+// image route
+router.use("/", imageRoute);
 
 const indexRouter = router;
 
