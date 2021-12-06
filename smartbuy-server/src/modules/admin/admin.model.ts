@@ -39,5 +39,5 @@ const adminSchema = new Schema(
     }
 );
 
-const Admin = mongoose.model<IAdmin>("User", adminSchema);
+const Admin = mongoose.model<IAdmin>("Admin", adminSchema);
 export default Admin;
