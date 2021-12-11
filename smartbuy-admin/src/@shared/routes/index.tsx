@@ -1,13 +1,9 @@
 import ProtectedRoutes from "./protected-routes.component";
 import PublicRoutes from "./public-routes.component";
-import jwt_decode from "jwt-decode";
 import { storage } from "@shared/utils";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { ENV } from "../config/ENV";
 
 const AppRoutes = () => {
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    // const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     const authToken = storage.getToken();
 
