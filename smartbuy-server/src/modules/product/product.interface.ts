@@ -8,7 +8,5 @@ export default interface IProduct extends Document {
     category: ICategory;
     code: string;
     description: string;
-    specification: string;
     isAvailable: boolean;
-    isPopular: boolean;
 }
