@@ -18,16 +18,14 @@ const storage = multer.diskStorage({
 
 const upload = multer({
     storage: storage,
-    limits: { fileSize: 3000000  },
+    limits: { fileSize: 3000000 },
 });
 
 const postImage = async (req: Request, res: Response) => {
     res.send({
         success: true,
         message: "image uploaded successfully",
-        payload: {
-            imageUrl: `http://localhost:3000/images/${req.file?.filename}`,
-        },
+        url: `http://${req.headers.host}/images/${req.file?.filename}`,
     });
 };
 
@@ -38,9 +36,9 @@ export const multerErrorHandler = (
     next: NextFunction
 ) => {
     if (err instanceof multer.MulterError) {
-        res.send({
+        res.status(400).json({
             success: false,
-            message: err.message + ', maximum size is 3000000 bytes',
+            message: err.message,
             payload: {
                 imageUrl: null,
             },

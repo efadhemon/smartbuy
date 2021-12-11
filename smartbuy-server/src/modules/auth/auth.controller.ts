@@ -29,8 +29,14 @@ const userResister = async (req: Request, res: Response) => {
     const resistedUser = await newUser.save();
 
     // create and assign a token
-    const token = jwt.sign({ _id: resistedUser._id }, config.token.secret);
-    res.header("auth-token", token).send(token);
+    const token = jwt.sign({ id: resistedUser._id }, config.token.secret);
+    res.header("auth-token", token).send({
+        success: true,
+        message: "Register success",
+        payload: {
+            token: token,
+        },
+    });
 };
 
 const userLogin = async (req: Request, res: Response) => {
@@ -43,13 +49,15 @@ const userLogin = async (req: Request, res: Response) => {
     if (!validPass) return res.status(400).send("Phone or Password is wrong");
 
     // create and assign a token
-    const token = jwt.sign({ _id: user._id }, config.token.secret);
-    res.header("auth-token", token).send(token);
+    const token = jwt.sign({ id: user._id }, config.token.secret);
+    res.header("auth-token", token).send({
+        success: true,
+        message: "login success",
+        payload: {
+            token: token,
+        },
+    });
 };
-
-
-
-
 
 //-------------------- admin auth ----------------------------------------------
 const adminResister = async (req: Request, res: Response) => {
@@ -74,8 +82,14 @@ const adminResister = async (req: Request, res: Response) => {
     const resistedAdmin = await newAdmin.save();
 
     // create and assign a token
-    const token = jwt.sign({ _id: resistedAdmin._id }, config.token.secret);
-    res.header("auth-token", token).send(token);
+    const token = jwt.sign({ id: resistedAdmin._id }, config.token.secret);
+    res.header("auth-token", token).send({
+        success: true,
+        message: "Register success",
+        payload:{
+            token: token
+        }
+    });
 };
 
 const adminLogin = async (req: Request, res: Response) => {
@@ -88,8 +102,14 @@ const adminLogin = async (req: Request, res: Response) => {
     if (!validPass) return res.status(400).send("Phone or Password is wrong");
 
     // create and assign a token
-    const token = jwt.sign({ _id: admin._id }, config.token.secret);
-    res.header("auth-token", token).send(token);
+    const token = jwt.sign({ id: admin._id }, config.token.secret);
+    res.header("auth-token", token).send({
+        success: true,
+        message: "Login success",
+        payload:{
+            token: token
+        }
+    });
 };
 
 const authController = {

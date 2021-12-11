@@ -3,8 +3,7 @@ import { responseData } from "../../shared/utils/responseData";
 import productService from "./product.service";
 
 const createProduct = async (req: Request, res: Response) => {
-    const user = req.body;
-    const newProduct = await productService.createProduct(user);
+    const newProduct = await productService.createProduct(req.body);
     return res.status(200).send(responseData(newProduct));
 };
 

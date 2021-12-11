@@ -1,13 +1,14 @@
 import { Document } from "mongoose";
+import ICategory from "../category/category.interface";
 
 export default interface IProduct extends Document {
     name: string;
     price: string;
-    category: string;
     brand: string;
-    rating: number;
-    reviews: object[];
+    category: ICategory;
     code: string;
     description: string;
     specification: string;
+    isAvailable: boolean;
+    isPopular: boolean;
 }

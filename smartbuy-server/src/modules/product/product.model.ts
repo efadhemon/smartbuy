@@ -13,24 +13,20 @@ const productSchema = new Schema(
             type: String,
             required: true,
         },
-        category: {
-            type: String,
-            required: true,
-        },
         brand: {
             type: String,
             required: true,
         },
-        rating: {
-            type: Number,
-            required: false,
-        },
-        reviews: {
-            type: Array,
-            required: false,
+        category: {
+            type: Object,
+            required: true,
         },
         code: {
             type: String,
+            required: true,
+        },
+        images: {
+            type: Array,
             required: true,
         },
         description: {
@@ -39,6 +35,14 @@ const productSchema = new Schema(
         },
         specification: {
             type: String,
+            required: true,
+        },
+        isAvailable: {
+            type: Boolean,
+            required: true,
+        },
+        isPopular: {
+            type: Boolean,
             required: true,
         },
     },

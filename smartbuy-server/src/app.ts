@@ -17,10 +17,14 @@ app.use("/", indexRouter);
 
 /** Error handling */
 app.use((req: Request, res: Response, next: NextFunction) => {
+
     const error = new Error("Not found");
     res.status(404).json({
+        success: false,
         message: error.message,
+        payload: null
     });
 });
+
 
 export default app;
