@@ -6,20 +6,29 @@ export enum Paths {
     DefaultDashboard = "/dashboard/default/",
 
     //!User
-    Users = "/users",
-    UserCreate = "/users/create",
-    UserUpdate = "/users/update",
+    User = "/user",
+    UserList = "/user/list",
+    UserCreate = "/user/create",
+    UserUpdate = "/user/update",
+
+    //!User
+    Admin = "/admin",
+    AdminList = "/admin/list",
+    AdminCreate = "/admin/create",
+    AdminUpdate = "/admin/update",
 
     //Category
     Category = "/category",
+    CategoryList = "/category/list",
     CategoryCreate = "/category/create",
     CategoryUpdate = "/category/update",
 
     //Products
-    Products = "/products",
-    ProductsDetail = "/products/:id",
-    ProductsCreate = "/products/create",
-    ProductsUpdate = "/products/update",
+    Product = "/product",
+    ProductList = "/product/list",
+    ProductDetail = "/product/:id",
+    ProductCreate = "/product/create",
+    ProductUpdate = "/product/update",
 
     //Banners
     Banners = "/banners",

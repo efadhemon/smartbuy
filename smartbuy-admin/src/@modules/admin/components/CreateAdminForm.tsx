@@ -1,15 +1,15 @@
-import { IUpdateUser } from "@shared/interfaces";
+import { ICreateAdmin } from "@shared/interfaces";
 import { Button, Col, Form, Input, Row, Select } from "antd";
 const { Option } = Select;
 
 interface IFProps {
-    initialValues?: IUpdateUser;
-    onFinish?: (values: IUpdateUser) => void;
+    initialValues?: ICreateAdmin;
+    onFinish?: (values: ICreateAdmin) => void;
     onFinishFailed?: (errorInfo: any) => void;
     isLoading?: boolean;
 }
 
-const UpdateUserForm: React.FC<IFProps> = ({
+const CreateAdminForm: React.FC<IFProps> = ({
     initialValues,
     onFinish,
     onFinishFailed,
@@ -81,7 +81,7 @@ const UpdateUserForm: React.FC<IFProps> = ({
                             },
                         ]}
                     >
-                        <Input.Password disabled placeholder="Enter a password" />
+                        <Input.Password placeholder="Enter a password" />
                     </Form.Item>
                 </Col>
 
@@ -130,11 +130,9 @@ const UpdateUserForm: React.FC<IFProps> = ({
                         </Button>
                     </Form.Item>
                 </Col>
-
-                <Col xs={24} sm={24} md={12} lg={24} xl={24}></Col>
             </Row>
         </Form>
     );
 };
 
-export default UpdateUserForm;
+export default CreateAdminForm;

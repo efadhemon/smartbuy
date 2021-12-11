@@ -177,11 +177,21 @@ const MainLayout: React.FC<IFProps> = ({ children }) => {
                         <Menu.Item
                             icon={<UserOutlined />}
                             onClick={() =>
-                                navigate(Paths.Users, { replace: true })
+                                navigate(Paths.Admin, { replace: true })
                             }
-                            key={Paths.Users}
+                            key={Paths.Admin}
                         >
-                            Users
+                            Admin
+                        </Menu.Item>
+
+                        <Menu.Item
+                            icon={<UserOutlined />}
+                            onClick={() =>
+                                navigate(Paths.User, { replace: true })
+                            }
+                            key={Paths.User}
+                        >
+                            User
                         </Menu.Item>
 
                         <Menu.Item
@@ -197,11 +207,11 @@ const MainLayout: React.FC<IFProps> = ({ children }) => {
                         <Menu.Item
                             icon={<UserOutlined />}
                             onClick={() =>
-                                navigate(Paths.Products, { replace: true })
+                                navigate(Paths.Product, { replace: true })
                             }
-                            key={Paths.Products}
+                            key={Paths.Product}
                         >
-                            Products
+                            Product
                         </Menu.Item>
                     </Menu>
                 </Sider>

@@ -1,15 +1,15 @@
-import { baseService } from "@shared/base/base.service"
-import { IAuthCredential } from "@shared/interfaces"
-import { CoreAxiosInstance } from "./../config/axios/core-axios-instantance"
+import { baseService } from "@shared/base/base.service";
+import { CoreAxiosInstance } from "@shared/config";
+import { IAuthCredential } from "@shared/interfaces";
 
-const END_POINT: string = "/auth/login"
+const END_POINT: string = "/auth/admin/login";
 
 export const AuthService = {
-	...baseService(END_POINT),
-	login: (payload: IAuthCredential) => {
-		return CoreAxiosInstance.post(`${END_POINT}`, payload)
-	},
-}
+    ...baseService(END_POINT),
+    login: (payload: IAuthCredential) => {
+        return CoreAxiosInstance.post(`${END_POINT}`, payload);
+    },
+};
 // class AAuthService extends BaseService<{},{}> {
 // 	END_POINT: string = "/auth"
 // 	constructor() {
@@ -17,7 +17,7 @@ export const AuthService = {
 // 	}
 
 // 	login(payload: IAuthCredential) {
-// 		
+//
 // 		return CoreAxiosInstance.post(`${END_POINT}`, payload)
 // 	}
 // }

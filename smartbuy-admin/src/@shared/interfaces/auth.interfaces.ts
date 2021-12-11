@@ -1,4 +1,4 @@
 export interface IAuthCredential {
-	phoneNumber: string
+	phone: string
 	password: string
 }

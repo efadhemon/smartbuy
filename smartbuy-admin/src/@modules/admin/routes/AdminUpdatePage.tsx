@@ -1,30 +1,29 @@
 import { Authorization } from "@modules/auth";
 import { Paths } from "@shared/enums";
-import { useCategory, useUpdateCategory } from "@shared/hooks";
+import { useAdmin, useUpdateAdmin } from "@shared/hooks";
 import { Purify } from "@shared/utils";
 import { notification, PageHeader } from "antd";
 import { AxiosResponse } from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import CategoryUpdateForm from "../components/CategoryUpdateForm";
+import UpdateAdminForm from "../components/UpdateAdminForm";
 
-const CategoryUpdatePage = () => {
+const AdminUpdatePage = () => {
     const navigate = useNavigate();
     const { id } = useParams();
-    const { data, isLoading } = useCategory({ id });
-
-    const updateCategory = useUpdateCategory({
+    const { data, isLoading } = useAdmin({ id });
+    const updateAdmin = useUpdateAdmin({
         config: {
             onSuccess: (data: AxiosResponse) => {
                 if (data?.data?.success) {
-                    navigate(Paths.CategoryList);
+                    navigate(Paths.AdminList);
                     notification.success({
                         type: "success",
-                        message: "Category update successfully",
+                        message: "Admin update successfully",
                     });
                 } else {
                     notification.error({
                         type: "error",
-                        message: data?.data?.message || "Something is wrong!",
+                        message: data?.data?.message || "Something is wrong",
                     });
                 }
             },
@@ -32,17 +31,14 @@ const CategoryUpdatePage = () => {
     });
 
     return (
-        <Authorization allowedAccess={["CategoryModify"]}>
+        <Authorization allowedAccess={["AdminModify"]}>
             <Purify loading={isLoading} empty={false}>
-                <PageHeader
-                    onBack={() => navigate(-1)}
-                    title="Update Category"
-                />
-                <CategoryUpdateForm
+                <PageHeader onBack={() => navigate(-1)} title="Update Admin" />
+                <UpdateAdminForm
                     initialValues={data?.data?.payload}
-                    isLoading={updateCategory.isLoading}
+                    isLoading={updateAdmin.isLoading}
                     onFinish={(values) =>
-                        updateCategory.mutateAsync({ ...values, id })
+                        updateAdmin.mutateAsync({ ...values, id })
                     }
                 />
             </Purify>
@@ -50,4 +46,4 @@ const CategoryUpdatePage = () => {
     );
 };
 
-export default CategoryUpdatePage;
+export default AdminUpdatePage;

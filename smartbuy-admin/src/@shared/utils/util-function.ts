@@ -9,7 +9,7 @@ export const concatFilterQuery = (options: any): string => {
         .join("&");
 };
 
-const storagePrefix = "jd_react_";
+const storagePrefix = "_auth_";
 
 export const storage = {
     getToken: (): string | false => {
@@ -17,7 +17,6 @@ export const storage = {
             return false;
         }
         var item = localStorage.getItem(`${storagePrefix}token`);
-
         if (!item) {
             return false;
         }
@@ -36,7 +35,7 @@ export const storage = {
         localStorage.clear();
     },
 
-    setData(data: any, key: string) {
+    setData(key: string, data: any) {
         if (!window.localStorage || !window.JSON || !key) {
             return;
         }

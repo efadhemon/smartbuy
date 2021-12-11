@@ -6,14 +6,14 @@ import { useNavigate } from "react-router-dom";
 import { Authorization } from "@modules/auth";
 import { useCreateUser } from "@shared/hooks";
 
-const CreateUserPage = () => {
+export const CreateUserPage = () => {
     const navigate = useNavigate();
 
     const createUserMutation = useCreateUser({
         config: {
             onSuccess: (data: AxiosResponse) => {
                 if (data?.data?.success) {
-                    navigate(Paths.Users);
+                    navigate(Paths.UserList);
                     notification.success({
                         type: "success",
                         message: "User created successfully",
@@ -21,7 +21,7 @@ const CreateUserPage = () => {
                 } else {
                     notification.error({
                         type: "error",
-                        message: data?.data?.message,
+                        message: data?.data?.message || "Something is wrong",
                     });
                 }
             },
@@ -38,5 +38,3 @@ const CreateUserPage = () => {
         </Authorization>
     );
 };
-
-export default CreateUserPage;

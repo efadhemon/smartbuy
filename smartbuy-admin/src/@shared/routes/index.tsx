@@ -1,10 +1,31 @@
-import { useAuth } from "@shared/hooks";
 import ProtectedRoutes from "./protected-routes.component";
 import PublicRoutes from "./public-routes.component";
+import jwt_decode from "jwt-decode";
+import { storage } from "@shared/utils";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { ENV } from "../config/ENV";
 
 const AppRoutes = () => {
-    const { isAuthenticated } = useAuth();
-    return isAuthenticated ? <ProtectedRoutes /> : <PublicRoutes />;
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+    const authToken = storage.getToken();
+
+    // if (authToken) {
+    //     const admin: any = jwt_decode(authToken);
+    //     if (admin.id) {
+    //         axios
+    //             .get(`${ENV.CORE_END_POINT}admin/${admin.id}`)
+    //             .then((res) => {
+    //                 setIsAuthenticated(res?.data?.success);
+    //             })
+    //             .catch((error) => {
+    //                 setIsAuthenticated(false);
+    //             });
+    //     }
+    // }
+
+    return authToken ? <ProtectedRoutes /> : <PublicRoutes />;
 };
 
 export default AppRoutes;

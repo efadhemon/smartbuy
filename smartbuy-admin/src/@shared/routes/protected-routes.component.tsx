@@ -3,8 +3,10 @@ import { DashboardRoutes } from "@modules/dashboard";
 import DefaultDashboardPage from "@modules/dashboard/routes/default-dashboard-page-component";
 import MainLayout from "@shared/components/layout/main-layout.component";
 import NotFound from "@shared/components/NotFound";
-import { UsersRoutes } from "@modules/users";
+import { UserRoutes } from "@modules/user";
 import { CategoryRoutes } from "@modules/category";
+import { AdminRoutes } from "@modules/admin";
+import { ProductRoutes } from "@modules/product";
 
 const App = () => {
     let pathName = window.location.pathname;
@@ -23,12 +25,20 @@ const ProtectedRoutes = () => {
             children: DashboardRoutes,
         },
         {
-            path: "users",
-            children: UsersRoutes,
+            path: "admin",
+            children: AdminRoutes,
+        },
+        {
+            path: "user",
+            children: UserRoutes,
         },
         {
             path: "category",
             children: CategoryRoutes,
+        },
+        {
+            path: "product",
+            children: ProductRoutes,
         },
     ];
 

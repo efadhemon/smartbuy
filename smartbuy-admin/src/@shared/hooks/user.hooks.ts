@@ -1,73 +1,73 @@
 import { IBaseFilter } from "@shared/interfaces";
 import { MutationConfig, QueryConfig, queryClient } from "@shared/config";
-import { UsersService } from "@shared/services";
+import { UserService } from "@shared/services";
 import { useMutation, useQuery } from "react-query";
 import { notification } from "antd";
 
 // useUsers hooks
 type IFuseUsers = {
     options: IBaseFilter;
-    config?: QueryConfig<typeof UsersService.filter>;
+    config?: QueryConfig<typeof UserService.filter>;
 };
 export const useUsers = ({ options, config }: IFuseUsers) => {
     return useQuery({
         ...config,
-        queryKey: [UsersService.NAME, UsersService.filterByID.name],
-        queryFn: () => UsersService.filter(options),
+        queryKey: [UserService.NAME, UserService.filterById.name],
+        queryFn: () => UserService.filter(options),
     });
 };
 
 // use user hook
 type IFuseUser = {
     id: string;
-    config?: QueryConfig<typeof UsersService.filterByID>;
+    config?: QueryConfig<typeof UserService.filterById>;
 };
 
 export const useUser = ({ id, config }: IFuseUser) => {
     return useQuery({
         ...config,
-        queryFn: () => UsersService.filterByID(id),
+        queryFn: () => UserService.filterById(id),
     });
 };
 
 // useCreateUser hook
 type IFuseCreateUser = {
-    config?: MutationConfig<typeof UsersService.create>;
+    config?: MutationConfig<typeof UserService.create>;
 };
 
 export const useCreateUser = ({ config }: IFuseCreateUser = {}) => {
     return useMutation({
         ...config,
-        mutationFn: UsersService.create,
+        mutationFn: UserService.create,
     });
 };
 
 // useUpdateUser hook
 type IFuseUpdateUser = {
-    config?: MutationConfig<typeof UsersService.update>;
+    config?: MutationConfig<typeof UserService.update>;
 };
 
 export const useUpdateUser = ({ config }: IFuseUpdateUser = {}) => {
     return useMutation({
         ...config,
-        mutationFn: UsersService.update,
+        mutationFn: UserService.update,
     });
 };
 
 type IFuseDeleteUser = {
-    config?: MutationConfig<typeof UsersService.delete>;
+    config?: MutationConfig<typeof UserService.delete>;
 };
 
 export const useDeleteUser = ({ config }: IFuseDeleteUser = {}) => {
     return useMutation({
         onSuccess: () => {
-            queryClient.invalidateQueries(UsersService.NAME);
+            queryClient.invalidateQueries(UserService.NAME);
             notification.success({
                 type: "success",
                 message: "User Deleted",
             });
         },
         ...config,
-        mutationFn: UsersService.delete,
+        mutationFn: UserService.delete,
     });
 };

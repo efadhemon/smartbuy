@@ -3,6 +3,7 @@ import { Button, Col, Form, Input, message, Radio, Row, Upload } from "antd";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import ImgCrop from "antd-img-crop";
+import { ENV } from "@shared/config";
 
 interface IFProps {
     initialValues?: ICreateCategory;
@@ -45,7 +46,7 @@ const CategoryCreateForm: React.FC<IFProps> = ({
         }
         if (file.status === "done") {
             setImage({
-                url: file?.response?.payload?.imageUrl,
+                url: file?.response?.url,
                 isLoading: false,
             });
         }
@@ -118,7 +119,7 @@ const CategoryCreateForm: React.FC<IFProps> = ({
                                 showUploadList={true}
                                 maxCount={1}
                                 onPreview={() => window.open(image.url)}
-                                action="http://localhost:3000/upload/images"
+                                action={`${ENV.CORE_END_POINT}upload/images`}
                                 beforeUpload={beforeUpload}
                                 onChange={handleImageUpload}
                             >

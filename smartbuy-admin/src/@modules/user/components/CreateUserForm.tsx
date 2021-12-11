@@ -130,8 +130,6 @@ const CreateUserForm: React.FC<IFProps> = ({
                         </Button>
                     </Form.Item>
                 </Col>
-
-                <Col xs={24} sm={24} md={12} lg={24} xl={24}></Col>
             </Row>
         </Form>
     );

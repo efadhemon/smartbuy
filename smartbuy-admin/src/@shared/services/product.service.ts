@@ -1,23 +1,22 @@
 import { CoreAxiosInstance } from "@shared/config"
-import { IProductFilter, IProducts, IProductsFilter } from "@shared/interfaces"
+import { IBaseFilter, ICreateProduct, IUpdateProduct } from "@shared/interfaces"
 import { concatFilterQuery } from "@shared/utils"
 
 
-const END_POINT: string = "/products/"
+const END_POINT: string = "/product/"
 
 export const ProductService = {
-	create(payload: IProducts) {
+	NAME: END_POINT,
+	create(payload: ICreateProduct) {
 		return CoreAxiosInstance.post(END_POINT, payload)
 	},
-	filter(options: IProductsFilter) {
+	filter(options: IBaseFilter) {
 		return CoreAxiosInstance.get(`${END_POINT}?${concatFilterQuery(options)}`)
 	},
-	filterOne(options: IProductFilter) {	
-		const {id} = options;
-		delete options.id;	
-		return CoreAxiosInstance.get(`${END_POINT}${id}?${concatFilterQuery(options)}`)
+	filterById(id: string) {		
+		return CoreAxiosInstance.get(`${END_POINT}${id}`)
 	},
-	update(payload: IProducts) {
+	update(payload: IUpdateProduct) {
 		const { id } = payload
 		delete payload.id;
 		return CoreAxiosInstance.put(`${END_POINT}${id}`, payload)

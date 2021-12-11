@@ -1,22 +1,22 @@
 import { Authorization } from "@modules/auth";
 import { Paths } from "@shared/enums";
-import { useCreateCategory } from "@shared/hooks";
+import { useCreateProduct } from "@shared/hooks";
 import { notification, PageHeader } from "antd";
 import { AxiosResponse } from "axios";
 import { useNavigate } from "react-router-dom";
-import CategoryCreateForm from "../components/CategoryCreateForm";
+import ProductCreateForm from "../components/ProductCreateForm";
 
-const CategoryCreatePage = () => {
+const ProductCreatePage = () => {
     const navigate = useNavigate();
 
-    const createCategoryMutation = useCreateCategory({
+    const createProductMutation = useCreateProduct({
         config: {
             onSuccess: (data: AxiosResponse) => {
                 if (data?.data?.success) {
-                    navigate(Paths.CategoryList);
+                    navigate(Paths.ProductList);
                     notification.success({
                         type: "success",
-                        message: "Category successfully created",
+                        message: "Product successfully created",
                     });
                 } else {
                     notification.error({
@@ -29,16 +29,14 @@ const CategoryCreatePage = () => {
     });
 
     return (
-        <Authorization allowedAccess={["CategoryCreate"]}>
-            <PageHeader onBack={() => navigate(-1)} title="Create Category" />
-            <CategoryCreateForm
-                isLoading={createCategoryMutation.isLoading}
-                onFinish={(values) =>
-                    createCategoryMutation.mutateAsync(values)
-                }
+        <Authorization allowedAccess={["ProductCreate"]}>
+            <PageHeader onBack={() => navigate(-1)} title="Create Product" />
+            <ProductCreateForm
+                isLoading={createProductMutation.isLoading}
+                onFinish={(values) => createProductMutation.mutateAsync(values)}
             />
         </Authorization>
     );
 };
 
-export default CategoryCreatePage;
+export default ProductCreatePage;

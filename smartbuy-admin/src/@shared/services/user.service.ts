@@ -4,9 +4,9 @@ import { CoreAxiosInstance } from "./../config/axios/core-axios-instantance";
 import { IUpdateUser } from "../interfaces/user.interfaces";
 import { concatFilterQuery } from "@shared/utils";
 
-const END_POINT: string = "/users/";
+const END_POINT: string = "/user/";
 
-export const UsersService = {
+export const UserService = {
 	NAME: END_POINT,
     create(payload: ICreateUser) {
         return CoreAxiosInstance.post(END_POINT, payload);
@@ -16,7 +16,7 @@ export const UsersService = {
             `${END_POINT}?${concatFilterQuery(options)}`
         );
     },
-    filterByID(id: string) {
+    filterById(id: string) {
         return CoreAxiosInstance.get(`${END_POINT}${id}`);
     },
     update(payload: IUpdateUser) {
