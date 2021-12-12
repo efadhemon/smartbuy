@@ -1,9 +1,20 @@
+import "antd/dist/antd.variable.min.css";
 import "@shared/styles/app.scss";
-
 import App from "./App";
 import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
+import { ConfigProvider } from "antd";
+
+ConfigProvider.config({
+    theme: {
+        primaryColor: '#1890ff',
+        errorColor: '#ff4d4f',
+        warningColor: '#faad14',
+        successColor: '#52c41a',
+        infoColor: '#1890ff',
+    },
+});
 
 ReactDOM.render(
     <React.StrictMode>

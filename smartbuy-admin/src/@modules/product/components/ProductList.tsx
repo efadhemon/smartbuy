@@ -114,6 +114,7 @@ const ProductList = () => {
 
     return (
         <Table
+            bordered
             columns={columns}
             dataSource={dataSource}
             loading={isLoading}

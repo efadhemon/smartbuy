@@ -86,6 +86,7 @@ export const AdminList = () => {
 
     return (
         <Table
+            bordered
             columns={columns}
             dataSource={dataSource}
             loading={isLoading}

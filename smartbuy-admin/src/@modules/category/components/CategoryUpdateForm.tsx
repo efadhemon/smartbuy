@@ -121,7 +121,7 @@ const CategoryUpdateForm: React.FC<IFProps> = ({
                             <span className="text-red-400">*</span> Image
                         </p>
                         <div className="flex gap-4 items-center">
-                            <div className="image-preview">
+                            <div>
                                 <div className="ant-upload ant-upload-select-picture-card">
                                     <img
                                         src={image.url || initialValues.image}

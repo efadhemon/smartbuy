@@ -80,7 +80,6 @@ const Login = () => {
 							Sign in
 						</Button>
 					</Form.Item>
-					{/* Or <a href="/">register now!</a> */}
 				</Form>
 			</Card>
 		</div>

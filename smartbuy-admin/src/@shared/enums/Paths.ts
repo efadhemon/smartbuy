@@ -28,4 +28,7 @@ export enum Paths {
 
     //Banners
     Banners = "/banners",
+
+    // Orders
+    Orders = "/orders"
 }

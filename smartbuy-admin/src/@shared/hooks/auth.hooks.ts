@@ -6,10 +6,14 @@ import { useMutation } from "react-query";
 export const useAuth = () => {
     const loginFn = useMutation(AuthService.login, {
         onSuccess: (res) => {
-            if (res) {
-                storage.setToken(res.data);
-                notification.success({ message: "Auth Login Success" });
+            if (res.data.success) {
+                storage.setToken(res.data?.payload?.token);
+                notification.success({ message: res.data?.message });
                 window.location.reload();
+            } else {
+                notification.error({
+                    message: res.data?.message || "Something is wrong",
+                });
             }
         },
     });
@@ -18,11 +22,8 @@ export const useAuth = () => {
         window.location.assign(window.location.origin as unknown as string);
     };
 
-    const loadUserFn = () => {};
-
     return {
         loginFn,
         logoutFn,
-        loadUserFn,
     };
 };

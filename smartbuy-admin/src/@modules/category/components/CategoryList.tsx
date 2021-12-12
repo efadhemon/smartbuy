@@ -32,6 +32,7 @@ const CategoryList = () => {
             title: "Image",
             dataIndex: "image",
             key: "image",
+            width: 120,
             render: (image: any) => (
                 <a href={image} target="_blank" rel="noreferrer">
                     <img
@@ -86,6 +87,7 @@ const CategoryList = () => {
 
     return (
         <Table
+            bordered
             columns={columns}
             dataSource={dataSource}
             loading={isLoading}

@@ -1,9 +1,8 @@
-import { Avatar, Button, Layout, Menu, Typography } from "antd";
+import { Button, Layout, Menu } from "antd";
 import {
     MenuFoldOutlined,
     MenuUnfoldOutlined,
     PoweroffOutlined,
-    UserOutlined,
 } from "@ant-design/icons";
 import React, { useState } from "react";
 
@@ -12,9 +11,13 @@ import { Paths } from "@shared/enums";
 import { useNavigate } from "react-router-dom";
 import { useResponsive } from "ahooks";
 import { useAuth } from "@shared/hooks";
+import { AiOutlineBorderlessTable, AiOutlineUnorderedList, AiOutlineWifi } from "react-icons/ai";
+import { HiOutlineUsers } from "react-icons/hi";
+import { BiCategory } from "react-icons/bi";
+import { MdProductionQuantityLimits } from "react-icons/md";
 
 const { Header, Sider, Content } = Layout;
-const { Title, Text } = Typography;
+
 interface IFProps {
     children: any;
 }
@@ -26,7 +29,6 @@ const AppLayout: React.FC<IFProps> = ({ children }) => {
     let pathname = window.location.pathname;
     const styles = {
         sider: {
-            background: "#fff",
             boxShadow: "0 0 20px #0815420d",
             borderRight: "1px solid #ecf3fa",
             overflow: "auto",
@@ -110,93 +112,67 @@ const AppLayout: React.FC<IFProps> = ({ children }) => {
                         />
                     )}
                 </div>
-                <div
-                    style={{
-                        marginTop: 30,
-                        marginBottom: 15,
-                    }}
-                >
-                    {isCollapsed ? (
-                        <div
-                            style={{
-                                display: "flex",
-                                justifyContent: "center",
-                            }}
-                        >
-                            <Avatar
-                                src={`https://i.ibb.co/LNCj9Fd/mostbeautiful.jpg`}
-                            />
-                        </div>
-                    ) : (
-                        <div
-                            style={{
-                                display: "flex",
-                                justifyContent: "flex-start",
-                                alignItems: "center",
-                                paddingLeft: 10,
-                            }}
-                        >
-                            <Avatar
-                                size="large"
-                                src={`https://i.ibb.co/LNCj9Fd/mostbeautiful.jpg`}
-                            />
-                            <div style={{ flex: 1, marginLeft: 15 }}>
-                                <Text type="secondary">Welcome,</Text>
-                                <Title
-                                    style={{
-                                        fontSize: 14,
-                                        textTransform: "capitalize",
-                                        margin: 0,
-                                    }}
-                                    level={5}
-                                >
-                                    Econ
-                                </Title>
-                            </div>
-                        </div>
-                    )}
-                </div>
 
                 <Menu
-                    theme="light"
+                    theme="dark"
                     mode="inline"
                     defaultSelectedKeys={[String(pathname)]}
                     defaultOpenKeys={[String(pathname)]}
                 >
                     <Menu.Item
-                        icon={<UserOutlined />}
+                        icon={<AiOutlineWifi />}
                         onClick={() => navigate(Paths.Admin, { replace: true })}
                         key={Paths.Admin}
                     >
-                        Admin
+                        Admins
                     </Menu.Item>
 
                     <Menu.Item
-                        icon={<UserOutlined />}
+                        icon={<HiOutlineUsers />}
                         onClick={() => navigate(Paths.User, { replace: true })}
                         key={Paths.User}
                     >
-                        User
+                        Users
                     </Menu.Item>
 
                     <Menu.Item
-                        icon={<UserOutlined />}
+                        icon={<BiCategory />}
                         onClick={() =>
                             navigate(Paths.Category, { replace: true })
                         }
                         key={Paths.Category}
                     >
-                        Category
+                        Categories
                     </Menu.Item>
 
                     <Menu.Item
-                        icon={<UserOutlined />}
+                        icon={<MdProductionQuantityLimits />}
                         onClick={() =>
                             navigate(Paths.Product, { replace: true })
                         }
                         key={Paths.Product}
                     >
-                        Product
+                        Products
+                    </Menu.Item>
+
+                    <Menu.Item
+                        icon={<AiOutlineBorderlessTable />}
+                        onClick={() =>
+                            navigate(Paths.Banners, { replace: true })
+                        }
+                        key={Paths.Banners}
+                    >
+                        Banners
+                    </Menu.Item>
+
+                    <Menu.Item
+                        icon={<AiOutlineUnorderedList />}
+                        onClick={() =>
+                            navigate(Paths.Orders, { replace: true })
+                        }
+                        key={Paths.Orders}
+                    >
+                        Orders
                     </Menu.Item>
                 </Menu>
             </Sider>
