@@ -1,14 +1,12 @@
-import { AppProvider } from "@shared/context"
-import AppRoutes from "@shared/routes"
-import React from "react"
-import 'draft-js/dist/Draft.css';
+import { AppProvider } from "@shared/context";
+import AppRoutes from "@shared/routes";
 
 const App = () => {
-	return (
-		<AppProvider>
-			<AppRoutes />
-		</AppProvider>
-	)
-}
+    return (
+        <AppProvider>
+            <AppRoutes />
+        </AppProvider>
+    );
+};
 
-export default App
+export default App;

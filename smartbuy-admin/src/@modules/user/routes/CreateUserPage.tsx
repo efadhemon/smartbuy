@@ -3,7 +3,6 @@ import { notification, PageHeader } from "antd";
 import { Paths } from "@shared/enums";
 import CreateUserForm from "../components/CreateUserForm";
 import { useNavigate } from "react-router-dom";
-import { Authorization } from "@modules/auth";
 import { useCreateUser } from "@shared/hooks";
 
 export const CreateUserPage = () => {
@@ -29,12 +28,11 @@ export const CreateUserPage = () => {
     });
 
     return (
-        <Authorization allowedAccess={["UserCreate"]}>
-            <PageHeader onBack={() => navigate(-1)} title="Create User" />
+        <PageHeader onBack={() => navigate(-1)} title="Create User">
             <CreateUserForm
                 isLoading={createUserMutation.isLoading}
                 onFinish={(values) => createUserMutation.mutateAsync(values)}
             />
-        </Authorization>
+        </PageHeader>
     );
 };

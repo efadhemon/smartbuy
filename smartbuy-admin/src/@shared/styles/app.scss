@@ -1,0 +1,21 @@
+@import "./themes/index.scss";
+@import "./vendors/tailwind.css";
+@import "./pages/index.scss";
+
+// ant table customization
+.ant-table-thead {
+    tr {
+        th {
+            &:last-child {
+                text-align: right;
+                padding-right: 80px;
+            }
+        }
+    }
+}
+
+.ant-table-cell {
+    &:last-child {
+        text-align: right;
+    }
+}

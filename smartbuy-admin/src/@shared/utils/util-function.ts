@@ -1,4 +1,3 @@
-// import { IBaseFilter } from "@shared/interfaces"
 
 //base filter query utils
 export const concatFilterQuery = (options: any): string => {
@@ -42,7 +41,7 @@ export const storage = {
         localStorage.setItem(key, JSON.stringify(data));
     },
 
-    getDate(key: string) {
+    getData(key: string) {
         if (!window.localStorage || !window.JSON || !key) {
             return;
         }
@@ -62,6 +61,7 @@ export const storage = {
         localStorage.removeItem(key);
     },
 };
+
 export const methodSuccessMessage = (
     method: "POST" | "PUT" | "DELETE" | string
 ): string => {

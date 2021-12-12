@@ -1,3 +1,2 @@
-export * from "./interfaces"
-export * from "./lib"
-export * from "./routes"
+export * from "./interfaces";
+export * from "./routes";

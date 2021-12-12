@@ -1,4 +1,3 @@
-import { Authorization } from "@modules/auth";
 import { Paths } from "@shared/enums";
 import { useCategory, useUpdateCategory } from "@shared/hooks";
 import { Purify } from "@shared/utils";
@@ -32,12 +31,8 @@ const CategoryUpdatePage = () => {
     });
 
     return (
-        <Authorization allowedAccess={["CategoryModify"]}>
-            <Purify loading={isLoading} empty={false}>
-                <PageHeader
-                    onBack={() => navigate(-1)}
-                    title="Update Category"
-                />
+        <Purify loading={isLoading} empty={false}>
+            <PageHeader onBack={() => navigate(-1)} title="Update Category">
                 <CategoryUpdateForm
                     initialValues={data?.data?.payload}
                     isLoading={updateCategory.isLoading}
@@ -45,8 +40,8 @@ const CategoryUpdatePage = () => {
                         updateCategory.mutateAsync({ ...values, id })
                     }
                 />
-            </Purify>
-        </Authorization>
+            </PageHeader>
+        </Purify>
     );
 };
 

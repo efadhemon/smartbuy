@@ -1,4 +1,3 @@
-import { Authorization } from "@modules/auth";
 import { Paths } from "@shared/enums";
 import { useProduct, useUpdateProduct } from "@shared/hooks";
 import { Purify } from "@shared/utils";
@@ -32,12 +31,8 @@ const ProductUpdatePage = () => {
     });
 
     return (
-        <Authorization allowedAccess={["ProductModify"]}>
-            <Purify loading={isLoading} empty={false}>
-                <PageHeader
-                    onBack={() => navigate(-1)}
-                    title="Product Update"
-                />
+        <Purify loading={isLoading} empty={false}>
+            <PageHeader onBack={() => navigate(-1)} title="Product Update">
                 <ProductUpdateForm
                     initialValues={data?.data?.payload}
                     isLoading={productUpdateMutation.isLoading}
@@ -45,8 +40,8 @@ const ProductUpdatePage = () => {
                         productUpdateMutation.mutateAsync({ ...values, id })
                     }
                 />
-            </Purify>
-        </Authorization>
+            </PageHeader>
+        </Purify>
     );
 };
 

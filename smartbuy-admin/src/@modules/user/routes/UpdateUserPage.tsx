@@ -1,4 +1,3 @@
-import { Authorization } from "@modules/auth";
 import { Paths } from "@shared/enums";
 import { useUpdateUser, useUser } from "@shared/hooks";
 import { Purify } from "@shared/utils";
@@ -31,9 +30,8 @@ export const UpdateUserPage = () => {
     });
 
     return (
-        <Authorization allowedAccess={["UserModify"]}>
-            <Purify loading={isLoading} empty={false}>
-                <PageHeader onBack={() => navigate(-1)} title="Update User" />
+        <Purify loading={isLoading} empty={false}>
+            <PageHeader onBack={() => navigate(-1)} title="Update User">
                 <UpdateUserForm
                     initialValues={data?.data?.payload}
                     isLoading={updateUserMutation.isLoading}
@@ -41,7 +39,7 @@ export const UpdateUserPage = () => {
                         updateUserMutation.mutateAsync({ ...values, id })
                     }
                 />
-            </Purify>
-        </Authorization>
+            </PageHeader>
+        </Purify>
     );
 };

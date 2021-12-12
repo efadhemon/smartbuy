@@ -1,6 +1,6 @@
-import { Authorization } from "@modules/auth";
 import { Paths } from "@shared/enums";
 import { useCreateProduct } from "@shared/hooks";
+import { ICreateProduct } from "@shared/interfaces";
 import { notification, PageHeader } from "antd";
 import { AxiosResponse } from "axios";
 import { useNavigate } from "react-router-dom";
@@ -29,13 +29,12 @@ const ProductCreatePage = () => {
     });
 
     return (
-        <Authorization allowedAccess={["ProductCreate"]}>
-            <PageHeader onBack={() => navigate(-1)} title="Create Product" />
+        <PageHeader onBack={() => navigate(-1)} title="Create Product">
             <ProductCreateForm
                 isLoading={createProductMutation.isLoading}
-                onFinish={(values) => createProductMutation.mutateAsync(values)}
+                onFinish={(values: ICreateProduct) => createProductMutation.mutateAsync(values)}
             />
-        </Authorization>
+        </PageHeader>
     );
 };
 

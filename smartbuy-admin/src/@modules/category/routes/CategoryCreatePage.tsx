@@ -1,6 +1,6 @@
-import { Authorization } from "@modules/auth";
 import { Paths } from "@shared/enums";
 import { useCreateCategory } from "@shared/hooks";
+import { ICreateCategory } from "@shared/interfaces";
 import { notification, PageHeader } from "antd";
 import { AxiosResponse } from "axios";
 import { useNavigate } from "react-router-dom";
@@ -29,15 +29,14 @@ const CategoryCreatePage = () => {
     });
 
     return (
-        <Authorization allowedAccess={["CategoryCreate"]}>
-            <PageHeader onBack={() => navigate(-1)} title="Create Category" />
+        <PageHeader onBack={() => navigate(-1)} title="Create Category">
             <CategoryCreateForm
                 isLoading={createCategoryMutation.isLoading}
-                onFinish={(values) =>
+                onFinish={(values: ICreateCategory) =>
                     createCategoryMutation.mutateAsync(values)
                 }
             />
-        </Authorization>
+        </PageHeader>
     );
 };
 

@@ -3,7 +3,6 @@ import { notification, PageHeader } from "antd";
 import { Paths } from "@shared/enums";
 import CreateAdminForm from "../components/CreateAdminForm";
 import { useNavigate } from "react-router-dom";
-import { Authorization } from "@modules/auth";
 import { useCreateAdmin } from "@shared/hooks";
 
 const AdminCreatePage = () => {
@@ -29,13 +28,12 @@ const AdminCreatePage = () => {
     });
 
     return (
-        <Authorization allowedAccess={["AdminCreate"]}>
-            <PageHeader onBack={() => navigate(-1)} title="Create Admin" />
+        <PageHeader onBack={() => navigate(-1)} title="Create Admin">
             <CreateAdminForm
                 isLoading={createAdmin.isLoading}
                 onFinish={(values) => createAdmin.mutateAsync(values)}
             />
-        </Authorization>
+        </PageHeader>
     );
 };
 

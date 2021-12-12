@@ -3,15 +3,6 @@ export interface IBaseFilter {
   name?: string;
   page?: number;
   take?: number;
-  between?: string;
-  before?: string;
-  after?: string;
-  fetchAll?: string | boolean;
-  single?: boolean;
-  selects?: string[];
-  relations?: string[];
-  order?: ['name' | 'createdAt', 'ASC' | 'DSC'];
-  owner?: string;
 }
 
 export interface IBaseResponse {
@@ -20,12 +11,10 @@ export interface IBaseResponse {
   success?: boolean;
 }
 export interface IBaseFilterPayload {
-  data: any[];
+  message?: string;
+  payload?: any;
+  success?: boolean;
   page?: number;
   take?: number;
   total?: number;
-}
-export interface IOption {
-  label: string;
-  value: string;
 }

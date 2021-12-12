@@ -1,4 +1,3 @@
-import { Authorization } from "@modules/auth";
 import { Paths } from "@shared/enums";
 import { useAdmin, useUpdateAdmin } from "@shared/hooks";
 import { Purify } from "@shared/utils";
@@ -31,9 +30,8 @@ const AdminUpdatePage = () => {
     });
 
     return (
-        <Authorization allowedAccess={["AdminModify"]}>
-            <Purify loading={isLoading} empty={false}>
-                <PageHeader onBack={() => navigate(-1)} title="Update Admin" />
+        <Purify loading={isLoading} empty={false}>
+            <PageHeader onBack={() => navigate(-1)} title="Update Admin">
                 <UpdateAdminForm
                     initialValues={data?.data?.payload}
                     isLoading={updateAdmin.isLoading}
@@ -41,8 +39,8 @@ const AdminUpdatePage = () => {
                         updateAdmin.mutateAsync({ ...values, id })
                     }
                 />
-            </Purify>
-        </Authorization>
+            </PageHeader>
+        </Purify>
     );
 };
 

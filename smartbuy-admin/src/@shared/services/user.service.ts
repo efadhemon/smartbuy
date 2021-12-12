@@ -1,13 +1,12 @@
 import { IBaseFilter, ICreateUser } from "@shared/interfaces";
-
-import { CoreAxiosInstance } from "./../config/axios/core-axios-instantance";
 import { IUpdateUser } from "../interfaces/user.interfaces";
 import { concatFilterQuery } from "@shared/utils";
+import { CoreAxiosInstance } from "@shared/config";
 
 const END_POINT: string = "/user/";
 
 export const UserService = {
-	NAME: END_POINT,
+    NAME: END_POINT,
     create(payload: ICreateUser) {
         return CoreAxiosInstance.post(END_POINT, payload);
     },
