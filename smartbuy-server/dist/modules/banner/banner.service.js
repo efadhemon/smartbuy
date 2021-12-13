@@ -39,32 +39,32 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var user_model_1 = __importDefault(require("./user.model"));
-var userService = {
-    create: function (user) { return __awaiter(void 0, void 0, void 0, function () {
+var banner_model_1 = __importDefault(require("./banner.model"));
+var BannerService = {
+    create: function (category) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            return [2 /*return*/, user_model_1.default.create(user)];
+            return [2 /*return*/, banner_model_1.default.create(category)];
         });
     }); },
     get: function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            return [2 /*return*/, user_model_1.default.find({})];
+            return [2 /*return*/, banner_model_1.default.find({})];
         });
     }); },
     getById: function (id) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            return [2 /*return*/, user_model_1.default.findById(id)];
+            return [2 /*return*/, banner_model_1.default.findById(id)];
         });
     }); },
-    updateById: function (id, data) { return __awaiter(void 0, void 0, void 0, function () {
+    updateByID: function (id, data) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            return [2 /*return*/, user_model_1.default.findByIdAndUpdate(id, data, { new: true })];
+            return [2 /*return*/, banner_model_1.default.findByIdAndUpdate(id, data, { new: true })];
         });
     }); },
     deleteById: function (id) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            return [2 /*return*/, user_model_1.default.findByIdAndDelete(id)];
+            return [2 /*return*/, banner_model_1.default.findByIdAndDelete(id)];
         });
     }); },
 };
-exports.default = userService;
+exports.default = BannerService;

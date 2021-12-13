@@ -7,9 +7,9 @@ var express_1 = __importDefault(require("express"));
 var product_controller_1 = __importDefault(require("../../modules/product/product.controller"));
 var productRouter = express_1.default.Router();
 // product routes
-productRouter.post("/", product_controller_1.default.createProduct);
-productRouter.get("/", product_controller_1.default.getProducts);
-productRouter.get("/:id", product_controller_1.default.getProductById);
-productRouter.put("/:id", product_controller_1.default.updateProductById);
-productRouter.delete("/:id", product_controller_1.default.deleteProductById);
+productRouter.post("/", product_controller_1.default.create);
+productRouter.get("/", product_controller_1.default.get);
+productRouter.get("/:id", product_controller_1.default.getById);
+productRouter.put("/:id", product_controller_1.default.updateById);
+productRouter.delete("/:id", product_controller_1.default.deleteById);
 exports.default = productRouter;

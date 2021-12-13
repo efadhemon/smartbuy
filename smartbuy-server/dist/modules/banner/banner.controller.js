@@ -39,32 +39,69 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var user_model_1 = __importDefault(require("./user.model"));
-var userService = {
-    create: function (user) { return __awaiter(void 0, void 0, void 0, function () {
+var responseData_1 = require("../../shared/utils/responseData");
+var banner_service_1 = __importDefault(require("./banner.service"));
+var bannerController = {
+    create: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var newBanner;
         return __generator(this, function (_a) {
-            return [2 /*return*/, user_model_1.default.create(user)];
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, banner_service_1.default.create(req.body)];
+                case 1:
+                    newBanner = _a.sent();
+                    return [2 /*return*/, res.status(200).send((0, responseData_1.responseData)(newBanner, req))];
+            }
         });
     }); },
-    get: function () { return __awaiter(void 0, void 0, void 0, function () {
+    get: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var banners;
         return __generator(this, function (_a) {
-            return [2 /*return*/, user_model_1.default.find({})];
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, banner_service_1.default.get()];
+                case 1:
+                    banners = _a.sent();
+                    return [2 /*return*/, res.status(200).send((0, responseData_1.responseData)(banners, req))];
+            }
         });
     }); },
-    getById: function (id) { return __awaiter(void 0, void 0, void 0, function () {
+    getById: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var id, banner;
         return __generator(this, function (_a) {
-            return [2 /*return*/, user_model_1.default.findById(id)];
+            switch (_a.label) {
+                case 0:
+                    id = req.params.id;
+                    return [4 /*yield*/, banner_service_1.default.getById(id)];
+                case 1:
+                    banner = _a.sent();
+                    return [2 /*return*/, res.status(200).send((0, responseData_1.responseData)(banner, req))];
+            }
         });
     }); },
-    updateById: function (id, data) { return __awaiter(void 0, void 0, void 0, function () {
+    updateByID: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var id, updatedBanner;
         return __generator(this, function (_a) {
-            return [2 /*return*/, user_model_1.default.findByIdAndUpdate(id, data, { new: true })];
+            switch (_a.label) {
+                case 0:
+                    id = req.params.id;
+                    return [4 /*yield*/, banner_service_1.default.updateByID(id, req.body)];
+                case 1:
+                    updatedBanner = _a.sent();
+                    return [2 /*return*/, res.status(200).send((0, responseData_1.responseData)(updatedBanner, req))];
+            }
         });
     }); },
-    deleteById: function (id) { return __awaiter(void 0, void 0, void 0, function () {
+    deleteById: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var id, deletedBanner;
         return __generator(this, function (_a) {
-            return [2 /*return*/, user_model_1.default.findByIdAndDelete(id)];
+            switch (_a.label) {
+                case 0:
+                    id = req.params.id;
+                    return [4 /*yield*/, banner_service_1.default.deleteById(id)];
+                case 1:
+                    deletedBanner = _a.sent();
+                    return [2 /*return*/, res.status(200).send((0, responseData_1.responseData)(deletedBanner, req))];
+            }
         });
     }); },
 };
-exports.default = userService;
+exports.default = bannerController;

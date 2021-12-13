@@ -7,9 +7,9 @@ var express_1 = __importDefault(require("express"));
 var admin_controller_1 = __importDefault(require("../../modules/admin/admin.controller"));
 var adminRouter = express_1.default.Router();
 // admin routes
-adminRouter.post("/", admin_controller_1.default.createAdmin);
-adminRouter.get("/", admin_controller_1.default.getAdmins);
-adminRouter.get("/:id", admin_controller_1.default.getAdminById);
-adminRouter.put("/:id", admin_controller_1.default.updateAdminById);
-adminRouter.delete("/:id", admin_controller_1.default.deleteAdminById);
+adminRouter.post("/", admin_controller_1.default.create);
+adminRouter.get("/", admin_controller_1.default.get);
+adminRouter.get("/:id", admin_controller_1.default.getById);
+adminRouter.put("/:id", admin_controller_1.default.updateById);
+adminRouter.delete("/:id", admin_controller_1.default.deleteById);
 exports.default = adminRouter;

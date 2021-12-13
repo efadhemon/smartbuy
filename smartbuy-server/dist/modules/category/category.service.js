@@ -40,36 +40,31 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var category_model_1 = __importDefault(require("./category.model"));
-var createCategory = function (category) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        return [2 /*return*/, category_model_1.default.create(category)];
-    });
-}); };
-var getCategories = function () { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        return [2 /*return*/, category_model_1.default.find({})];
-    });
-}); };
-var getCategoryById = function (categoryId) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        return [2 /*return*/, category_model_1.default.findById(categoryId)];
-    });
-}); };
-var updateCategoryById = function (categoryId, update) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        return [2 /*return*/, category_model_1.default.findByIdAndUpdate(categoryId, update, { new: true })];
-    });
-}); };
-var deleteCategoryById = function (categoryId) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        return [2 /*return*/, category_model_1.default.findByIdAndDelete(categoryId)];
-    });
-}); };
 var categoryService = {
-    createCategory: createCategory,
-    getCategories: getCategories,
-    getCategoryById: getCategoryById,
-    updateCategoryById: updateCategoryById,
-    deleteCategoryById: deleteCategoryById,
+    create: function (category) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            return [2 /*return*/, category_model_1.default.create(category)];
+        });
+    }); },
+    get: function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            return [2 /*return*/, category_model_1.default.find({})];
+        });
+    }); },
+    getById: function (id) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            return [2 /*return*/, category_model_1.default.findById(id)];
+        });
+    }); },
+    updateById: function (id, data) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            return [2 /*return*/, category_model_1.default.findByIdAndUpdate(id, data, { new: true })];
+        });
+    }); },
+    deleteById: function (id) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            return [2 /*return*/, category_model_1.default.findByIdAndDelete(id)];
+        });
+    }); },
 };
 exports.default = categoryService;

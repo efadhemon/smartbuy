@@ -40,36 +40,31 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var admin_model_1 = __importDefault(require("./admin.model"));
-var createAdmin = function (admin) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        return [2 /*return*/, admin_model_1.default.create(admin)];
-    });
-}); };
-var getAdmins = function () { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        return [2 /*return*/, admin_model_1.default.find({})];
-    });
-}); };
-var getAdminById = function (adminId) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        return [2 /*return*/, admin_model_1.default.findById(adminId)];
-    });
-}); };
-var updateAdminById = function (adminId, update) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        return [2 /*return*/, admin_model_1.default.findByIdAndUpdate(adminId, update, { new: true })];
-    });
-}); };
-var deleteAdminById = function (adminId) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        return [2 /*return*/, admin_model_1.default.findByIdAndDelete(adminId)];
-    });
-}); };
 var adminService = {
-    createAdmin: createAdmin,
-    getAdmins: getAdmins,
-    getAdminById: getAdminById,
-    updateAdminById: updateAdminById,
-    deleteAdminById: deleteAdminById,
+    create: function (admin) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            return [2 /*return*/, admin_model_1.default.create(admin)];
+        });
+    }); },
+    get: function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            return [2 /*return*/, admin_model_1.default.find({})];
+        });
+    }); },
+    getById: function (adminId) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            return [2 /*return*/, admin_model_1.default.findById(adminId)];
+        });
+    }); },
+    updateById: function (adminId, update) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            return [2 /*return*/, admin_model_1.default.findByIdAndUpdate(adminId, update, { new: true })];
+        });
+    }); },
+    deleteById: function (adminId) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            return [2 /*return*/, admin_model_1.default.findByIdAndDelete(adminId)];
+        });
+    }); },
 };
 exports.default = adminService;

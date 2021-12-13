@@ -41,73 +41,67 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var responseData_1 = require("../../shared/utils/responseData");
 var category_service_1 = __importDefault(require("./category.service"));
-var createCategory = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var newCategory;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4 /*yield*/, category_service_1.default.createCategory(req.body)];
-            case 1:
-                newCategory = _a.sent();
-                return [2 /*return*/, res.status(200).send((0, responseData_1.responseData)(newCategory))];
-        }
-    });
-}); };
-var getCategories = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var categories;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4 /*yield*/, category_service_1.default.getCategories()];
-            case 1:
-                categories = _a.sent();
-                return [2 /*return*/, res.send((0, responseData_1.responseData)(categories, req.query.page, req.query.take))];
-        }
-    });
-}); };
-var getCategoryById = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var categoryId, category;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                categoryId = req.params.id;
-                return [4 /*yield*/, category_service_1.default.getCategoryById(categoryId)];
-            case 1:
-                category = _a.sent();
-                return [2 /*return*/, res.send((0, responseData_1.responseData)(category))];
-        }
-    });
-}); };
-var updateCategoryById = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var categoryId, update, updatedCategory;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                categoryId = req.params.id;
-                update = req.body;
-                return [4 /*yield*/, category_service_1.default.updateCategoryById(categoryId, update)];
-            case 1:
-                updatedCategory = _a.sent();
-                return [2 /*return*/, res.send((0, responseData_1.responseData)(updatedCategory))];
-        }
-    });
-}); };
-var deleteCategoryById = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var categoryId, deletedCategory;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                categoryId = req.params.id;
-                return [4 /*yield*/, category_service_1.default.deleteCategoryById(categoryId)];
-            case 1:
-                deletedCategory = _a.sent();
-                return [2 /*return*/, res.send((0, responseData_1.responseData)(deletedCategory))];
-        }
-    });
-}); };
 var categoryController = {
-    createCategory: createCategory,
-    getCategories: getCategories,
-    getCategoryById: getCategoryById,
-    updateCategoryById: updateCategoryById,
-    deleteCategoryById: deleteCategoryById,
+    create: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var newCategory;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, category_service_1.default.create(req.body)];
+                case 1:
+                    newCategory = _a.sent();
+                    return [2 /*return*/, res.status(200).send((0, responseData_1.responseData)(newCategory, req))];
+            }
+        });
+    }); },
+    get: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var categories;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, category_service_1.default.get()];
+                case 1:
+                    categories = _a.sent();
+                    return [2 /*return*/, res.send((0, responseData_1.responseData)(categories, req))];
+            }
+        });
+    }); },
+    getById: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var id, category;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    id = req.params.id;
+                    return [4 /*yield*/, category_service_1.default.getById(id)];
+                case 1:
+                    category = _a.sent();
+                    return [2 /*return*/, res.send((0, responseData_1.responseData)(category, req))];
+            }
+        });
+    }); },
+    updateById: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var id, updatedCategory;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    id = req.params.id;
+                    return [4 /*yield*/, category_service_1.default.updateById(id, req.body)];
+                case 1:
+                    updatedCategory = _a.sent();
+                    return [2 /*return*/, res.send((0, responseData_1.responseData)(updatedCategory, req))];
+            }
+        });
+    }); },
+    deleteById: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var id, deletedCategory;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    id = req.params.id;
+                    return [4 /*yield*/, category_service_1.default.deleteById(id)];
+                case 1:
+                    deletedCategory = _a.sent();
+                    return [2 /*return*/, res.send((0, responseData_1.responseData)(deletedCategory, req))];
+            }
+        });
+    }); },
 };
 exports.default = categoryController;

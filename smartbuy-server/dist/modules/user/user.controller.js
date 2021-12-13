@@ -55,97 +55,91 @@ var bcryptjs_1 = __importDefault(require("bcryptjs"));
 var user_service_1 = __importDefault(require("./user.service"));
 var auth_validator_1 = require("../auth/auth.validator");
 var responseData_1 = require("../../shared/utils/responseData");
-var createUser = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var error, phoneExist, emailExist, salt, hashPassword, newUser, createdUser;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                error = (0, auth_validator_1.authValidation)({
-                    phone: req.body.phone,
-                    password: req.body.password,
-                }).error;
-                if (error)
-                    return [2 /*return*/, res.send({ message: error.details[0].message })];
-                return [4 /*yield*/, user_model_1.default.findOne({ phone: req.body.phone })];
-            case 1:
-                phoneExist = _a.sent();
-                if (phoneExist)
-                    return [2 /*return*/, res.send({ message: "Phone Number is already exits" })];
-                return [4 /*yield*/, user_model_1.default.findOne({ phone: req.body.email })];
-            case 2:
-                emailExist = _a.sent();
-                if (emailExist)
-                    return [2 /*return*/, res.send({ message: "Email is already exits" })];
-                return [4 /*yield*/, bcryptjs_1.default.genSalt(10)];
-            case 3:
-                salt = _a.sent();
-                return [4 /*yield*/, bcryptjs_1.default.hash(req.body.password, salt)];
-            case 4:
-                hashPassword = _a.sent();
-                newUser = __assign(__assign({}, req.body), { password: hashPassword });
-                return [4 /*yield*/, user_service_1.default.createUser(newUser)];
-            case 5:
-                createdUser = _a.sent();
-                return [2 /*return*/, res.status(200).send((0, responseData_1.responseData)(createdUser))];
-        }
-    });
-}); };
-var getUsers = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var users;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4 /*yield*/, user_service_1.default.getUsers()];
-            case 1:
-                users = _a.sent();
-                return [2 /*return*/, res.send((0, responseData_1.responseData)(users, req.query.page, req.query.take))];
-        }
-    });
-}); };
-var getUserById = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var userId, user;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                userId = req.params.id;
-                return [4 /*yield*/, user_service_1.default.getUserById(userId)];
-            case 1:
-                user = _a.sent();
-                return [2 /*return*/, res.send((0, responseData_1.responseData)(user))];
-        }
-    });
-}); };
-var updateUserById = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var userId, updatedData, user;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                userId = req.params.id;
-                updatedData = req.body;
-                return [4 /*yield*/, user_service_1.default.updateUserById(userId, updatedData)];
-            case 1:
-                user = _a.sent();
-                return [2 /*return*/, res.send((0, responseData_1.responseData)(user))];
-        }
-    });
-}); };
-var deleteUserById = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var userId, user;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                userId = req.params.id;
-                return [4 /*yield*/, user_service_1.default.deleteUserById(userId)];
-            case 1:
-                user = _a.sent();
-                return [2 /*return*/, res.send((0, responseData_1.responseData)(user))];
-        }
-    });
-}); };
 var userController = {
-    createUser: createUser,
-    getUsers: getUsers,
-    getUserById: getUserById,
-    updateUserById: updateUserById,
-    deleteUserById: deleteUserById,
+    create: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var error, phoneExist, emailExist, salt, hashPassword, newUser, createdUser;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    error = (0, auth_validator_1.authValidation)({
+                        phone: req.body.phone,
+                        password: req.body.password,
+                    }).error;
+                    if (error)
+                        return [2 /*return*/, res.send({ message: error.details[0].message })];
+                    return [4 /*yield*/, user_model_1.default.findOne({ phone: req.body.phone })];
+                case 1:
+                    phoneExist = _a.sent();
+                    if (phoneExist)
+                        return [2 /*return*/, res.send({ message: "Phone Number is already exits" })];
+                    return [4 /*yield*/, user_model_1.default.findOne({ phone: req.body.email })];
+                case 2:
+                    emailExist = _a.sent();
+                    if (emailExist)
+                        return [2 /*return*/, res.send({ message: "Email is already exits" })];
+                    return [4 /*yield*/, bcryptjs_1.default.genSalt(10)];
+                case 3:
+                    salt = _a.sent();
+                    return [4 /*yield*/, bcryptjs_1.default.hash(req.body.password, salt)];
+                case 4:
+                    hashPassword = _a.sent();
+                    newUser = __assign(__assign({}, req.body), { password: hashPassword });
+                    return [4 /*yield*/, user_service_1.default.create(newUser)];
+                case 5:
+                    createdUser = _a.sent();
+                    return [2 /*return*/, res.status(200).send((0, responseData_1.responseData)(createdUser, req))];
+            }
+        });
+    }); },
+    get: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var users;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, user_service_1.default.get()];
+                case 1:
+                    users = _a.sent();
+                    return [2 /*return*/, res.send((0, responseData_1.responseData)(users, req))];
+            }
+        });
+    }); },
+    getById: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var id, user;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    id = req.params.id;
+                    return [4 /*yield*/, user_service_1.default.getById(id)];
+                case 1:
+                    user = _a.sent();
+                    return [2 /*return*/, res.send((0, responseData_1.responseData)(user, req))];
+            }
+        });
+    }); },
+    updateById: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var id, updatedUser;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    id = req.params.id;
+                    return [4 /*yield*/, user_service_1.default.updateById(id, req.body)];
+                case 1:
+                    updatedUser = _a.sent();
+                    return [2 /*return*/, res.send((0, responseData_1.responseData)(updatedUser, req))];
+            }
+        });
+    }); },
+    deleteById: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var id, deletedUser;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    id = req.params.id;
+                    return [4 /*yield*/, user_service_1.default.deleteById(id)];
+                case 1:
+                    deletedUser = _a.sent();
+                    return [2 /*return*/, res.send((0, responseData_1.responseData)(deletedUser, req))];
+            }
+        });
+    }); },
 };
 exports.default = userController;

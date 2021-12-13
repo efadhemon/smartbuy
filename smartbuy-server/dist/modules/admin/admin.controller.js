@@ -55,98 +55,92 @@ var auth_validator_1 = require("../auth/auth.validator");
 var responseData_1 = require("../../shared/utils/responseData");
 var admin_model_1 = __importDefault(require("./admin.model"));
 var admin_service_1 = __importDefault(require("./admin.service"));
-var createAdmin = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var error, phoneExist, emailExist, salt, hashPassword, newAdmin, createdAdmin;
-    var _a;
-    return __generator(this, function (_b) {
-        switch (_b.label) {
-            case 0:
-                error = (0, auth_validator_1.authValidation)({
-                    phone: req.body.phone,
-                    password: req.body.password,
-                }).error;
-                if (error)
-                    return [2 /*return*/, res.send({ message: (_a = error === null || error === void 0 ? void 0 : error.details[0]) === null || _a === void 0 ? void 0 : _a.message })];
-                return [4 /*yield*/, admin_model_1.default.findOne({ phone: req.body.phone })];
-            case 1:
-                phoneExist = _b.sent();
-                if (phoneExist)
-                    return [2 /*return*/, res.send({ message: "Phone Number is already exits" })];
-                return [4 /*yield*/, admin_model_1.default.findOne({ phone: req.body.email })];
-            case 2:
-                emailExist = _b.sent();
-                if (emailExist)
-                    return [2 /*return*/, res.send({ message: "Email is already exits" })];
-                return [4 /*yield*/, bcryptjs_1.default.genSalt(10)];
-            case 3:
-                salt = _b.sent();
-                return [4 /*yield*/, bcryptjs_1.default.hash(req.body.password, salt)];
-            case 4:
-                hashPassword = _b.sent();
-                newAdmin = __assign(__assign({}, req.body), { password: hashPassword });
-                return [4 /*yield*/, admin_service_1.default.createAdmin(newAdmin)];
-            case 5:
-                createdAdmin = _b.sent();
-                return [2 /*return*/, res.status(200).send((0, responseData_1.responseData)(createdAdmin))];
-        }
-    });
-}); };
-var getAdmins = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var admins;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4 /*yield*/, admin_service_1.default.getAdmins()];
-            case 1:
-                admins = _a.sent();
-                return [2 /*return*/, res.send((0, responseData_1.responseData)(admins, req.query.page, req.query.take))];
-        }
-    });
-}); };
-var getAdminById = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var adminId, admin;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                adminId = req.params.id;
-                return [4 /*yield*/, admin_service_1.default.getAdminById(adminId)];
-            case 1:
-                admin = _a.sent();
-                return [2 /*return*/, res.send((0, responseData_1.responseData)(admin))];
-        }
-    });
-}); };
-var updateAdminById = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var adminId, updatedData, updatedAdmin;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                adminId = req.params.id;
-                updatedData = req.body;
-                return [4 /*yield*/, admin_service_1.default.updateAdminById(adminId, updatedData)];
-            case 1:
-                updatedAdmin = _a.sent();
-                return [2 /*return*/, res.send((0, responseData_1.responseData)(updatedAdmin))];
-        }
-    });
-}); };
-var deleteAdminById = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var adminId, deletedAdmin;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                adminId = req.params.id;
-                return [4 /*yield*/, admin_service_1.default.deleteAdminById(adminId)];
-            case 1:
-                deletedAdmin = _a.sent();
-                return [2 /*return*/, res.send((0, responseData_1.responseData)(deletedAdmin))];
-        }
-    });
-}); };
 var adminController = {
-    createAdmin: createAdmin,
-    getAdmins: getAdmins,
-    getAdminById: getAdminById,
-    updateAdminById: updateAdminById,
-    deleteAdminById: deleteAdminById,
+    create: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var error, phoneExist, emailExist, salt, hashPassword, newAdmin, createdAdmin;
+        var _a;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    error = (0, auth_validator_1.authValidation)({
+                        phone: req.body.phone,
+                        password: req.body.password,
+                    }).error;
+                    if (error)
+                        return [2 /*return*/, res.send({ message: (_a = error === null || error === void 0 ? void 0 : error.details[0]) === null || _a === void 0 ? void 0 : _a.message })];
+                    return [4 /*yield*/, admin_model_1.default.findOne({ phone: req.body.phone })];
+                case 1:
+                    phoneExist = _b.sent();
+                    if (phoneExist)
+                        return [2 /*return*/, res.send({ message: "Phone Number is already exits" })];
+                    return [4 /*yield*/, admin_model_1.default.findOne({ phone: req.body.email })];
+                case 2:
+                    emailExist = _b.sent();
+                    if (emailExist)
+                        return [2 /*return*/, res.send({ message: "Email is already exits" })];
+                    return [4 /*yield*/, bcryptjs_1.default.genSalt(10)];
+                case 3:
+                    salt = _b.sent();
+                    return [4 /*yield*/, bcryptjs_1.default.hash(req.body.password, salt)];
+                case 4:
+                    hashPassword = _b.sent();
+                    newAdmin = __assign(__assign({}, req.body), { password: hashPassword });
+                    return [4 /*yield*/, admin_service_1.default.create(newAdmin)];
+                case 5:
+                    createdAdmin = _b.sent();
+                    return [2 /*return*/, res.status(200).send((0, responseData_1.responseData)(createdAdmin, req))];
+            }
+        });
+    }); },
+    get: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var admins;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, admin_service_1.default.get()];
+                case 1:
+                    admins = _a.sent();
+                    return [2 /*return*/, res.send((0, responseData_1.responseData)(admins, req))];
+            }
+        });
+    }); },
+    getById: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var id, admin;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    id = req.params.id;
+                    return [4 /*yield*/, admin_service_1.default.getById(id)];
+                case 1:
+                    admin = _a.sent();
+                    return [2 /*return*/, res.send((0, responseData_1.responseData)(admin, req))];
+            }
+        });
+    }); },
+    updateById: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var id, updatedAdmin;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    id = req.params.id;
+                    return [4 /*yield*/, admin_service_1.default.updateById(id, req.body)];
+                case 1:
+                    updatedAdmin = _a.sent();
+                    return [2 /*return*/, res.send((0, responseData_1.responseData)(updatedAdmin, req))];
+            }
+        });
+    }); },
+    deleteById: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var id, deletedAdmin;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    id = req.params.id;
+                    return [4 /*yield*/, admin_service_1.default.deleteById(id)];
+                case 1:
+                    deletedAdmin = _a.sent();
+                    return [2 /*return*/, res.send((0, responseData_1.responseData)(deletedAdmin, req))];
+            }
+        });
+    }); },
 };
 exports.default = adminController;

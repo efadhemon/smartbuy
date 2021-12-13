@@ -40,36 +40,31 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var product_model_1 = __importDefault(require("./product.model"));
-var createProduct = function (product) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        return [2 /*return*/, product_model_1.default.create(product)];
-    });
-}); };
-var getProducts = function () { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        return [2 /*return*/, product_model_1.default.find({})];
-    });
-}); };
-var getProductById = function (productId) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        return [2 /*return*/, product_model_1.default.findById(productId)];
-    });
-}); };
-var updateProductById = function (productId, update) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        return [2 /*return*/, product_model_1.default.findByIdAndUpdate(productId, update, { new: true })];
-    });
-}); };
-var deleteProductById = function (productId) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        return [2 /*return*/, product_model_1.default.findByIdAndDelete(productId)];
-    });
-}); };
 var productService = {
-    createProduct: createProduct,
-    getProducts: getProducts,
-    getProductById: getProductById,
-    updateProductById: updateProductById,
-    deleteProductById: deleteProductById,
+    create: function (product) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            return [2 /*return*/, product_model_1.default.create(product)];
+        });
+    }); },
+    get: function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            return [2 /*return*/, product_model_1.default.find({})];
+        });
+    }); },
+    getById: function (id) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            return [2 /*return*/, product_model_1.default.findById(id)];
+        });
+    }); },
+    updateById: function (id, data) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            return [2 /*return*/, product_model_1.default.findByIdAndUpdate(id, data, { new: true })];
+        });
+    }); },
+    deleteById: function (id) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            return [2 /*return*/, product_model_1.default.findByIdAndDelete(id)];
+        });
+    }); },
 };
 exports.default = productService;

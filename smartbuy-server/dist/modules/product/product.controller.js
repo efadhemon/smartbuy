@@ -41,73 +41,67 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var responseData_1 = require("../../shared/utils/responseData");
 var product_service_1 = __importDefault(require("./product.service"));
-var createProduct = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var newProduct;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4 /*yield*/, product_service_1.default.createProduct(req.body)];
-            case 1:
-                newProduct = _a.sent();
-                return [2 /*return*/, res.status(200).send((0, responseData_1.responseData)(newProduct))];
-        }
-    });
-}); };
-var getProducts = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var products;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4 /*yield*/, product_service_1.default.getProducts()];
-            case 1:
-                products = _a.sent();
-                return [2 /*return*/, res.send((0, responseData_1.responseData)(products, req.query.page, req.query.take))];
-        }
-    });
-}); };
-var getProductById = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var productId, product;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                productId = req.params.id;
-                return [4 /*yield*/, product_service_1.default.getProductById(productId)];
-            case 1:
-                product = _a.sent();
-                return [2 /*return*/, res.send((0, responseData_1.responseData)(product))];
-        }
-    });
-}); };
-var updateProductById = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var productId, update, product;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                productId = req.params.id;
-                update = req.body;
-                return [4 /*yield*/, product_service_1.default.updateProductById(productId, update)];
-            case 1:
-                product = _a.sent();
-                return [2 /*return*/, res.send((0, responseData_1.responseData)(product))];
-        }
-    });
-}); };
-var deleteProductById = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var productId, product;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                productId = req.params.id;
-                return [4 /*yield*/, product_service_1.default.deleteProductById(productId)];
-            case 1:
-                product = _a.sent();
-                return [2 /*return*/, res.send((0, responseData_1.responseData)(product))];
-        }
-    });
-}); };
 var productController = {
-    createProduct: createProduct,
-    getProducts: getProducts,
-    getProductById: getProductById,
-    updateProductById: updateProductById,
-    deleteProductById: deleteProductById,
+    create: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var newProduct;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, product_service_1.default.create(req.body)];
+                case 1:
+                    newProduct = _a.sent();
+                    return [2 /*return*/, res.status(200).send((0, responseData_1.responseData)(newProduct, req))];
+            }
+        });
+    }); },
+    get: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var products;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, product_service_1.default.get()];
+                case 1:
+                    products = _a.sent();
+                    return [2 /*return*/, res.send((0, responseData_1.responseData)(products, req))];
+            }
+        });
+    }); },
+    getById: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var id, product;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    id = req.params.id;
+                    return [4 /*yield*/, product_service_1.default.getById(id)];
+                case 1:
+                    product = _a.sent();
+                    return [2 /*return*/, res.send((0, responseData_1.responseData)(product, req))];
+            }
+        });
+    }); },
+    updateById: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var id, updatedProduct;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    id = req.params.id;
+                    return [4 /*yield*/, product_service_1.default.updateById(id, req.body)];
+                case 1:
+                    updatedProduct = _a.sent();
+                    return [2 /*return*/, res.send((0, responseData_1.responseData)(updatedProduct, req))];
+            }
+        });
+    }); },
+    deleteById: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var id, deletedProduct;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    id = req.params.id;
+                    return [4 /*yield*/, product_service_1.default.deleteById(id)];
+                case 1:
+                    deletedProduct = _a.sent();
+                    return [2 /*return*/, res.send((0, responseData_1.responseData)(deletedProduct, req))];
+            }
+        });
+    }); },
 };
 exports.default = productController;

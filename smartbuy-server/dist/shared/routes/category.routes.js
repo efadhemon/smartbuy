@@ -7,9 +7,9 @@ var express_1 = __importDefault(require("express"));
 var category_controller_1 = __importDefault(require("../../modules/category/category.controller"));
 var categoryRouter = express_1.default.Router();
 // category routes
-categoryRouter.post("/", category_controller_1.default.createCategory);
-categoryRouter.get("/", category_controller_1.default.getCategories);
-categoryRouter.get("/:id", category_controller_1.default.getCategoryById);
-categoryRouter.put("/:id", category_controller_1.default.updateCategoryById);
-categoryRouter.delete("/:id", category_controller_1.default.deleteCategoryById);
+categoryRouter.post("/", category_controller_1.default.create);
+categoryRouter.get("/", category_controller_1.default.get);
+categoryRouter.get("/:id", category_controller_1.default.getById);
+categoryRouter.put("/:id", category_controller_1.default.updateById);
+categoryRouter.delete("/:id", category_controller_1.default.deleteById);
 exports.default = categoryRouter;
