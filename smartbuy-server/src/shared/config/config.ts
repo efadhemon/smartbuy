@@ -8,7 +8,7 @@ const config = {
         secret: process.env.TOKEN_SECRET || "gkfdvbklfbreriobrtbjrtjbtgdsg",
     },
     server: {
-        port: process.env.PORT || 3000,
+        port: process.env.PORT || 5000,
     },
     cloudinary:{
         cloud_name: process.env.CLOUDINARY_CLOUD_NAME,

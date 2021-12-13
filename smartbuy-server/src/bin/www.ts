@@ -13,7 +13,7 @@ const debug = require("debug")("smartbuy-server:server");
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(config.server.port || "3000");
+const port = normalizePort(config.server.port);
 app.set("port", port);
 
 /**
@@ -84,5 +84,5 @@ function onListening() {
     var addr = server.address();
     var bind = typeof addr === "string" ? "pipe " + addr : "port " + addr?.port;
     debug("Listening on " + bind);
-    console.log("Listening on " + bind);
+    console.log("Listening on " + `http://localhost:${port}`);
 }

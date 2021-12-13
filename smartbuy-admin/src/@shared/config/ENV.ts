@@ -1,3 +1,3 @@
 export const ENV = {
-	CORE_END_POINT: "https://smartbuy-server.herokuapp.com/",
+	CORE_END_POINT: "http://localhost:5000/api/v1/",
 }

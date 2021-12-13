@@ -8,11 +8,6 @@ import userRouter from "./user.routes";
 
 const indexRouter = express.Router();
 
-indexRouter.get("/", (req: Request, res: Response) => {
-    res.send("App is working.");
-});
-
-
 indexRouter.use("/auth", authRouter);
 indexRouter.use("/admin", adminRouter);
 indexRouter.use("/user", userRouter);
