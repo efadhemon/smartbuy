@@ -8,8 +8,8 @@ const bannerSchema = new Schema(
             type: String,
             required: true,
         },
-        url: {
-            type: String,
+        image: {
+            type: ["HERO_SLIDER" , "CAMPAIGN_SLIDER" , "OFFER_SLIDER"],
             required: true,
         },
         isActive: {
