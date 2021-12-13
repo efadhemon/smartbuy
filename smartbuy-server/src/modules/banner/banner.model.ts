@@ -4,16 +4,20 @@ const { Schema } = mongoose;
 
 const bannerSchema = new Schema(
     {
-        type: {
-            type:  ["HERO_SLIDER" , "CAMPAIGN_SLIDER" , "OFFER_SLIDER"],
-            required: true,
-        },
         image: {
             type: String,
             required: true,
         },
-        isActive: {
-            type: Boolean,
+        title: {
+            type: String,
+            required: true,
+        },
+        type: {
+            type:  String,
+            required: true,
+        },
+        url: {
+            type: String,
             required: true,
         },
     },

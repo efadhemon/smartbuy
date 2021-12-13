@@ -119,7 +119,7 @@ const CategoryCreateForm: React.FC<IFProps> = ({
                                 showUploadList={true}
                                 maxCount={1}
                                 onPreview={() => window.open(image.url)}
-                                action={`${ENV.CORE_END_POINT}upload/images`}
+                                action={`${ENV.CORE_END_POINT}upload/image`}
                                 beforeUpload={beforeUpload}
                                 onChange={handleImageUpload}
                             >

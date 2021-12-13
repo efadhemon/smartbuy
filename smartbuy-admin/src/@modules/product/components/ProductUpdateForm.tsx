@@ -90,14 +90,6 @@ const ProductUpdateForm: React.FC<IFProps> = ({
             url: [...initialValues.images],
             isLoading: false,
         });
-
-        // setEditorState(
-        //     EditorState.createWithContent(
-        //         ContentState.createFromBlockArray(
-        //             convertFromHTML(initialValues.specification)
-        //         )
-        //     )
-        // );
     }, [form, initialValues]);
 
     return (
@@ -325,7 +317,7 @@ const ProductUpdateForm: React.FC<IFProps> = ({
                                         onPreview={(file) =>
                                             setPreviewImage(file.url)
                                         }
-                                        action={`${ENV.CORE_END_POINT}upload/images`}
+                                        action={`${ENV.CORE_END_POINT}upload/image`}
                                         beforeUpload={beforeUpload}
                                         onChange={handleImageUpload}
                                     >

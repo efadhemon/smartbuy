@@ -13,17 +13,15 @@ const CategoryUpdatePage = () => {
 
     const updateCategory = useUpdateCategory({
         config: {
-            onSuccess: (data: AxiosResponse) => {
-                if (data?.data?.success) {
+            onSuccess: (res: AxiosResponse) => {
+                if (res?.data?.success) {
                     navigate(Paths.CategoryList);
                     notification.success({
-                        type: "success",
-                        message: "Category update successfully",
+                        message: res.data?.message,
                     });
                 } else {
                     notification.error({
-                        type: "error",
-                        message: data?.data?.message || "Something is wrong!",
+                        message: res?.data?.message || "Something is wrong",
                     });
                 }
             },

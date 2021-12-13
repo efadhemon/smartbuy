@@ -1,5 +1,4 @@
 @import "./vendors/tailwind.css";
-@import "./pages/index.scss";
 
 // ant table customization
 .ant-table-thead {
@@ -16,5 +15,35 @@
 .ant-table-cell {
     &:last-child {
         text-align: right;
+    }
+}
+
+
+
+// banner page css
+.banner-create-form {
+    .ant-upload-picture-card-wrapper {
+        .ant-upload.ant-upload-select-picture-card {
+            width: 100%;
+            height: 200px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .ant-form {
+        .ant-form-item {
+            margin: 0;
+            margin-bottom: 10px;
+            .ant-form-item-label {
+                padding: 0;
+            }
+        }
     }
 }

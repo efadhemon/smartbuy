@@ -40,7 +40,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var banner_model_1 = __importDefault(require("./banner.model"));
-var BannerService = {
+var bannerService = {
     create: function (category) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             return [2 /*return*/, banner_model_1.default.create(category)];
@@ -67,4 +67,4 @@ var BannerService = {
         });
     }); },
 };
-exports.default = BannerService;
+exports.default = bannerService;

@@ -32,11 +32,11 @@ const CategoryList = () => {
             title: "Image",
             dataIndex: "image",
             key: "image",
-            width: 120,
+            width: 100,
             render: (image: any) => (
                 <a href={image} target="_blank" rel="noreferrer">
                     <img
-                        style={{ width: 80, height: 80, borderRadius: 5 }}
+                        style={{ width: 50, height: 50, margin: "auto" }}
                         src={image}
                         alt=""
                     />

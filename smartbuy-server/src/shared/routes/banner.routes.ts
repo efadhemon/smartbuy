@@ -3,7 +3,7 @@ import bannerController from "../../modules/banner/banner.controller";
 
 const bannerRouter = express.Router();
 
-// admin routes
+// banner routes
 bannerRouter.post("/", bannerController.create);
 bannerRouter.get("/", bannerController.get);
 bannerRouter.get("/:id", bannerController.getById);

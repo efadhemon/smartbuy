@@ -10,17 +10,15 @@ export const CreateUserPage = () => {
 
     const createUserMutation = useCreateUser({
         config: {
-            onSuccess: (data: AxiosResponse) => {
-                if (data?.data?.success) {
+            onSuccess: (res: AxiosResponse) => {
+                if (res?.data?.success) {
                     navigate(Paths.UserList);
                     notification.success({
-                        type: "success",
-                        message: "User created successfully",
+                        message: res.data?.message,
                     });
                 } else {
                     notification.error({
-                        type: "error",
-                        message: data?.data?.message || "Something is wrong",
+                        message: res?.data?.message || "Something is wrong",
                     });
                 }
             },

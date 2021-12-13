@@ -27,7 +27,8 @@ export enum Paths {
     ProductUpdate = "/product/update",
 
     //Banners
-    Banners = "/banners",
+    Banner = "/banner",
+    BannerList = "/banner/list",
 
     // Orders
     Orders = "/orders"

@@ -267,7 +267,7 @@ const ProductCreateForm: React.FC<IFProps> = ({
                                 onPreview={({ response }) =>
                                     setPreviewImage(response?.payload?.imageUrl)
                                 }
-                                action={`${ENV.CORE_END_POINT}upload/images`}
+                                action={`${ENV.CORE_END_POINT}upload/image`}
                                 beforeUpload={beforeUpload}
                                 onChange={handleImageUpload}
                             >

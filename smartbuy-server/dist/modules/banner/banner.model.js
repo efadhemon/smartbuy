@@ -6,16 +6,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var mongoose_1 = __importDefault(require("mongoose"));
 var Schema = mongoose_1.default.Schema;
 var bannerSchema = new Schema({
-    type: {
-        type: ["HERO_SLIDER", "CAMPAIGN_SLIDER", "OFFER_SLIDER"],
-        required: true,
-    },
     image: {
         type: String,
         required: true,
     },
-    isActive: {
-        type: Boolean,
+    title: {
+        type: String,
+        required: true,
+    },
+    type: {
+        type: String,
+        required: true,
+    },
+    url: {
+        type: String,
         required: true,
     },
 }, {

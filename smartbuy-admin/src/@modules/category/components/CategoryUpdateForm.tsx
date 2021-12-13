@@ -136,7 +136,7 @@ const CategoryUpdateForm: React.FC<IFProps> = ({
                                     className="avatar-uploader"
                                     showUploadList={false}
                                     onPreview={() => window.open(image.url)}
-                                    action={`${ENV.CORE_END_POINT}upload/images`}
+                                    action={`${ENV.CORE_END_POINT}upload/image`}
                                     beforeUpload={beforeUpload}
                                     onChange={handleImageUpload}
                                 >

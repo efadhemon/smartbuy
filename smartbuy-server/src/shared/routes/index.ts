@@ -14,7 +14,7 @@ indexRouter.use("/admin", adminRouter);
 indexRouter.use("/user", userRouter);
 indexRouter.use("/category", categoryRouter);
 indexRouter.use("/product", productRouter);
+indexRouter.use("/banner", bannerRouter);
 indexRouter.use("/upload", imageRouter);
-imageRouter.use("/banner", bannerRouter);
 
 export default indexRouter;

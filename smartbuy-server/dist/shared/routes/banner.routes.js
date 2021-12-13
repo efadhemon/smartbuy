@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
 var banner_controller_1 = __importDefault(require("../../modules/banner/banner.controller"));
 var bannerRouter = express_1.default.Router();
-// admin routes
+// banner routes
 bannerRouter.post("/", banner_controller_1.default.create);
 bannerRouter.get("/", banner_controller_1.default.get);
 bannerRouter.get("/:id", banner_controller_1.default.getById);

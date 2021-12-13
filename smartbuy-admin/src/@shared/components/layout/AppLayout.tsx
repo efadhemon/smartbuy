@@ -158,9 +158,9 @@ const AppLayout: React.FC<IFProps> = ({ children }) => {
                     <Menu.Item
                         icon={<AiOutlineBorderlessTable />}
                         onClick={() =>
-                            navigate(Paths.Banners, { replace: true })
+                            navigate(Paths.Banner, { replace: true })
                         }
-                        key={Paths.Banners}
+                        key={Paths.Banner}
                     >
                         Banners
                     </Menu.Item>

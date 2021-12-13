@@ -17,6 +17,6 @@ indexRouter.use("/admin", admin_routes_1.default);
 indexRouter.use("/user", user_routes_1.default);
 indexRouter.use("/category", category_routes_1.default);
 indexRouter.use("/product", product_routes_1.default);
+indexRouter.use("/banner", banner_routes_1.default);
 indexRouter.use("/upload", image_routes_1.default);
-image_routes_1.default.use("/banner", banner_routes_1.default);
 exports.default = indexRouter;

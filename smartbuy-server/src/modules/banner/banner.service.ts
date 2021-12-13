@@ -1,7 +1,7 @@
 import IBanner from "./banner.interface";
 import Banner from "./banner.model";
 
-const BannerService = {
+const bannerService = {
     create: async (category: IBanner) => {
         return Banner.create(category);
     },
@@ -19,4 +19,4 @@ const BannerService = {
     },
 };
 
-export default BannerService;
+export default bannerService;

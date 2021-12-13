@@ -5,6 +5,7 @@ import { UserRoutes } from "@modules/user";
 import { CategoryRoutes } from "@modules/category";
 import { AdminRoutes } from "@modules/admin";
 import { ProductRoutes } from "@modules/product";
+import { BannerRoutes } from "@modules/banner";
 
 const App = () => {
     return (
@@ -31,6 +32,10 @@ const ProtectedRoutes = () => {
         {
             path: "product",
             children: ProductRoutes,
+        },
+        {
+            path: "banner",
+            children: BannerRoutes,
         },
     ];
 

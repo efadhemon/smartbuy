@@ -52,10 +52,7 @@ var imageController = {
                     res.send({
                         success: true,
                         message: "image uploaded successfully",
-                        payload: {
-                            url: image.secure_url,
-                            cloudinary_id: image.public_id,
-                        },
+                        url: image.secure_url,
                     });
                     return [2 /*return*/];
             }
