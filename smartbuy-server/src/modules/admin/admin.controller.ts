@@ -31,18 +31,18 @@ const createAdmin = async (req: Request, res: Response) => {
     };
 
     const createdAdmin = await adminService.createAdmin(newAdmin);
-    return res.status(200).send(responseData(createdAdmin));
+    return res.status(200).send(responseData(createdAdmin, req));
 };
 
 const getAdmins = async (req: Request, res: Response) => {
     const admins = await adminService.getAdmins();
-    return res.send(responseData(admins, req.query.page, req.query.take));
+    return res.send(responseData(admins, req));
 };
 
 const getAdminById = async (req: Request, res: Response) => {
     const adminId = req.params.id;
     const admin = await adminService.getAdminById(adminId);
-    return res.send(responseData(admin));
+    return res.send(responseData(admin, req));
 };
 
 const updateAdminById = async (req: Request, res: Response) => {
@@ -52,13 +52,13 @@ const updateAdminById = async (req: Request, res: Response) => {
         adminId,
         updatedData
     );
-    return res.send(responseData(updatedAdmin));
+    return res.send(responseData(updatedAdmin, req));
 };
 
 const deleteAdminById = async (req: Request, res: Response) => {
     const adminId = req.params.id;
     const deletedAdmin = await adminService.deleteAdminById(adminId);
-    return res.send(responseData(deletedAdmin));
+    return res.send(responseData(deletedAdmin, req));
 };
 
 const adminController = {

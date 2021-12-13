@@ -31,31 +31,31 @@ const createUser = async (req: Request, res: Response) => {
     };
 
     const createdUser = await userService.createUser(newUser);
-    return res.status(200).send(responseData(createdUser));
+    return res.status(200).send(responseData(createdUser, req));
 };
 
 const getUsers = async (req: Request, res: Response) => {
     const users = await userService.getUsers();
-    return res.send(responseData(users, req.query.page, req.query.take));
+    return res.send(responseData(users, req));
 };
 
 const getUserById = async (req: Request, res: Response) => {
     const userId = req.params.id;
     const user = await userService.getUserById(userId);
-    return res.send(responseData(user));
+    return res.send(responseData(user, req));
 };
 
 const updateUserById = async (req: Request, res: Response) => {
     const userId = req.params.id;
     const updatedData = req.body;
     const user = await userService.updateUserById(userId, updatedData);
-    return res.send(responseData(user));
+    return res.send(responseData(user, req));
 };
 
 const deleteUserById = async (req: Request, res: Response) => {
     const userId = req.params.id;
     const user = await userService.deleteUserById(userId);
-    return res.send(responseData(user));
+    return res.send(responseData(user, req));
 };
 
 const userController = {
