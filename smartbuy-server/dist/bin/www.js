@@ -14,7 +14,7 @@ var debug = require("debug")("smartbuy-server:server");
 /**
  * Get port from environment and store in Express.
  */
-var port = normalizePort(config_1.default.server.port || "3000");
+var port = normalizePort(config_1.default.server.port);
 app_1.default.set("port", port);
 /**
  * Create HTTP server.
@@ -70,4 +70,5 @@ function onListening() {
     var addr = server.address();
     var bind = typeof addr === "string" ? "pipe " + addr : "port " + (addr === null || addr === void 0 ? void 0 : addr.port);
     debug("Listening on " + bind);
+    console.log("Listening on " + "http://localhost:".concat(port));
 }

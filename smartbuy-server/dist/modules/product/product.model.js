@@ -34,18 +34,10 @@ var productSchema = new Schema({
         type: String,
         required: true,
     },
-    specification: {
-        type: String,
-        required: true,
-    },
     isAvailable: {
         type: Boolean,
         required: true,
-    },
-    isPopular: {
-        type: Boolean,
-        required: true,
-    },
+    }
 }, {
     timestamps: false,
     versionKey: false,

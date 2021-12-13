@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var multer_1 = require("./shared/utils/multer");
 var express_1 = __importDefault(require("express"));
 var cookie_parser_1 = __importDefault(require("cookie-parser"));
 var morgan_1 = __importDefault(require("morgan"));
@@ -15,14 +16,16 @@ app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use((0, cookie_parser_1.default)());
-app.use("/", index_1.default);
+// app router
+app.use("/api/v1", index_1.default);
 /** Error handling */
 app.use(function (req, res, next) {
     var error = new Error("Not found");
     res.status(404).json({
         success: false,
         message: error.message,
-        payload: null
+        payload: null,
     });
 });
+app.use(multer_1.multerErrorHandler);
 exports.default = app;

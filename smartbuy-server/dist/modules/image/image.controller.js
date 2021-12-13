@@ -39,47 +39,27 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.multerErrorHandler = void 0;
-var express_1 = __importDefault(require("express"));
-var multer_1 = __importDefault(require("multer"));
-var path_1 = __importDefault(require("path"));
-var router = express_1.default.Router();
-var storage = multer_1.default.diskStorage({
-    destination: "./upload/images",
-    filename: function (req, file, cb) {
-        return cb(null, "".concat(file.fieldname, "_").concat(Date.now()).concat(path_1.default.extname(file.originalname)));
-    },
-});
-var upload = (0, multer_1.default)({
-    storage: storage,
-    limits: { fileSize: 3000000 },
-});
-var postImage = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var _a;
-    return __generator(this, function (_b) {
-        res.send({
-            success: true,
-            message: "image uploaded successfully",
-            url: "http://".concat(req.headers.host, "/images/").concat((_a = req.file) === null || _a === void 0 ? void 0 : _a.filename),
+var cloudinary_1 = __importDefault(require("../../shared/utils/cloudinary"));
+var imageController = {
+    postImage: function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+        var image;
+        var _a;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0: return [4 /*yield*/, cloudinary_1.default.v2.uploader.upload("./upload/images/".concat((_a = req.file) === null || _a === void 0 ? void 0 : _a.filename))];
+                case 1:
+                    image = _b.sent();
+                    res.send({
+                        success: true,
+                        message: "image uploaded successfully",
+                        payload: {
+                            url: image.secure_url,
+                            cloudinary_id: image.public_id,
+                        },
+                    });
+                    return [2 /*return*/];
+            }
         });
-        return [2 /*return*/];
-    });
-}); };
-var multerErrorHandler = function (err, req, res, next) {
-    if (err instanceof multer_1.default.MulterError) {
-        res.status(400).json({
-            success: false,
-            message: err.message,
-            payload: {
-                imageUrl: null,
-            },
-        });
-    }
-    next();
+    }); },
 };
-exports.multerErrorHandler = multerErrorHandler;
-router.use("/images", express_1.default.static("upload/images"));
-router.post("/upload/images", upload.single("image"), postImage);
-router.use(exports.multerErrorHandler);
-var imageRoute = router;
-exports.default = imageRoute;
+exports.default = imageController;
