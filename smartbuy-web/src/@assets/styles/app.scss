@@ -1,19 +1,19 @@
-@import "./theme/antd/ant-scss-var.scss";
+@import "./variables";
 
 @import "abstracts/mixins";
 @import "abstracts/example";
 @import "vendors/index.scss";
 @import "base/helper";
 @import "base/plugins.scss";
-@import "custom-style.scss";
+@import "./custom-style";
 @import "./modules/index.scss";
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .app-core-content {
-    background-color: #eef0f1;
+  background-color: #eef0f1;
 }
